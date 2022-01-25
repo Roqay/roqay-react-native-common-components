@@ -1,8 +1,14 @@
 # eslam-elmeniawy-components
 
-Common components used by "Eslam El-Meniawy" packed in library for usage in future projects
+Common React Native components used by "Eslam El-Meniawy" packed in library for usage in future projects.
 
 ## Installation
+
+```sh
+yarn add eslam-elmeniawy-components
+```
+
+or
 
 ```sh
 npm install eslam-elmeniawy-components
