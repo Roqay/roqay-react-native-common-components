@@ -1,7 +1,7 @@
 {
   "name": "eslam-elmeniawy-components",
-  "version": "0.1.0",
-  "description": "Common components used by "Eslam El-Meniawy" packed in library for usage in future projects",
+  "version": "1.0.0",
+  "description": "Common components used by \"Eslam El-Meniawy\" packed in library for usage in future projects",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
@@ -34,7 +34,10 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "eslam",
+    "elmeniawy",
+    "eslam-elmeniawy"
   ],
   "repository": "https://github.com/EslamElMeniawy/eslam-elmeniawy-components.git/eslam-elmeniawy-components",
   "author": "Eslam El-Meniawy <eslam.elmeniawy@gmail.com> (https://github.com/EslamElMeniawy/eslam-elmeniawy-components.git)",
