@@ -29,7 +29,7 @@ npm install react-native-paper react-native-vector-icons react-native-vector-ima
 ## Usage
 
 ```js
-import { multiply } from "eslam-elmeniawy-components";
+import { multiply } from 'eslam-elmeniawy-components';
 
 // ...
 
