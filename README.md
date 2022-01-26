@@ -28,11 +28,11 @@ yarn ios
 
 ## Usage
 
-Each component has its own usage part in the [documentation](documentation).
+Each component has its own usage part in the [documentation](docs).
 
 ## Components
 
-- [Dialog](documentation/Dialog.md)
+- [Dialog](docs/Dialog.md)
 
 ## Contributing
 

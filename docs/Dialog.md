@@ -6,15 +6,33 @@ Dialog component that is wrapped by `Portal` component from `react-native-paper`
 
 ### Android
 
-![Android Simple Dialog](/assets/images/android-simple-dialog.png 'Android Simple Dialog')
-![Android Top Dialog](/assets/images/android-top-dialog.png 'Android Top Dialog')
-![Android Bottom Dialog](/assets/images/android-bottom-dialog 'Android Bottom Dialog')
+<figure>
+    <img src="/assets/images/android-simple-dialog.png" width="100" height="200" alt="Android Simple Dialog">
+    <figcaption>Android Simple Dialog</figcaption>
+</figure>
+<figure>
+    <img src="/assets/images/android-top-dialog.png" width="100" height="200" alt="Android Top Dialog">
+    <figcaption>Android Top Dialog</figcaption>
+</figure>
+<figure>
+    <img src="/assets/images/android-bottom-dialog.png" width="100" height="200" alt="Android Bottom Dialog">
+    <figcaption>Android Bottom Dialog</figcaption>
+</figure>
 
 ### iOS
 
-![iOS Simple Dialog](/assets/images/ios-simple-dialog.png 'iOS Simple Dialog')
-![iOS Top Dialog](/assets/images/ios-top-dialog.png 'iOS Top Dialog')
-![iOS Bottom Dialog](/assets/images/ios-bottom-dialog 'iOS Bottom Dialog')
+<figure>
+    <img src="/assets/images/ios-simple-dialog.png" width="100" height="200" alt="iOS Simple Dialog">
+    <figcaption>iOS Simple Dialog</figcaption>
+</figure>
+<figure>
+    <img src="/assets/images/ios-top-dialog.png" width="100" height="200" alt="iOS Top Dialog">
+    <figcaption>iOS Top Dialog</figcaption>
+</figure>
+<figure>
+    <img src="/assets/images/ios-bottom-dialog.png" width="100" height="200" alt="iOS Bottom Dialog">
+    <figcaption>iOS Bottom Dialog</figcaption>
+</figure>
 
 ## Usage
 
