@@ -25,8 +25,8 @@ Dialog component that is wrapped by `Portal` component from `react-native-paper`
 ```js
 import React from 'react';
 import { View } from 'react-native';
-import { Button, Text } from 'react-native-paper';
-import { Dialog } from 'eslam-elmeniawy-components';
+import { Button } from 'react-native-paper';
+import { Dialog, Text } from 'eslam-elmeniawy-components';
 
 const MyComponent = () => {
   const [visible, setVisible] = React.useState(false);
