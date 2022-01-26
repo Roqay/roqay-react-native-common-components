@@ -20,7 +20,6 @@ const styles = ScaledSheet.create({
   safeArea: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
   },
   dialog: {
     width: '90%',
@@ -99,15 +98,27 @@ export default class Dialog extends React.PureComponent<Props, State> {
     if (visible) {
       const edges: Edge[] = ['right', 'left'];
 
+      let justifyContent:
+        | 'flex-start'
+        | 'flex-end'
+        | 'center'
+        | 'space-between'
+        | 'space-around'
+        | 'space-evenly'
+        | undefined;
+
       switch (position) {
         case 'top':
           edges.push('bottom');
+          justifyContent = 'flex-start';
           break;
-        case 'top':
+        case 'bottom':
           edges.push('top');
+          justifyContent = 'flex-end';
           break;
         default:
           edges.push('top', 'bottom');
+          justifyContent = 'center';
           break;
       }
 
@@ -120,7 +131,10 @@ export default class Dialog extends React.PureComponent<Props, State> {
             style={styles.overlay}
             onPress={isDialogDismissable ? onDismiss : null}
           >
-            <SafeAreaView edges={edges} style={styles.safeArea}>
+            <SafeAreaView
+              edges={edges}
+              style={[styles.safeArea, { justifyContent: justifyContent }]}
+            >
               <Pressable style={[styles.dialog, style]} onPress={() => {}}>
                 {children}
               </Pressable>
