@@ -1,11 +1,14 @@
 import React from 'react';
-import { Pressable, View, BackHandler } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {
+  Pressable,
+  BackHandler,
+  NativeEventSubscription,
+  ViewStyle,
+  StyleProp,
+} from 'react-native';
+import { Edge, SafeAreaView } from 'react-native-safe-area-context';
 import { Portal } from 'react-native-paper';
 import { ScaledSheet } from 'react-native-size-matters';
-
-import type { Node } from 'react';
-import type { EventSubscription } from 'react-native/Libraries/vendor/emitter/EventSubscription';
 
 // #region Styles
 const styles = ScaledSheet.create({
@@ -33,13 +36,12 @@ const styles = ScaledSheet.create({
 
 // #region Types
 interface Props {
-  dialogPosition?: 'top' | 'bottom' | 'center' | null | undefined;
-  message?: string | null | undefined;
-  dismiss?: Function | null | undefined;
-  actionText?: string | null | undefined;
-  actionPress?: Function | null | undefined;
-  showCancelAction?: boolean | null | undefined;
+  visible?: boolean | null | undefined;
+  position?: 'top' | 'bottom' | 'center' | null | undefined;
+  onDismiss?: () => void | null | undefined;
   dismissable?: boolean | null | undefined;
+  style?: StyleProp<ViewStyle> | null | undefined;
+  children?: React.ReactNode | null | undefined;
 }
 
 interface State {}
@@ -50,7 +52,7 @@ export default class Dialog extends React.PureComponent<Props, State> {
   isComponentMounted: boolean = false;
 
   // Variable for android back handler.
-  backHandlerSubscription: null | EventSubscription = null;
+  backHandlerSubscription: null | NativeEventSubscription = null;
 
   // #region Lifecycle
   componentDidMount() {
@@ -72,4 +74,62 @@ export default class Dialog extends React.PureComponent<Props, State> {
     this.backHandlerSubscription?.remove();
   }
   // #endregion
+
+  onBackPress: () => boolean = () => {
+    const { visible, onDismiss, dismissable } = this.props;
+
+    if (visible) {
+      const isDialogDismissable =
+        dismissable == null || dismissable === undefined ? true : dismissable;
+
+      if (isDialogDismissable && onDismiss) {
+        onDismiss();
+      }
+
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  render(): null | React.ReactNode {
+    const { visible, position, onDismiss, dismissable, style, children } =
+      this.props;
+
+    if (visible) {
+      const edges: Edge[] = ['right', 'left'];
+
+      switch (position) {
+        case 'top':
+          edges.push('bottom');
+          break;
+        case 'top':
+          edges.push('top');
+          break;
+        default:
+          edges.push('top', 'bottom');
+          break;
+      }
+
+      const isDialogDismissable =
+        dismissable == null || dismissable === undefined ? true : dismissable;
+
+      return (
+        <Portal>
+          <Pressable
+            style={styles.overlay}
+            onPress={isDialogDismissable ? onDismiss : null}
+          >
+            <SafeAreaView edges={edges} style={styles.safeArea}>
+              <Pressable style={[styles.dialog, style]} onPress={() => {}}>
+                {children}
+              </Pressable>
+            </SafeAreaView>
+          </Pressable>
+        </Portal>
+      );
+    }
+
+    return null;
+  }
 }
