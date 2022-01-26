@@ -4,13 +4,28 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "link-deps": "react-native link",
+    "android-clean": "cd android && ./gradlew clean && cd ..",
+    "pods": "pod repo update && npx pod-install",
     "android": "react-native run-android",
+    "ios-clean": "cd ios && xcodebuild clean && cd ..",
+    "ios-simulator": "react-native run-ios --simulator=\"iPhone 13 Pro Max\"",
     "ios": "react-native run-ios",
-    "start": "react-native start"
+    "start": "react-native start",
+    "postinstall": "yarn pods && yarn link-deps && yarn android-clean && yarn ios-clean"
   },
   "dependencies": {
-    "react": "16.13.1",
-    "react-native": "0.63.4"
+    "@klarna/react-native-vector-drawable": "^0.3.0",
+    "@react-navigation/native": "^6.0.6",
+    "@react-navigation/native-stack": "^6.2.5",
+    "react": "17.0.2",
+    "react-native": "0.66.4",
+    "react-native-paper": "^4.11.2",
+    "react-native-safe-area-context": "^3.3.2",
+    "react-native-screens": "^3.10.2",
+    "react-native-size-matters": "^0.4.0",
+    "react-native-vector-icons": "^9.0.0",
+    "react-native-vector-image": "^0.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

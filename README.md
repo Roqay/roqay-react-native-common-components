@@ -1,22 +1,38 @@
 # eslam-elmeniawy-components
 
-Common components used by "Eslam El-Meniawy" packed in library for usage in future projects
+Common React Native components used by "Eslam El-Meniawy" packed in library for usage in future projects.
 
 ## Installation
 
 ```sh
-npm install eslam-elmeniawy-components
+yarn add eslam-elmeniawy-components
+```
+
+The package depends on some third party packages that needs to be installed on the project as well. To install them you can use the following commands:
+
+```sh
+yarn add react-native-paper react-native-vector-icons react-native-vector-image @klarna/react-native-vector-drawable react-native-safe-area-context
+```
+
+## Example
+
+Example is available in [example folder](example).
+To run the example run the following commands:
+
+```sh
+cd example
+yarn
+yarn android
+yarn ios
 ```
 
 ## Usage
 
-```js
-import { multiply } from "eslam-elmeniawy-components";
+Each component has its own usage part in the [documentation](docs).
 
-// ...
+## Components
 
-const result = await multiply(3, 7);
-```
+- [Dialog](docs/Dialog.md)
 
 ## Contributing
 

@@ -1,31 +1,25 @@
-import * as React from 'react';
+import React from 'react';
+import { enableScreens } from 'react-native-screens';
+import { Provider, DefaultTheme } from 'react-native-paper';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'eslam-elmeniawy-components';
+import HomeScreen from './HomeScreen';
+import DialogScreen from './DialogScreen';
+
+enableScreens();
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <Provider theme={DefaultTheme}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Dialog" component={DialogScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});
