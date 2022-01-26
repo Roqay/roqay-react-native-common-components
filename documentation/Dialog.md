@@ -1,6 +1,20 @@
 # Dialog
 
-Dialog component that is wrapped by "Portal" component from "react-native-paper" to render above other components with the handling of Android hardware back implemented to dismiss the dialog.
+Dialog component that is wrapped by `Portal` component from `react-native-paper` to render above other components with the handling of Android hardware back implemented to dismiss the dialog.
+
+## Images
+
+### Android
+
+![Android Simple Dialog](/assets/images/android-simple-dialog.png 'Android Simple Dialog')
+![Android Top Dialog](/assets/images/android-top-dialog.png 'Android Top Dialog')
+![Android Bottom Dialog](/assets/images/android-bottom-dialog 'Android Bottom Dialog')
+
+### iOS
+
+![iOS Simple Dialog](/assets/images/ios-simple-dialog.png 'iOS Simple Dialog')
+![iOS Top Dialog](/assets/images/ios-top-dialog.png 'iOS Top Dialog')
+![iOS Bottom Dialog](/assets/images/ios-bottom-dialog 'iOS Bottom Dialog')
 
 ## Usage
 
