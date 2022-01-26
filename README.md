@@ -32,7 +32,9 @@ Each component has its own usage part in the [documentation](docs).
 
 ## Components
 
+- [Checkbox](docs/Checkbox.md)
 - [Dialog](docs/Dialog.md)
+- [Text](docs/Text.md)
 
 ## Contributing
 

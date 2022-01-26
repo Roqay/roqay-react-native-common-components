@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
-import { Button, Text } from 'react-native-paper';
-import { Dialog } from 'eslam-elmeniawy-components';
+import { Button } from 'react-native-paper';
+import { Dialog, Text } from 'eslam-elmeniawy-components';
 import { ScaledSheet } from 'react-native-size-matters';
 
 export default function DialogScreen() {
@@ -57,6 +57,8 @@ export default function DialogScreen() {
 
 const styles = ScaledSheet.create({
   button: {
+    width: '90%',
+    alignSelf: 'center',
     marginVertical: '8@vs',
   },
   text: {

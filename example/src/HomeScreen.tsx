@@ -8,8 +8,14 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
 
   return (
     <ScrollView>
+      <Button style={styles.button} onPress={() => openScreen('Checkbox')}>
+        Checkbox
+      </Button>
       <Button style={styles.button} onPress={() => openScreen('Dialog')}>
         Dialog
+      </Button>
+      <Button style={styles.button} onPress={() => openScreen('Text')}>
+        Text
       </Button>
     </ScrollView>
   );
@@ -17,6 +23,8 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
 
 const styles = ScaledSheet.create({
   button: {
+    width: '90%',
+    alignSelf: 'center',
     marginVertical: '8@vs',
   },
 });
