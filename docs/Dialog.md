@@ -6,33 +6,37 @@ Dialog component that is wrapped by `Portal` component from `react-native-paper`
 
 ### Android
 
-<figure>
-    <img src="/assets/images/android-simple-dialog.png" width="100" height="200" alt="Android Simple Dialog">
-    <figcaption>Android Simple Dialog</figcaption>
-</figure>
-<figure>
-    <img src="/assets/images/android-top-dialog.png" width="100" height="200" alt="Android Top Dialog">
-    <figcaption>Android Top Dialog</figcaption>
-</figure>
-<figure>
-    <img src="/assets/images/android-bottom-dialog.png" width="100" height="200" alt="Android Bottom Dialog">
-    <figcaption>Android Bottom Dialog</figcaption>
-</figure>
+<p float="left">
+  <figure>
+      <img src="/assets/images/android-simple-dialog.png" width="100" height="200" alt="Android Simple Dialog">
+      <figcaption>Android Simple Dialog</figcaption>
+  </figure>
+  <figure>
+      <img src="/assets/images/android-top-dialog.png" width="100" height="200" alt="Android Top Dialog">
+      <figcaption>Android Top Dialog</figcaption>
+  </figure>
+  <figure>
+      <img src="/assets/images/android-bottom-dialog.png" width="100" height="200" alt="Android Bottom Dialog">
+      <figcaption>Android Bottom Dialog</figcaption>
+  </figure>
+</p>
 
 ### iOS
 
-<figure>
-    <img src="/assets/images/ios-simple-dialog.png" width="100" height="200" alt="iOS Simple Dialog">
-    <figcaption>iOS Simple Dialog</figcaption>
-</figure>
-<figure>
-    <img src="/assets/images/ios-top-dialog.png" width="100" height="200" alt="iOS Top Dialog">
-    <figcaption>iOS Top Dialog</figcaption>
-</figure>
-<figure>
-    <img src="/assets/images/ios-bottom-dialog.png" width="100" height="200" alt="iOS Bottom Dialog">
-    <figcaption>iOS Bottom Dialog</figcaption>
-</figure>
+<p float="left">
+  <figure>
+      <img src="/assets/images/ios-simple-dialog.png" width="100" height="200" alt="iOS Simple Dialog">
+      <figcaption>iOS Simple Dialog</figcaption>
+  </figure>
+  <figure>
+      <img src="/assets/images/ios-top-dialog.png" width="100" height="200" alt="iOS Top Dialog">
+      <figcaption>iOS Top Dialog</figcaption>
+  </figure>
+  <figure>
+      <img src="/assets/images/ios-bottom-dialog.png" width="100" height="200" alt="iOS Bottom Dialog">
+      <figcaption>iOS Bottom Dialog</figcaption>
+  </figure>
+</p>
 
 ## Usage
 
