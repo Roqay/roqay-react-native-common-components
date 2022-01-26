@@ -7,15 +7,15 @@ Dialog component that is wrapped by `Portal` component from `react-native-paper`
 ### Android
 
 <p float="left">
-  <figure>
+  <figure width="32%">
       <img src="/assets/images/android-simple-dialog.png" width="100" height="200" alt="Android Simple Dialog">
       <figcaption>Android Simple Dialog</figcaption>
   </figure>
-  <figure>
+  <figure width="32%">
       <img src="/assets/images/android-top-dialog.png" width="100" height="200" alt="Android Top Dialog">
       <figcaption>Android Top Dialog</figcaption>
   </figure>
-  <figure>
+  <figure width="32%">
       <img src="/assets/images/android-bottom-dialog.png" width="100" height="200" alt="Android Bottom Dialog">
       <figcaption>Android Bottom Dialog</figcaption>
   </figure>
@@ -23,7 +23,7 @@ Dialog component that is wrapped by `Portal` component from `react-native-paper`
 
 ### iOS
 
-<p float="left">
+<p align="middle">
   <figure>
       <img src="/assets/images/ios-simple-dialog.png" width="100" height="200" alt="iOS Simple Dialog">
       <figcaption>iOS Simple Dialog</figcaption>
