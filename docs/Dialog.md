@@ -24,18 +24,9 @@ Dialog component that is wrapped by `Portal` component from `react-native-paper`
 ### iOS
 
 <p align="middle">
-  <figure>
-      <img src="/assets/images/ios-simple-dialog.png" width="100" height="200" alt="iOS Simple Dialog">
-      <figcaption>iOS Simple Dialog</figcaption>
-  </figure>
-  <figure>
-      <img src="/assets/images/ios-top-dialog.png" width="100" height="200" alt="iOS Top Dialog">
-      <figcaption>iOS Top Dialog</figcaption>
-  </figure>
-  <figure>
-      <img src="/assets/images/ios-bottom-dialog.png" width="100" height="200" alt="iOS Bottom Dialog">
-      <figcaption>iOS Bottom Dialog</figcaption>
-  </figure>
+  <img src="/assets/images/ios-simple-dialog.png" width="100" height="200" alt="iOS Simple Dialog">
+  <img src="/assets/images/ios-top-dialog.png" width="100" height="200" alt="iOS Top Dialog">
+  <img src="/assets/images/ios-bottom-dialog.png" width="100" height="200" alt="iOS Bottom Dialog">
 </p>
 
 ## Usage
