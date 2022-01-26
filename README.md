@@ -1,6 +1,6 @@
-# eslam-elmeniawy-components
+# Eslam El-Meniawy Components
 
-Common React Native components used by "Eslam El-Meniawy" packed in library for usage in future projects.
+Common React Native components used by [Eslam El-Meniawy](https://eslamelmeniawy.github.io) packed in library for usage in future projects.
 
 ## Installation
 
