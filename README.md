@@ -21,19 +21,14 @@ To run the example run the following commands:
 
 ```sh
 cd example
-```
-
-```sh
 yarn
-```
-
-```sh
 yarn android
-```
-
-```sh
 yarn ios
 ```
+
+## Usage
+
+Each component has its own usage part in the [documentation](documentation).
 
 ## Components
 

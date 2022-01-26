@@ -4,8 +4,6 @@ Dialog component that is wrapped by "Portal" component from "react-native-paper"
 
 ## Usage
 
-Each component has its own usage part in the [documentation](documentation).
-
 ```js
 import React from 'react';
 import { View } from 'react-native';
@@ -34,26 +32,26 @@ const MyComponent = () => {
 
 ### visible
 
-Type: `boolean`
-Default value: `false`
+Type: `boolean`  
+Default value: `false`  
 Determines whether the dialog is visible.
 
 ### position
 
-Type: `'top' | 'bottom' | 'center'`
-Default value: `'center'`
+Type: `'top' | 'bottom' | 'center'`  
+Default value: `'center'`  
 Determines the position of the dialog.
 
 ### onDismiss
 
-Type: `() => void`
+Type: `() => void`  
 Callback that is called when the user dismisses the dialog.
 
 ### dismissable
 
-Type: `boolean`
-Default value: `true`
-Determines whether clicking outside the dialog dismiss it.
+Type: `boolean`  
+Default value: `true`  
+Determines whether clicking outside the dialog dismiss it.  
 Also affects the Android hardware back button click while the dialog is open.
 
 ### style
@@ -62,5 +60,5 @@ Type: `StyleProp<ViewStyle>`
 
 ### children
 
-Type: `React.ReactNode`
+Type: `React.ReactNode`  
 Content of the dialog.
