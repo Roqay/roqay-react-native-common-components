@@ -3,8 +3,8 @@ import {
   Pressable,
   BackHandler,
   NativeEventSubscription,
-  ViewStyle,
   StyleProp,
+  ViewStyle,
 } from 'react-native';
 import { Edge, SafeAreaView } from 'react-native-safe-area-context';
 import { Portal } from 'react-native-paper';
@@ -91,7 +91,7 @@ export default class Dialog extends React.PureComponent<Props, State> {
     }
   };
 
-  render(): null | React.ReactNode {
+  render(): null | React.ReactElement {
     const { visible, position, onDismiss, dismissable, style, children } =
       this.props;
 
