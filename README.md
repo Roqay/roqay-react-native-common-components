@@ -19,7 +19,9 @@ See [React Native Paper Getting Started](https://callstack.github.io/react-nativ
 
 As mentioned in [React Native Paper Getting Started](https://callstack.github.io/react-native-paper/getting-started.html), `react-native-paper` also depends on `react-native-vector-icons` so make sure to add it to your project as well.
 
-If you intend using `.svg` images for components then make sure to add [`react-native-vector-image`](https://github.com/oblador/react-native-vector-image) to your project and follow the [installation steps](https://github.com/oblador/react-native-vector-image#installation) as well.
+### Using `.svg` props available in some components
+
+If you intend using `.svg` images for components that support them then make sure to add [`react-native-vector-image`](https://github.com/oblador/react-native-vector-image) to your project and follow the [installation steps](https://github.com/oblador/react-native-vector-image#installation) as well.
 
 ## Example
 
@@ -41,6 +43,7 @@ Each component has its own usage part in the [documentation](docs).
 
 - [Checkbox](docs/Checkbox.md)
 - [Dialog](docs/Dialog.md)
+- [IconButton](docs/IconButton.md)
 - [Text](docs/Text.md)
 
 ## Contributing
