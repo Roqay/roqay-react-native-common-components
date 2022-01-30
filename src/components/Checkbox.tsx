@@ -2,6 +2,7 @@ import React from 'react';
 import { View, ViewProps } from 'react-native';
 import { DefaultTheme, TouchableRipple, Checkbox } from 'react-native-paper';
 import { ScaledSheet } from 'react-native-size-matters';
+
 import Text from './Text';
 
 import type { Props as TextProps } from './Text';
