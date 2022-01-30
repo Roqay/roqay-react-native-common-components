@@ -91,7 +91,7 @@ Callback that is called when the user press the button.
 
 Type: `boolean`  
 Default value: `false`  
-Determines whether icon button is disabled.
+Determines whether button is disabled.
 
 ### iconSize
 
