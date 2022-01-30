@@ -15,6 +15,17 @@ const styles = ScaledSheet.create({
     borderRadius: '16@msr',
     overflow: 'hidden',
   },
+  noPadding: {
+    padding: 0,
+    paddingHorizontal: 0,
+    paddingVertical: 0,
+    paddingTop: 0,
+    paddingBottom: 0,
+    paddingStart: 0,
+    paddingEnd: 0,
+    paddingRight: 0,
+    paddingLeft: 0,
+  },
   rippleView: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -128,15 +139,47 @@ export default (props: Props): React.ReactElement => {
 
   const iconColor = noIconTint ? undefined : textColor;
 
+  const flattenStyle = StyleSheet.flatten(style);
+
+  const {
+    padding,
+    paddingHorizontal,
+    paddingVertical,
+    paddingTop,
+    paddingBottom,
+    paddingStart,
+    paddingEnd,
+    paddingRight,
+    paddingLeft,
+  } = flattenStyle;
+
   return (
-    <View style={[styles.container, style, enabledStyle]} {...other}>
+    <View
+      style={[styles.container, style, enabledStyle, styles.noPadding]}
+      {...other}
+    >
       <TouchableRipple
         onPress={onPress}
         disabled={disabled}
         rippleColor={rippleColor}
         underlayColor={rippleColor}
       >
-        <View style={styles.rippleView}>
+        <View
+          style={[
+            styles.rippleView,
+            {
+              padding,
+              paddingHorizontal,
+              paddingVertical,
+              paddingTop,
+              paddingBottom,
+              paddingStart,
+              paddingEnd,
+              paddingRight,
+              paddingLeft,
+            },
+          ]}
+        >
           {getIcon({
             image: startImage,
             vector: startVector,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ViewProps } from 'react-native';
+import { View, ViewProps, StyleSheet } from 'react-native';
 import { DefaultTheme, TouchableRipple, Checkbox } from 'react-native-paper';
 import { ScaledSheet } from 'react-native-size-matters';
 
@@ -14,8 +14,16 @@ const styles = ScaledSheet.create({
     borderRadius: '8@msr',
     overflow: 'hidden',
   },
-  ripple: {
-    flex: 1,
+  noPadding: {
+    padding: 0,
+    paddingHorizontal: 0,
+    paddingVertical: 0,
+    paddingTop: 0,
+    paddingBottom: 0,
+    paddingStart: 0,
+    paddingEnd: 0,
+    paddingRight: 0,
+    paddingLeft: 0,
   },
   rippleView: {
     flexDirection: 'row',
@@ -64,16 +72,44 @@ export default (props: Props): React.ReactElement => {
 
   const rippleColor = notNullCheckedColor.concat('40');
 
+  const flattenStyle = StyleSheet.flatten(style);
+
+  const {
+    padding,
+    paddingHorizontal,
+    paddingVertical,
+    paddingTop,
+    paddingBottom,
+    paddingStart,
+    paddingEnd,
+    paddingRight,
+    paddingLeft,
+  } = flattenStyle;
+
   return (
-    <View style={[styles.container, style]} {...other}>
+    <View style={[styles.container, style, styles.noPadding]} {...other}>
       <TouchableRipple
-        style={styles.ripple}
         onPress={onPress}
         disabled={disabled}
         rippleColor={rippleColor}
         underlayColor={rippleColor}
       >
-        <View style={[styles.ripple, styles.rippleView]}>
+        <View
+          style={[
+            styles.rippleView,
+            {
+              padding,
+              paddingHorizontal,
+              paddingVertical,
+              paddingTop,
+              paddingBottom,
+              paddingStart,
+              paddingEnd,
+              paddingRight,
+              paddingLeft,
+            },
+          ]}
+        >
           <Checkbox.Android
             status={checked ? 'checked' : 'unchecked'}
             onPress={onPress}
