@@ -63,7 +63,8 @@ Determines whether checkbox is disabled.
 ### checkedColor
 
 Type: `string`  
-Custom color for checked checkbox.
+Custom color for checked checkbox.  
+If not passed a default value from `react-native-paper` default theme is used equivalent to `DefaultTheme.colors.primary`.
 
 ### uncheckedColor
 
