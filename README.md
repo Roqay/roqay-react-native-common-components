@@ -11,8 +11,13 @@ yarn add eslam-elmeniawy-components
 The package depends on some third party packages that needs to be installed on the project as well. To install them you can use the following commands:
 
 ```sh
-yarn add react-native-paper react-native-vector-icons react-native-vector-image @klarna/react-native-vector-drawable react-native-safe-area-context
+yarn add react-native-paper react-native-safe-area-context react-native-vector-image @klarna/react-native-vector-drawable
 ```
+
+As the package depends on `react-native-paper`, your root component must be wrapped with `Provider` from `react-native-paper`.  
+See [React Native Paper Getting Started](https://callstack.github.io/react-native-paper/getting-started.html) for more details about adding `react-native-paper` to your project.  
+
+As mentioned in [React Native Paper Getting Started](https://callstack.github.io/react-native-paper/getting-started.html), `react-native-paper` also depends on `react-native-vector-icons` so make sure to add it to your project as well.
 
 ## Example
 
