@@ -15,9 +15,6 @@ const styles = ScaledSheet.create({
     borderRadius: '16@msr',
     overflow: 'hidden',
   },
-  ripple: {
-    flex: 1,
-  },
   rippleView: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -134,13 +131,12 @@ export default (props: Props): React.ReactElement => {
   return (
     <View style={[styles.container, style, enabledStyle]} {...other}>
       <TouchableRipple
-        style={styles.ripple}
         onPress={onPress}
         disabled={disabled}
         rippleColor={rippleColor}
         underlayColor={rippleColor}
       >
-        <View style={[styles.ripple, styles.rippleView]}>
+        <View style={styles.rippleView}>
           {getIcon({
             image: startImage,
             vector: startVector,
