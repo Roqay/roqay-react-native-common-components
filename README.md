@@ -45,6 +45,7 @@ Each component has its own usage part in the [documentation](docs).
 - [Checkbox](docs/Checkbox.md)
 - [Dialog](docs/Dialog.md)
 - [IconButton](docs/IconButton.md)
+- [RadioButton](docs/RadioButton.md)
 - [Text](docs/Text.md)
 
 ## Contributing
