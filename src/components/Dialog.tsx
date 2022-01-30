@@ -7,7 +7,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import { Edge, SafeAreaView } from 'react-native-safe-area-context';
-import { Portal } from 'react-native-paper';
+import { DefaultTheme, Portal } from 'react-native-paper';
 import { ScaledSheet } from 'react-native-size-matters';
 
 // #region Styles
@@ -15,7 +15,7 @@ const styles = ScaledSheet.create({
   overlay: {
     width: '100%',
     height: '100%',
-    backgroundColor: '#000000B3',
+    backgroundColor: DefaultTheme.colors.onSurface.concat('B3'),
   },
   safeArea: {
     flex: 1,
@@ -24,7 +24,7 @@ const styles = ScaledSheet.create({
   dialog: {
     width: '90%',
     marginVertical: '8@vs',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: DefaultTheme.colors.surface,
     borderRadius: '10@msr',
     overflow: 'hidden',
     alignItems: 'center',
