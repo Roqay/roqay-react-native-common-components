@@ -67,7 +67,7 @@ const getIcon = (props: IconProps): null | React.ReactElement => {
 
   if (vector) {
     try {
-      const VectorImage = require('react-native-vector-image');
+      const VectorImage = require('react-native-vector-image').default;
 
       return (
         <VectorImage source={vector} style={iconStyle} resizeMode="contain" />

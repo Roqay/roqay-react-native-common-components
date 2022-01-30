@@ -15,7 +15,11 @@ export default function IconButtonScreen() {
         onPress={_onPress}
       />
       <Text style={styles.text}>Vector</Text>
-      <IconButton style={styles.icon} vector={require('./information.svg')} />
+      <IconButton
+        style={styles.icon}
+        vector={require('./information.svg')}
+        onPress={_onPress}
+      />
       <Text style={styles.text}>Icon</Text>
       <IconButton
         style={styles.icon}
