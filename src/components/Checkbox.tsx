@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, ViewProps } from 'react-native';
-import { TouchableRipple, Checkbox } from 'react-native-paper';
+import { DefaultTheme, TouchableRipple, Checkbox } from 'react-native-paper';
 import { ScaledSheet } from 'react-native-size-matters';
 import Text from './Text';
 
@@ -55,11 +55,13 @@ export default (props: Props): React.ReactElement => {
 
   const textProp = textProps || {};
   const { style: textStyle, ...rest } = textProp;
-  let rippleColor: string | undefined;
 
-  if (checkedColor) {
-    rippleColor = checkedColor.concat('40');
-  }
+  const notNullCheckedColor: string =
+    checkedColor == null || checkedColor === undefined
+      ? DefaultTheme.colors.primary
+      : checkedColor;
+
+  const rippleColor = notNullCheckedColor.concat('40');
 
   return (
     <View style={[styles.container, style]} {...other}>
@@ -74,7 +76,7 @@ export default (props: Props): React.ReactElement => {
           <Checkbox.Android
             status={checked ? 'checked' : 'unchecked'}
             onPress={onPress}
-            color={checkedColor}
+            color={notNullCheckedColor}
             uncheckedColor={uncheckedColor}
             disabled={disabled}
           />
