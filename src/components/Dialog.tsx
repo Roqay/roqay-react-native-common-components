@@ -7,7 +7,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import { Edge, SafeAreaView } from 'react-native-safe-area-context';
-import { Portal } from 'react-native-paper';
+import { DefaultTheme, Portal } from 'react-native-paper';
 import { ScaledSheet } from 'react-native-size-matters';
 
 // #region Styles
@@ -15,7 +15,6 @@ const styles = ScaledSheet.create({
   overlay: {
     width: '100%',
     height: '100%',
-    backgroundColor: '#000000B3',
   },
   safeArea: {
     flex: 1,
@@ -24,7 +23,7 @@ const styles = ScaledSheet.create({
   dialog: {
     width: '90%',
     marginVertical: '8@vs',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: DefaultTheme.colors.surface,
     borderRadius: '10@msr',
     overflow: 'hidden',
     alignItems: 'center',
@@ -40,6 +39,7 @@ interface Props {
   onDismiss?: () => void | null | undefined;
   dismissable?: boolean | null | undefined;
   style?: StyleProp<ViewStyle> | null | undefined;
+  overlayColor?: string | null | undefined;
   children?: React.ReactNode | null | undefined;
 }
 
@@ -92,8 +92,15 @@ export default class Dialog extends React.PureComponent<Props, State> {
   };
 
   render(): null | React.ReactElement {
-    const { visible, position, onDismiss, dismissable, style, children } =
-      this.props;
+    const {
+      visible,
+      position,
+      onDismiss,
+      dismissable,
+      style,
+      overlayColor,
+      children,
+    } = this.props;
 
     if (visible) {
       const edges: Edge[] = ['right', 'left'];
@@ -125,10 +132,20 @@ export default class Dialog extends React.PureComponent<Props, State> {
       const isDialogDismissable =
         dismissable == null || dismissable === undefined ? true : dismissable;
 
+      const overlayStyle = [
+        styles.overlay,
+        {
+          backgroundColor:
+            overlayColor == null || overlayColor === undefined
+              ? DefaultTheme.colors.onSurface.concat('B3')
+              : overlayColor,
+        },
+      ];
+
       return (
         <Portal>
           <Pressable
-            style={styles.overlay}
+            style={overlayStyle}
             onPress={isDialogDismissable ? onDismiss : null}
           >
             <SafeAreaView

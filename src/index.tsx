@@ -1,5 +1,8 @@
+import Button from './components/Button';
 import Checkbox from './components/Checkbox';
 import Dialog from './components/Dialog';
+import IconButton from './components/IconButton';
+import RadioButton from './components/RadioButton';
 import Text from './components/Text';
 
-export { Checkbox, Dialog, Text };
+export { Button, Checkbox, Dialog, IconButton, RadioButton, Text };

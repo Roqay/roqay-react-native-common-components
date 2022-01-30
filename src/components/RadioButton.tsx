@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, ViewProps, StyleSheet } from 'react-native';
-import { DefaultTheme, TouchableRipple, Checkbox } from 'react-native-paper';
+import { DefaultTheme, TouchableRipple, RadioButton } from 'react-native-paper';
 import { ScaledSheet } from 'react-native-size-matters';
 
 import Text from './Text';
@@ -110,7 +110,8 @@ export default (props: Props): React.ReactElement => {
             },
           ]}
         >
-          <Checkbox.Android
+          <RadioButton.Android
+            value={text == null || text === undefined ? 'radio' : text}
             status={checked ? 'checked' : 'unchecked'}
             onPress={onPress}
             color={notNullCheckedColor}
