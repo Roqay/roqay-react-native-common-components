@@ -76,6 +76,12 @@ Also affects the Android hardware back button click while the dialog is open.
 
 Type: `StyleProp<ViewStyle>`
 
+### overlayColor
+
+Type: `string`  
+The overlay color that displays behind the dialog.  
+If not passed a default value from `react-native-paper` default theme is used equivalent to `DefaultTheme.colors.onSurface` with alpha `70%`.
+
 ### children
 
 Type: `React.ReactNode`  
