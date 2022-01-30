@@ -14,6 +14,9 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
       <Button style={styles.button} onPress={() => openScreen('Dialog')}>
         Dialog
       </Button>
+      <Button style={styles.button} onPress={() => openScreen('IconButton')}>
+        Icon Button
+      </Button>
       <Button style={styles.button} onPress={() => openScreen('Text')}>
         Text
       </Button>
