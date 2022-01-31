@@ -74,7 +74,7 @@ export default class Dialog extends React.PureComponent<Props, State> {
   }
   // #endregion
 
-  onBackPress: () => boolean = () => {
+  onBackPress = (): boolean => {
     const { visible, onDismiss, dismissable } = this.props;
 
     if (visible) {
