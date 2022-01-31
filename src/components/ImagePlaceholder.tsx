@@ -20,8 +20,13 @@ const styles = ScaledSheet.create({
     paddingLeft: 0,
   },
   image: {
+    position: 'absolute',
     width: '100%',
     height: '100%',
+  },
+  loadingContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 // #endregion
@@ -110,7 +115,7 @@ export default class ImagePlaceholder extends React.PureComponent<
 
   setErrorState = (isError: boolean): void => {
     if (this.isComponentMounted) {
-      this.setState({ isError });
+      this.setState({ isError, isLoading: false });
     }
   };
 
@@ -131,8 +136,8 @@ export default class ImagePlaceholder extends React.PureComponent<
       props;
 
     try {
-      const FastImage = require('react-native-fast-image').default;
-      const Progress = require('react-native-progress').default;
+      const FastImage = require('react-native-fast-image');
+      const Progress = require('react-native-progress');
       require('react-native-svg');
 
       let notNullResizeMode;
@@ -190,14 +195,14 @@ export default class ImagePlaceholder extends React.PureComponent<
 
       return (
         <>
-          {(!source || isError) && placeholder && (
+          {(!source || isError || isLoading) && placeholder && (
             <Image
               source={placeholder}
               style={[styles.image, { resizeMode: notNullResizeMode }]}
               resizeMode={notNullResizeMode}
             />
           )}
-          {Boolean(source) && (
+          {Boolean(source) && !isError && (
             <FastImage
               style={styles.image}
               source={{
@@ -213,7 +218,9 @@ export default class ImagePlaceholder extends React.PureComponent<
                 nativeEvent: { loaded: number; total: number };
               }) =>
                 this.setProgressState(
-                  e.nativeEvent.loaded / e.nativeEvent.total
+                  e.nativeEvent.total > 0
+                    ? e.nativeEvent.loaded / e.nativeEvent.total
+                    : 0
                 )
               }
             />
@@ -222,11 +229,12 @@ export default class ImagePlaceholder extends React.PureComponent<
             <View
               style={[
                 styles.image,
+                styles.loadingContainer,
                 {
                   backgroundColor:
                     loadingProps?.backgroundColor == null ||
                     loadingProps?.backgroundColor === undefined
-                      ? DefaultTheme.colors.onSurface.concat('B3')
+                      ? DefaultTheme.colors.onSurface.concat('66')
                       : loadingProps?.backgroundColor,
                 },
               ]}
@@ -239,18 +247,19 @@ export default class ImagePlaceholder extends React.PureComponent<
                 )
               }
             >
-              {progressSize > 0 && (
-                <Progress.Pie
-                  size={progressSize}
-                  progress={progress}
-                  color={
-                    loadingProps?.color == null ||
-                    loadingProps?.color === undefined
-                      ? DefaultTheme.colors.primary
-                      : loadingProps?.color
-                  }
-                />
-              )}
+              {/* {progressSize > 0 && ( */}
+              <Progress.Pie
+                indeterminate={progress <= 0}
+                size={progressSize}
+                progress={progress}
+                color={
+                  loadingProps?.color == null ||
+                  loadingProps?.color === undefined
+                    ? DefaultTheme.colors.surface
+                    : loadingProps?.color
+                }
+              />
+              {/* )} */}
             </View>
           )}
         </>

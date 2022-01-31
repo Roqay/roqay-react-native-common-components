@@ -31,6 +31,11 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
       />
       <Button
         style={styles.button}
+        onPress={() => openScreen('ImagePlaceholder')}
+        text="ImagePlaceholder"
+      />
+      <Button
+        style={styles.button}
         onPress={() => openScreen('RadioButton')}
         text="RadioButton"
       />

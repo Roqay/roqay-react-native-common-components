@@ -9,6 +9,7 @@ import ButtonScreen from './ButtonScreen';
 import CheckboxScreen from './CheckboxScreen';
 import DialogScreen from './DialogScreen';
 import IconButtonScreen from './IconButtonScreen';
+import ImagePlaceholderScreen from './ImagePlaceholderScreen';
 import RadioButtonScreen from './RadioButtonScreen';
 import TextScreen from './TextScreen';
 
@@ -26,6 +27,10 @@ export default function App() {
           <Stack.Screen name="Checkbox" component={CheckboxScreen} />
           <Stack.Screen name="Dialog" component={DialogScreen} />
           <Stack.Screen name="IconButton" component={IconButtonScreen} />
+          <Stack.Screen
+            name="ImagePlaceholder"
+            component={ImagePlaceholderScreen}
+          />
           <Stack.Screen name="RadioButton" component={RadioButtonScreen} />
           <Stack.Screen name="Text" component={TextScreen} />
         </Stack.Navigator>
