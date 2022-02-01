@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
-import { RadioButton } from 'eslam-elmeniawy-components';
+import { RadioButton } from 'roqay-react-native-common-components';
 import { ScaledSheet } from 'react-native-size-matters';
 
 export default function RadioButtonScreen() {

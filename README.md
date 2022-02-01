@@ -5,7 +5,7 @@ Common React Native components used by [Eslam El-Meniawy](https://eslamelmeniawy
 ## Installation
 
 ```sh
-yarn add eslam-elmeniawy-components
+yarn add roqay-react-native-common-components
 ```
 
 The package depends on some third party packages that needs to be installed on the project as well. To install them you can use the following commands:

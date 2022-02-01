@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import { Button } from 'react-native-paper';
-import { Dialog, Text } from 'eslam-elmeniawy-components';
+import { Dialog, Text } from 'roqay-react-native-common-components';
 import { ScaledSheet } from 'react-native-size-matters';
 
 export default function DialogScreen() {
