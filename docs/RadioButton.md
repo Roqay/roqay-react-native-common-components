@@ -21,7 +21,7 @@ RadioButton component that uses `RadioButton` component from `react-native-paper
 ```js
 import React from 'react';
 import { View } from 'react-native';
-import { RadioButton } from 'eslam-elmeniawy-components';
+import { RadioButton } from 'roqay-react-native-common-components';
 
 const MyComponent = () => {
   const [checked, setChecked] = React.useState(false);

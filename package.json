@@ -1,5 +1,5 @@
 {
-  "name": "eslam-elmeniawy-components",
+  "name": "roqay-react-native-common-components",
   "version": "1.0.0",
   "description": "Common React Native components used by \"Eslam El-Meniawy\" packed in library for usage in future projects.",
   "main": "lib/commonjs/index",
@@ -13,7 +13,7 @@
     "android",
     "ios",
     "cpp",
-    "eslam-elmeniawy-components.podspec",
+    "roqay-react-native-common-components.podspec",
     "!lib/typescript/example",
     "!android/build",
     "!ios/build",

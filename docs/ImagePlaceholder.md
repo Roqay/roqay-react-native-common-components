@@ -25,7 +25,7 @@ To use the component, you need to add [`react-native-fast-image`](https://github
 ```js
 import React from 'react';
 import { View } from 'react-native';
-import { ImagePlaceholder } from 'eslam-elmeniawy-components';
+import { ImagePlaceholder } from 'roqay-react-native-common-components';
 
 const MyComponent = () => {
   return (

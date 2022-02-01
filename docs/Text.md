@@ -21,7 +21,7 @@ Text component that uses `Text`, `Title` and `Caption` components from `react-na
 ```js
 import React from 'react';
 import { View } from 'react-native';
-import { Text } from 'eslam-elmeniawy-components';
+import { Text } from 'roqay-react-native-common-components';
 
 const MyComponent = () => {
   return (
