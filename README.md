@@ -23,6 +23,10 @@ As mentioned in [React Native Paper Getting Started](https://callstack.github.io
 
 If you intend using `.svg` images for components that support them then make sure to add [`react-native-vector-image`](https://github.com/oblador/react-native-vector-image) to your project and follow the [installation steps](https://github.com/oblador/react-native-vector-image#installation) as well.
 
+### Using `ImagePlaceholder` component
+
+If you intend using [`ImagePlaceholder`](docs/ImagePlaceholder.md) component then make sure to add [`react-native-fast-image`](https://github.com/DylanVann/react-native-fast-image), [`react-native-progress`](https://github.com/oblador/react-native-progress) and [`react-native-svg`](https://github.com/react-native-svg/react-native-svg) to your project.
+
 ## Example
 
 Example is available in [example folder](example).
@@ -45,6 +49,7 @@ Each component has its own usage part in the [documentation](docs).
 - [Checkbox](docs/Checkbox.md)
 - [Dialog](docs/Dialog.md)
 - [IconButton](docs/IconButton.md)
+- [ImagePlaceholder](docs/ImagePlaceholder.md)
 - [RadioButton](docs/RadioButton.md)
 - [Text](docs/Text.md)
 

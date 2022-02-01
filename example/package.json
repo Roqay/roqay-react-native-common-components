@@ -20,10 +20,13 @@
     "@react-navigation/native-stack": "^6.2.5",
     "react": "17.0.2",
     "react-native": "0.66.4",
+    "react-native-fast-image": "^8.5.11",
     "react-native-paper": "^4.11.2",
+    "react-native-progress": "^5.0.0",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.10.2",
     "react-native-size-matters": "^0.4.0",
+    "react-native-svg": "^12.1.1",
     "react-native-vector-icons": "^9.0.0",
     "react-native-vector-image": "^0.3.3"
   },
