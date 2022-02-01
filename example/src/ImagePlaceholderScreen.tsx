@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
-import { ImagePlaceholder, Text } from 'eslam-elmeniawy-components';
+import { ImagePlaceholder, Text } from 'roqay-react-native-common-components';
 import { ScaledSheet } from 'react-native-size-matters';
 
 export default function ImagePlaceholderScreen() {

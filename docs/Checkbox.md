@@ -21,7 +21,7 @@ Checkbox component that uses `Checkbox` component from `react-native-paper` alon
 ```js
 import React from 'react';
 import { View } from 'react-native';
-import { Checkbox } from 'eslam-elmeniawy-components';
+import { Checkbox } from 'roqay-react-native-common-components';
 
 const MyComponent = () => {
   const [checked, setChecked] = React.useState(false);

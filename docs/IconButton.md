@@ -25,7 +25,7 @@ If you intend using `.svg` images for component then make sure to add [`react-na
 ```js
 import React from 'react';
 import { View } from 'react-native';
-import { IconButton } from 'eslam-elmeniawy-components';
+import { IconButton } from 'roqay-react-native-common-components';
 
 const MyComponent = () => {
   return (
