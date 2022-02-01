@@ -25,7 +25,7 @@ If you intend using `.svg` images for components that support them then make sur
 
 ### Using `ImagePlaceholder` component
 
-If you intend using `ImagePlaceholder` component then make sure to add [`react-native-fast-image](https://github.com/DylanVann/react-native-fast-image), [`react-native-progress`](https://github.com/oblador/react-native-progress) and [`react-native-svg`](https://github.com/react-native-svg/react-native-svg) to your project.
+If you intend using `ImagePlaceholder` component then make sure to add [`react-native-fast-image`](https://github.com/DylanVann/react-native-fast-image), [`react-native-progress`](https://github.com/oblador/react-native-progress) and [`react-native-svg`](https://github.com/react-native-svg/react-native-svg) to your project.
 
 ## Example
 

@@ -18,7 +18,7 @@ Image component that used to display remote image with placeholder that displays
 
 ## Extra Installation
 
-To use the component, you need to add [`react-native-fast-image](https://github.com/DylanVann/react-native-fast-image), [`react-native-progress`](https://github.com/oblador/react-native-progress) and [`react-native-svg`](https://github.com/react-native-svg/react-native-svg) to your project.
+To use the component, you need to add [`react-native-fast-image`](https://github.com/DylanVann/react-native-fast-image), [`react-native-progress`](https://github.com/oblador/react-native-progress) and [`react-native-svg`](https://github.com/react-native-svg/react-native-svg) to your project.
 
 ## Usage
 
