@@ -1,6 +1,6 @@
-# Eslam El-Meniawy Components
+# Roqay Common React Native Components
 
-Common React Native components used by [Eslam El-Meniawy](https://eslamelmeniawy.github.io) packed in library for usage in future projects.
+Common React Native components used by [Roqay](https://roqay.com) packed in library for usage in future projects.
 
 ## Installation
 
