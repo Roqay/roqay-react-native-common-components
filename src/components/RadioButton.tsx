@@ -72,7 +72,9 @@ export default (props: Props): React.ReactElement => {
 
   const rippleColor = notNullCheckedColor.concat('40');
 
-  const flattenStyle = StyleSheet.flatten(style);
+  const flattenStyle = StyleSheet.flatten(
+    style == null || style === undefined ? {} : style
+  );
 
   const {
     padding,

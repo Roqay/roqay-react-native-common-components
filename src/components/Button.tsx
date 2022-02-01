@@ -139,7 +139,9 @@ export default (props: Props): React.ReactElement => {
 
   const iconColor = noIconTint ? undefined : textColor;
 
-  const flattenStyle = StyleSheet.flatten(style);
+  const flattenStyle = StyleSheet.flatten(
+    style == null || style === undefined ? {} : style
+  );
 
   const {
     padding,
