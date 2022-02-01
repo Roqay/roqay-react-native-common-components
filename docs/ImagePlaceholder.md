@@ -62,44 +62,50 @@ The image to display while loading and in case of error.
 Type: `'cover' | 'contain' | 'stretch' | 'center'`  
 Default value: `'cover'`
 
-- `cover` - Scale the image uniformly (maintain the image's aspect ratio) so that both dimensions (width and height) of the image will be equal to or larger than the corresponding dimension of the view (minus padding).
-- `contain` - Scale the image uniformly (maintain the image's aspect ratio) so that both dimensions (width and height) of the image will be equal to or less than the corresponding dimension of the view (minus padding).
-- `stretch` - Scale width and height independently, This may change the aspect ratio of the src.
-- `center` - Do not scale the image, keep centered.
+- `'cover'` - Scale the image uniformly (maintain the image's aspect ratio) so that both dimensions (width and height) of the image will be equal to or larger than the corresponding dimension of the view (minus padding).
+- `'contain'` - Scale the image uniformly (maintain the image's aspect ratio) so that both dimensions (width and height) of the image will be equal to or less than the corresponding dimension of the view (minus padding).
+- `'stretch'` - Scale width and height independently, This may change the aspect ratio of the src.
+- `'center'` - Do not scale the image, keep centered.
 
 ### priority
 
 Type: `'low' | 'normal' | 'high'`  
-Default value: `'normal'`  
-Priority for loading the image.
+Default value: `'normal'`
+
+- `'low'` - Low Priority.
+- `'normal'` - Normal Priority.
+- `'high'` - High Priority.
 
 ### cache
 
-Type: `'low' | 'normal' | 'high'`  
-Default value: `'normal'`  
-Priority for loading the image.
+Type: `'immutable' | 'web' | 'cacheOnly'`  
+Default value: `'immutable'`
 
-### color
+- `'immutable'` - Only updates if url changes.
+- `'web'` - Use headers and follow normal caching procedures.
+- `'cacheOnly'` - Only show images from cache, do not make any network requests.
 
-Type: `string`  
-Custom color for icon.  
-If not passed a default value from `react-native-paper` default theme is used equivalent to `DefaultTheme.colors.primary`.
+### loadingProps
 
-### onPress
+Type: `Object`  
+Props for loading indicator.
 
-Type: `() => void`  
-Callback that is called when the user press the icon button.
-
-### disabled
+#### loadingProps.showLoading
 
 Type: `boolean`  
-Default value: `false`  
-Determines whether icon button is disabled.
+Default value: `true`  
+Whether to show loading indicator while the image is loading or not.
 
-### iconPercent
+#### loadingProps.color
 
-Type: `number`  
-Default value: `60`  
-Determines the image size as percent from the `size` prop.
+Type: `string`  
+Custom color for loading indicator.  
+If not passed a default value from `react-native-paper` default theme is used equivalent to `DefaultTheme.colors.surface`.
+
+#### loadingProps.backgroundColor
+
+Type: `string`  
+Custom color for loading indicator background.  
+If not passed a default value from `react-native-paper` default theme is used equivalent to `DefaultTheme.colors.onSurface` with alpha `40%`.
 
 ### [...View props](https://reactnative.dev/docs/view#props)
