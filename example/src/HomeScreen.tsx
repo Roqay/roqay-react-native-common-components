@@ -41,6 +41,11 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
       />
       <Button
         style={styles.button}
+        onPress={() => openScreen('TextInput')}
+        text="TextInput"
+      />
+      <Button
+        style={styles.button}
         onPress={() => openScreen('Text')}
         text="Text"
       />

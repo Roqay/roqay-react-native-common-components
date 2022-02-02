@@ -1,7 +1,6 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
-import { Button } from 'react-native-paper';
-import { Dialog, Text } from 'roqay-react-native-common-components';
+import { Dialog, Text, Button } from 'roqay-react-native-common-components';
 import { ScaledSheet } from 'react-native-size-matters';
 
 export default function DialogScreen() {
@@ -24,15 +23,21 @@ export default function DialogScreen() {
   return (
     <>
       <ScrollView>
-        <Button style={styles.button} onPress={_showSimpleDialog}>
-          Show Simple Dialog
-        </Button>
-        <Button style={styles.button} onPress={_showTopDialog}>
-          Show Top Dialog
-        </Button>
-        <Button style={styles.button} onPress={_showBottomDialog}>
-          Show Bottom Dialog
-        </Button>
+        <Button
+          style={styles.button}
+          onPress={_showSimpleDialog}
+          text="Show Simple Dialog"
+        />
+        <Button
+          style={styles.button}
+          onPress={_showTopDialog}
+          text="Show Top Dialog"
+        />
+        <Button
+          style={styles.button}
+          onPress={_showBottomDialog}
+          text="Show Bottom Dialog"
+        />
       </ScrollView>
       <Dialog visible={simpleDialogVisible} onDismiss={_hideSimpleDialog}>
         <Text style={styles.text}>This is simple dialog</Text>

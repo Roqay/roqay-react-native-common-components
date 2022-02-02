@@ -4,6 +4,7 @@ import Dialog from './components/Dialog';
 import IconButton from './components/IconButton';
 import ImagePlaceholder from './components/ImagePlaceholder';
 import RadioButton from './components/RadioButton';
+import TextInput from './components/TextInput';
 import Text from './components/Text';
 
 export {
@@ -13,5 +14,6 @@ export {
   IconButton,
   ImagePlaceholder,
   RadioButton,
+  TextInput,
   Text,
 };
