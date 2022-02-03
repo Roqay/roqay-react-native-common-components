@@ -2,6 +2,7 @@
 import Button from './components/Button';
 import Checkbox from './components/Checkbox';
 import Dialog from './components/Dialog';
+import FlatList from './components/FlatList';
 import IconButton from './components/IconButton';
 import ImagePlaceholder from './components/ImagePlaceholder';
 import RadioButton from './components/RadioButton';
@@ -18,6 +19,7 @@ export {
   Button,
   Checkbox,
   Dialog,
+  FlatList,
   IconButton,
   ImagePlaceholder,
   RadioButton,
