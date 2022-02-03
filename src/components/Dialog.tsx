@@ -65,7 +65,7 @@ class Dialog extends React.PureComponent<Props, State> {
     // Register subscription for back handler.
     this.backHandlerSubscription = BackHandler.addEventListener(
       'hardwareBackPress',
-      this.onBackPress
+      this._onBackPress
     );
   }
 
@@ -78,7 +78,7 @@ class Dialog extends React.PureComponent<Props, State> {
   }
   // #endregion
 
-  onBackPress = (): boolean => {
+  _onBackPress = (): boolean => {
     const { visible, onDismiss, dismissable } = this.props;
 
     if (visible) {

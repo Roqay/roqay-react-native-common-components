@@ -104,31 +104,31 @@ class ImagePlaceholder extends React.PureComponent<Props, State> {
   }
   // #endregion
 
-  setLoadingState = (isLoading: boolean): void => {
+  _setLoadingState = (isLoading: boolean): void => {
     if (this.isComponentMounted) {
       this.setState({ isLoading });
     }
   };
 
-  setErrorState = (isError: boolean): void => {
+  _setErrorState = (isError: boolean): void => {
     if (this.isComponentMounted) {
       this.setState({ isError, isLoading: false });
     }
   };
 
-  setProgressState = (progress: number): void => {
+  _setProgressState = (progress: number): void => {
     if (this.isComponentMounted) {
       this.setState({ progress });
     }
   };
 
-  setProgressSizeState = (progressSize: number): void => {
+  _setProgressSizeState = (progressSize: number): void => {
     if (this.isComponentMounted) {
       this.setState({ progressSize });
     }
   };
 
-  getImage = (props: ImageProps): null | React.ReactElement => {
+  _getImage = (props: ImageProps): null | React.ReactElement => {
     const {
       source,
       placeholder,
@@ -215,13 +215,13 @@ class ImagePlaceholder extends React.PureComponent<Props, State> {
                 cache: notNullCache,
               }}
               resizeMode={notNullResizeMode}
-              onLoadStart={() => this.setLoadingState(true)}
-              onLoadEnd={() => this.setLoadingState(false)}
-              onError={() => this.setErrorState(true)}
+              onLoadStart={() => this._setLoadingState(true)}
+              onLoadEnd={() => this._setLoadingState(false)}
+              onError={() => this._setErrorState(true)}
               onProgress={(e: {
                 nativeEvent: { loaded: number; total: number };
               }) =>
-                this.setProgressState(
+                this._setProgressState(
                   e.nativeEvent.total > 0
                     ? e.nativeEvent.loaded / e.nativeEvent.total
                     : 0
@@ -243,7 +243,7 @@ class ImagePlaceholder extends React.PureComponent<Props, State> {
                 },
               ]}
               onLayout={(event: LayoutChangeEvent) =>
-                this.setProgressSizeState(
+                this._setProgressSizeState(
                   (event.nativeEvent.layout.width >
                   event.nativeEvent.layout.height
                     ? event.nativeEvent.layout.height
@@ -300,7 +300,7 @@ class ImagePlaceholder extends React.PureComponent<Props, State> {
         ]}
         {...other}
       >
-        {this.getImage({
+        {this._getImage({
           source,
           placeholder,
           resizeMode,

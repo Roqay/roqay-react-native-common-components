@@ -5,7 +5,6 @@ import { set, omit } from 'lodash';
 
 // Types imports.
 import type Props from './Props';
-import type { SelectItem } from './Props';
 
 // Internal imports.
 import Text from '../Text';
@@ -126,5 +125,3 @@ const TextInput = (props: Props): React.ReactElement => {
 };
 
 export default withTheme(TextInput);
-
-export type { Props, SelectItem };

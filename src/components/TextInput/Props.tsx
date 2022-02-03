@@ -1,12 +1,7 @@
 // Types imports.
 import type { TextInputProps } from 'react-native-paper/lib/typescript/components/TextInput/TextInput';
 import type { Props as TextProps } from '../Text';
-
-export interface SelectItem {
-  key: string;
-  dropdownTitle?: string;
-  [key: string]: any;
-}
+import type SelectItem from '../../types/SelectItem';
 
 interface SelectProps {
   mode?: 'dialog' | 'dropdown';
