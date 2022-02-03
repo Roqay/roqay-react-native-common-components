@@ -1,6 +1,5 @@
 // Types imports.
 import type { TextInputProps } from 'react-native-paper/lib/typescript/components/TextInput/TextInput';
-import type { ReactNode } from 'react';
 import type { Props as TextProps } from '../Text';
 
 export interface SelectItem {
@@ -22,9 +21,15 @@ interface ErrorProps {
   textProps?: TextProps;
 }
 
+interface TopLabelProps {
+  label?: string;
+  textProps?: TextProps;
+}
+
 export default interface Props extends TextInputProps {
+  style?: TextInputProps['style'] & { [key: string]: any };
   isRequired?: boolean;
-  topLabel?: ReactNode;
+  topLabelProps?: TopLabelProps;
   errorProps?: ErrorProps;
   selectProps?: SelectProps;
 }

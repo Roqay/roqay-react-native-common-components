@@ -2,14 +2,16 @@
 import { ScaledSheet } from 'react-native-size-matters';
 
 const styles = ScaledSheet.create({
-  error: {
-    marginTop: '4@msr',
-  },
   input: {
     textAlign: 'left',
     fontSize: '13@msr',
     lineHeight: '26@msr',
     paddingHorizontal: '8@msr',
+  },
+  noVerticalMargin: {
+    marginVertical: 0,
+    marginTop: 0,
+    marginBottom: 0,
   },
 });
 

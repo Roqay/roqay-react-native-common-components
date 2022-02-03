@@ -10,47 +10,16 @@ import type { TextInputLabelProp } from 'react-native-paper/lib/typescript/compo
 
 // Internal imports.
 import styles from './styles';
-import Text from '../Text';
 
-const getLabel = (
-  isFocused: boolean,
-  props: Props
-): undefined | TextInputLabelProp => {
-  const {
-    topLabel,
-    isRequired,
-    label,
-    theme,
-    outlineColor,
-    activeOutlineColor,
-    underlineColor,
-    activeUnderlineColor,
-  } = props;
+const getLabel = (props: Props): undefined | TextInputLabelProp => {
+  const { topLabelProps, isRequired, label } = props;
 
-  if (topLabel) {
+  if (topLabelProps) {
     return undefined;
   }
 
   if (label && typeof label === 'string') {
-    const activeColor = activeOutlineColor
-      ? activeOutlineColor
-      : activeUnderlineColor;
-
-    const inActiveColor = outlineColor ? outlineColor : underlineColor;
-
-    return (
-      <Text
-        size={11}
-        style={{ color: isFocused ? activeColor : inActiveColor }}
-      >
-        {label}
-        {isRequired && (
-          <Text size={11} style={{ color: theme.colors.error }}>
-            {' *'}
-          </Text>
-        )}
-      </Text>
-    );
+    return isRequired ? `${label} *` : label;
   }
 
   return label;
@@ -72,8 +41,6 @@ export default (props: Props): React.ReactElement => {
     numberOfLines,
     returnKeyType,
     style,
-    onFocus,
-    onBlur,
     keyboardType,
     onChangeText,
     secureTextEntry,
@@ -81,7 +48,7 @@ export default (props: Props): React.ReactElement => {
   } = props;
 
   const newProps = omit(other, [
-    'topLabel',
+    'topLabelProps',
     'isRequired',
     'label',
     'placeholder',
@@ -89,15 +56,13 @@ export default (props: Props): React.ReactElement => {
     'scrollEnabled',
   ]);
 
-  const [isFocused, setIsFocused] = React.useState(false);
-
   return (
     <TextInput
       dense={dense === undefined ? true : dense}
       autoCapitalize={autoCapitalize === undefined ? 'none' : autoCapitalize}
       autoCorrect={autoCorrect === undefined ? false : autoCorrect}
       error={errorProps?.errorMessage ? true : error}
-      label={getLabel(isFocused, props)}
+      label={getLabel(props)}
       placeholder={getPlaceholder(props)}
       multiline={secureTextEntry ? false : true}
       numberOfLines={
@@ -116,20 +81,6 @@ export default (props: Props): React.ReactElement => {
         style,
         { minHeight: multiline ? ms(70) : undefined },
       ]}
-      onFocus={(args: any) => {
-        setIsFocused(true);
-
-        if (onFocus) {
-          onFocus(args);
-        }
-      }}
-      onBlur={(args: any) => {
-        setIsFocused(false);
-
-        if (onBlur) {
-          onBlur(args);
-        }
-      }}
       keyboardType={keyboardType}
       onChangeText={(text: string) => {
         let editedText = text;

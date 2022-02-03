@@ -4,35 +4,67 @@ import { TextInput } from 'roqay-react-native-common-components';
 import { ScaledSheet } from 'react-native-size-matters';
 
 export default function TextInputScreen() {
-  const [value, setValue] = React.useState('');
+  const [normalValue, setNormalValue] = React.useState('');
+  const [multilineValue, setMultilineValue] = React.useState('');
+  const [requiredValue, setRequiredValue] = React.useState('');
+  const [outlinedValue, setOutlinedValue] = React.useState('');
+  const [topLabelValue, setTopLabelValue] = React.useState('');
 
-  const _onChangeText = (text: string) => setValue(text);
+  const _onChangeTextNormal = (text: string) => setNormalValue(text);
+
+  const _onChangeTextMultiline = (text: string) => setMultilineValue(text);
+
+  const _onChangeTextRequired = (text: string) => setRequiredValue(text);
+
+  const _onChangeTextOutlined = (text: string) => setOutlinedValue(text);
+
+  const _onChangeTextTopLabel = (text: string) => setTopLabelValue(text);
 
   return (
     <ScrollView>
       <TextInput
         style={styles.input}
-        value={value}
-        onChangeText={_onChangeText}
+        value={normalValue}
+        onChangeText={_onChangeTextNormal}
         placeholder="Normal"
         label="Normal"
       />
       <TextInput
         style={styles.input}
-        value={value}
-        onChangeText={_onChangeText}
+        value={multilineValue}
+        onChangeText={_onChangeTextMultiline}
         multiline
         placeholder="Multiline"
         label="Multiline"
       />
-      {/* <TextInput
+      <TextInput
         style={styles.input}
-        value={value}
-        onChangeText={_onChangeText}
+        value={requiredValue}
+        onChangeText={_onChangeTextRequired}
         placeholder="Required"
         label="Required"
         isRequired
-      /> */}
+      />
+      <TextInput
+        mode="outlined"
+        style={styles.input}
+        value={outlinedValue}
+        onChangeText={_onChangeTextOutlined}
+        placeholder="Outlined"
+        label="Outlined"
+      />
+      <TextInput
+        style={styles.input}
+        value={topLabelValue}
+        onChangeText={_onChangeTextTopLabel}
+        placeholder="Top Label"
+        errorProps={{
+          errorMessage: 'Error',
+        }}
+        topLabelProps={{
+          label: 'Top Label',
+        }}
+      />
     </ScrollView>
   );
 }
