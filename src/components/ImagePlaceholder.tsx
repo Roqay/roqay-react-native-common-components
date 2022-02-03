@@ -1,7 +1,11 @@
+// External imports.
 import React from 'react';
 import { View, Image, ViewProps, LayoutChangeEvent } from 'react-native';
 import { ScaledSheet, ms } from 'react-native-size-matters';
-import { DefaultTheme } from 'react-native-paper';
+import { withTheme } from 'react-native-paper';
+
+// Types imports.
+import type { Theme } from 'react-native-paper/lib/typescript/types';
 
 // #region Styles
 const styles = ScaledSheet.create({
@@ -32,41 +36,37 @@ const styles = ScaledSheet.create({
 // #endregion
 
 // #region Types
-type ResizeModeType =
-  | 'cover'
-  | 'contain'
-  | 'stretch'
-  | 'center'
-  | null
-  | undefined;
+type ResizeModeType = 'cover' | 'contain' | 'stretch' | 'center';
 
-type PriorityType = 'low' | 'normal' | 'high' | null | undefined;
+type PriorityType = 'low' | 'normal' | 'high';
 
-type CacheType = 'immutable' | 'web' | 'cacheOnly' | null | undefined;
+type CacheType = 'immutable' | 'web' | 'cacheOnly';
 
 interface Props extends ViewProps {
-  size?: number | null | undefined;
-  source?: string | undefined;
-  placeholder?: number | undefined;
+  size?: number;
+  source?: string;
+  placeholder?: number;
   resizeMode?: ResizeModeType;
   priority?: PriorityType;
   cache?: CacheType;
-  loadingProps?: LoadingProps | null | undefined;
+  loadingProps?: LoadingProps;
+  theme: Theme;
 }
 
 interface LoadingProps {
-  showLoading?: boolean | null | undefined;
-  color?: string | null | undefined;
-  backgroundColor?: string | null | undefined;
+  showLoading?: boolean;
+  color?: string;
+  backgroundColor?: string;
 }
 
 interface ImageProps {
-  source?: string | undefined;
-  placeholder?: number | undefined;
+  source?: string;
+  placeholder?: number;
   resizeMode?: ResizeModeType;
   priority?: PriorityType;
   cache?: CacheType;
-  loadingProps?: LoadingProps | null | undefined;
+  loadingProps?: LoadingProps;
+  theme: Theme;
 }
 
 interface State {
@@ -77,10 +77,7 @@ interface State {
 }
 // #endregion
 
-export default class ImagePlaceholder extends React.PureComponent<
-  Props,
-  State
-> {
+class ImagePlaceholder extends React.PureComponent<Props, State> {
   // Variable for mount state.
   isComponentMounted: boolean = false;
 
@@ -132,8 +129,15 @@ export default class ImagePlaceholder extends React.PureComponent<
   };
 
   getImage = (props: ImageProps): null | React.ReactElement => {
-    const { source, placeholder, resizeMode, priority, cache, loadingProps } =
-      props;
+    const {
+      source,
+      placeholder,
+      resizeMode,
+      priority,
+      cache,
+      loadingProps,
+      theme,
+    } = props;
 
     try {
       const FastImage = require('react-native-fast-image');
@@ -234,7 +238,7 @@ export default class ImagePlaceholder extends React.PureComponent<
                   backgroundColor:
                     loadingProps?.backgroundColor == null ||
                     loadingProps?.backgroundColor === undefined
-                      ? DefaultTheme.colors.onSurface.concat('66')
+                      ? theme.colors.onSurface.concat('66')
                       : loadingProps?.backgroundColor,
                 },
               ]}
@@ -255,7 +259,7 @@ export default class ImagePlaceholder extends React.PureComponent<
                 color={
                   loadingProps?.color == null ||
                   loadingProps?.color === undefined
-                    ? DefaultTheme.colors.surface
+                    ? theme.colors.surface
                     : loadingProps?.color
                 }
               />
@@ -279,6 +283,7 @@ export default class ImagePlaceholder extends React.PureComponent<
       cache,
       loadingProps,
       style,
+      theme,
       ...other
     } = this.props;
 
@@ -302,8 +307,11 @@ export default class ImagePlaceholder extends React.PureComponent<
           priority,
           cache,
           loadingProps,
+          theme,
         })}
       </View>
     );
   }
 }
+
+export default withTheme(ImagePlaceholder);

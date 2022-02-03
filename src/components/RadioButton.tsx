@@ -1,10 +1,18 @@
+// External imports.
 import React from 'react';
 import { View, ViewProps, StyleSheet } from 'react-native';
-import { DefaultTheme, TouchableRipple, RadioButton } from 'react-native-paper';
+import {
+  withTheme,
+  TouchableRipple,
+  RadioButton as PaperRadioButton,
+} from 'react-native-paper';
 import { ScaledSheet } from 'react-native-size-matters';
 
-import Text from './Text';
+// Types imports.
+import type { Theme } from 'react-native-paper/lib/typescript/types';
 
+// Internal imports.
+import Text from './Text';
 import type { Props as TextProps } from './Text';
 
 // #region Styles
@@ -39,17 +47,18 @@ const styles = ScaledSheet.create({
 
 // #region Types
 interface Props extends ViewProps {
-  text?: string | null | undefined;
-  checked?: boolean | null | undefined;
-  onPress?: () => void | null | undefined;
-  disabled?: boolean | undefined;
-  checkedColor?: string | undefined;
-  uncheckedColor?: string | undefined;
-  textProps?: TextProps | null | undefined;
+  text?: string;
+  checked?: boolean;
+  onPress?: () => void;
+  disabled?: boolean;
+  checkedColor?: string;
+  uncheckedColor?: string;
+  textProps?: TextProps;
+  theme: Theme;
 }
 // #endregion
 
-export default (props: Props): React.ReactElement => {
+const RadioButton = (props: Props): React.ReactElement => {
   const {
     text,
     checked,
@@ -59,15 +68,15 @@ export default (props: Props): React.ReactElement => {
     uncheckedColor,
     textProps,
     style,
+    theme,
     ...other
   } = props;
 
-  const textProp = textProps || {};
-  const { style: textStyle, ...rest } = textProp;
+  const { style: textStyle, ...rest } = textProps || {};
 
   const notNullCheckedColor: string =
     checkedColor == null || checkedColor === undefined
-      ? DefaultTheme.colors.primary
+      ? theme.colors.primary
       : checkedColor;
 
   const rippleColor = notNullCheckedColor.concat('40');
@@ -95,6 +104,7 @@ export default (props: Props): React.ReactElement => {
         disabled={disabled}
         rippleColor={rippleColor}
         underlayColor={rippleColor}
+        theme={theme}
       >
         <View
           style={[
@@ -112,13 +122,14 @@ export default (props: Props): React.ReactElement => {
             },
           ]}
         >
-          <RadioButton.Android
+          <PaperRadioButton.Android
             value={text == null || text === undefined ? 'radio' : text}
             status={checked ? 'checked' : 'unchecked'}
             onPress={onPress}
             color={notNullCheckedColor}
             uncheckedColor={uncheckedColor}
             disabled={disabled}
+            theme={theme}
           />
           {Boolean(text) && Boolean(text?.length) && (
             <Text style={[styles.text, textStyle]} {...rest}>
@@ -130,3 +141,5 @@ export default (props: Props): React.ReactElement => {
     </View>
   );
 };
+
+export default withTheme(RadioButton);

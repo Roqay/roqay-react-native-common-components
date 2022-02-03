@@ -1,20 +1,29 @@
+// External imports.
 import React from 'react';
-import { Text, Title, Caption } from 'react-native-paper';
+import {
+  withTheme,
+  Text as PaperText,
+  Title,
+  Caption,
+} from 'react-native-paper';
 import { ms } from 'react-native-size-matters';
 
+// Types imports.
+import type { Theme } from 'react-native-paper/lib/typescript/types';
 import type { TextProps } from 'react-native';
 
 // #region Types
 type TextType = 'normal' | 'bold' | 'caption';
 
 export interface Props extends TextProps {
-  size?: number | null | undefined;
-  type?: TextType | null | undefined;
+  size?: number;
+  type?: TextType;
+  theme: Theme;
 }
 // #endregion
 
-export default (props: Props): React.ReactElement => {
-  const { size, type, style, children, ...other } = props;
+const Text = (props: Props): React.ReactElement => {
+  const { size, type, style, children, theme, ...other } = props;
   let defaultTextSize: number = 13;
 
   switch (type) {
@@ -32,6 +41,7 @@ export default (props: Props): React.ReactElement => {
   }
 
   const textStyle = [
+    { color: theme.colors.text },
     style,
     {
       fontSize: ms(size == null || size === undefined ? defaultTextSize : size),
@@ -58,9 +68,11 @@ export default (props: Props): React.ReactElement => {
 
     default:
       return (
-        <Text style={textStyle} {...other}>
+        <PaperText style={textStyle} theme={theme} {...other}>
           {children}
-        </Text>
+        </PaperText>
       );
   }
 };
+
+export default withTheme(Text);
