@@ -11,6 +11,7 @@ import DialogScreen from './DialogScreen';
 import IconButtonScreen from './IconButtonScreen';
 import ImagePlaceholderScreen from './ImagePlaceholderScreen';
 import RadioButtonScreen from './RadioButtonScreen';
+import SelectDialogScreen from './SelectDialogScreen';
 import TextInputScreen from './TextInputScreen';
 import TextScreen from './TextScreen';
 
@@ -33,6 +34,7 @@ export default function App() {
             component={ImagePlaceholderScreen}
           />
           <Stack.Screen name="RadioButton" component={RadioButtonScreen} />
+          <Stack.Screen name="SelectDialog" component={SelectDialogScreen} />
           <Stack.Screen name="TextInput" component={TextInputScreen} />
           <Stack.Screen name="Text" component={TextScreen} />
         </Stack.Navigator>

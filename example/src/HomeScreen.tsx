@@ -5,48 +5,53 @@ import { ScaledSheet } from 'react-native-size-matters';
 import { Button } from 'roqay-react-native-common-components';
 
 export default function HomeScreen({ navigation }: { navigation: any }) {
-  const openScreen = (screenName: string) => navigation.navigate(screenName);
+  const _openScreen = (screenName: string) => navigation.navigate(screenName);
 
   return (
     <ScrollView>
       <Button
         style={styles.button}
-        onPress={() => openScreen('Button')}
+        onPress={() => _openScreen('Button')}
         text="Button"
       />
       <Button
         style={styles.button}
-        onPress={() => openScreen('Checkbox')}
+        onPress={() => _openScreen('Checkbox')}
         text="Checkbox"
       />
       <Button
         style={styles.button}
-        onPress={() => openScreen('Dialog')}
+        onPress={() => _openScreen('Dialog')}
         text="Dialog"
       />
       <Button
         style={styles.button}
-        onPress={() => openScreen('IconButton')}
+        onPress={() => _openScreen('IconButton')}
         text="IconButton"
       />
       <Button
         style={styles.button}
-        onPress={() => openScreen('ImagePlaceholder')}
+        onPress={() => _openScreen('ImagePlaceholder')}
         text="ImagePlaceholder"
       />
       <Button
         style={styles.button}
-        onPress={() => openScreen('RadioButton')}
+        onPress={() => _openScreen('RadioButton')}
         text="RadioButton"
       />
       <Button
         style={styles.button}
-        onPress={() => openScreen('TextInput')}
+        onPress={() => _openScreen('SelectDialog')}
+        text="SelectDialog"
+      />
+      <Button
+        style={styles.button}
+        onPress={() => _openScreen('TextInput')}
         text="TextInput"
       />
       <Button
         style={styles.button}
-        onPress={() => openScreen('Text')}
+        onPress={() => _openScreen('Text')}
         text="Text"
       />
     </ScrollView>

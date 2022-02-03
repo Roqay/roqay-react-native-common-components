@@ -5,6 +5,7 @@ import Dialog from './components/Dialog';
 import IconButton from './components/IconButton';
 import ImagePlaceholder from './components/ImagePlaceholder';
 import RadioButton from './components/RadioButton';
+import SelectDialog from './components/SelectDialog';
 import TextInput from './components/TextInput';
 import Text from './components/Text';
 
@@ -20,6 +21,7 @@ export {
   IconButton,
   ImagePlaceholder,
   RadioButton,
+  SelectDialog,
   TextInput,
   Text,
 };

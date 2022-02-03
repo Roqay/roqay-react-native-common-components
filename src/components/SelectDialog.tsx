@@ -17,31 +17,36 @@ import Button from './Button';
 
 // #region Styles
 const styles = ScaledSheet.create({
-  container: {
+  dialog: {
     width: '90%',
+    height: '90%',
+    borderRadius: 0,
+    overflow: 'hidden',
+    alignItems: 'center',
+    padding: 0,
+    backgroundColor: 'transparent',
+  },
+  container: {
     flex: 1,
-    marginVertical: '8@msr',
-    // backgroundColor: Colors.surface,
+    width: '100%',
     borderRadius: '10@msr',
     overflow: 'hidden',
-  },
-  input: {
-    width: '90%',
-    alignSelf: 'center',
+    padding: '16@msr',
   },
   noDataText: {
-    width: '90%',
     alignSelf: 'center',
     textAlign: 'center',
     marginTop: '16@msr',
   },
+  list: {
+    marginTop: '8@msr',
+  },
   selectItem: {
-    margin: '4@msr',
+    marginVertical: '4@msr',
   },
   closeButton: {
-    width: '90%',
-    // alignSelf: 'center',
-    marginVertical: '8@msr',
+    width: '100%',
+    marginTop: '16@msr',
     borderRadius: '10@msr',
   },
 });
@@ -55,6 +60,7 @@ interface Props {
   onItemsSelected?: (selectedItems?: Array<SelectItem>) => void;
   visible?: boolean;
   onDismiss?: () => void;
+  searchLabel?: string;
   noDataMessage?: string;
   closeText?: string;
   theme: Theme;
@@ -200,13 +206,15 @@ class SelectDialog extends React.PureComponent<Props, State> {
 
   _getSearchInput = (): React.ReactElement => {
     const { searchText } = this.state;
-    const { theme } = this.props;
+    const { searchLabel, theme } = this.props;
 
     return (
       <DefaultInput
+        mode="outlined"
+        label={searchLabel}
         value={searchText}
         onChangeText={this._onChangeTextSearchText}
-        style={styles.input}
+        style={{ backgroundColor: theme.colors.surface }}
         theme={theme}
       />
     );
@@ -223,6 +231,7 @@ class SelectDialog extends React.PureComponent<Props, State> {
           keyExtractor={(item) => item.key}
           renderItem={({ item }) => this._getListItem(item)}
           bounces={false}
+          style={styles.list}
         />
       );
     }
@@ -254,9 +263,14 @@ class SelectDialog extends React.PureComponent<Props, State> {
     const { visible, onDismiss, closeText, theme } = this.props;
 
     return (
-      <Dialog visible={visible} onDismiss={onDismiss}>
+      <Dialog visible={visible} onDismiss={onDismiss} style={styles.dialog}>
         <>
-          <View style={styles.container}>
+          <View
+            style={[
+              styles.container,
+              { backgroundColor: theme.colors.surface },
+            ]}
+          >
             {this._getSearchInput()}
             {this._getContent()}
           </View>
