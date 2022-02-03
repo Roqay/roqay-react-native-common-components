@@ -100,12 +100,12 @@ Whether to show loading indicator while the image is loading or not.
 
 Type: `string`  
 Custom color for loading indicator.  
-If not passed a default value from `react-native-paper` default theme is used equivalent to `DefaultTheme.colors.surface`.
+If not passed a default value from `react-native-paper` theme is used equivalent to `theme.colors.surface`.
 
 #### loadingProps.backgroundColor
 
 Type: `string`  
 Custom color for loading indicator background.  
-If not passed a default value from `react-native-paper` default theme is used equivalent to `DefaultTheme.colors.onSurface` with alpha `40%`.
+If not passed a default value from `react-native-paper` theme is used equivalent to `theme.colors.onSurface` with alpha `40%`.
 
 ### [...View props](https://reactnative.dev/docs/view#props)

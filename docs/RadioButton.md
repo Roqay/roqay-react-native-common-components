@@ -64,7 +64,7 @@ Determines whether radio button is disabled.
 
 Type: `string`  
 Custom color for checked radio button.  
-If not passed a default value from `react-native-paper` default theme is used equivalent to `DefaultTheme.colors.primary`.
+If not passed a default value from `react-native-paper` theme is used equivalent to `theme.colors.primary`.
 
 ### uncheckedColor
 

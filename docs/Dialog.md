@@ -80,7 +80,7 @@ Type: `StyleProp<ViewStyle>`
 
 Type: `string`  
 The overlay color that displays behind the dialog.  
-If not passed a default value from `react-native-paper` default theme is used equivalent to `DefaultTheme.colors.onSurface` with alpha `70%`.
+If not passed a default value from `react-native-paper` theme is used equivalent to `theme.colors.onSurface` with alpha `70%`.
 
 ### children
 

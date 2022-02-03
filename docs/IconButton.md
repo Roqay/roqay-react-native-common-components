@@ -68,7 +68,7 @@ Determines the full icon button size including the padding if available.
 
 Type: `string`  
 Custom color for icon.  
-If not passed a default value from `react-native-paper` default theme is used equivalent to `DefaultTheme.colors.primary`.
+If not passed a default value from `react-native-paper` theme is used equivalent to `theme.colors.primary`.
 
 ### onPress
 
