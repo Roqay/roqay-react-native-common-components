@@ -13,6 +13,9 @@ const styles = ScaledSheet.create({
     marginTop: 0,
     marginBottom: 0,
   },
+  selectItem: {
+    marginVertical: '4@msr',
+  },
 });
 
 export default styles;

@@ -9,12 +9,14 @@ import type Props from './Props';
 // Internal imports.
 import Text from '../Text';
 import DefaultInput from './DefaultInput';
+import SelectInput from './SelectInput';
 import styles from './styles';
 
 const getInput = (props: Props): React.ReactElement => {
   const { selectProps, ...other } = props;
 
   if (selectProps) {
+    return <SelectInput {...props} />;
   }
 
   return <DefaultInput {...other} />;

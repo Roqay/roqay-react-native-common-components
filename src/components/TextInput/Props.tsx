@@ -5,10 +5,13 @@ import type SelectItem from '../../types/SelectItem';
 
 interface SelectProps {
   mode?: 'dialog' | 'dropdown';
-  items?: Array<SelectItem>;
-  selectedItems?: Array<SelectItem>;
+  items?: SelectItem[];
+  selectedItems?: SelectItem[];
   allowMultiSelect?: boolean;
-  onItemsSelected?: (selectedItems?: Array<SelectItem>) => void;
+  onItemsSelected?: (selectedItems?: SelectItem[]) => void;
+  searchLabel?: string;
+  noDataMessage?: string;
+  closeText?: string;
 }
 
 interface ErrorProps {
@@ -27,4 +30,5 @@ export default interface Props extends TextInputProps {
   topLabelProps?: TopLabelProps;
   errorProps?: ErrorProps;
   selectProps?: SelectProps;
+  ref?: any;
 }

@@ -55,10 +55,10 @@ const styles = ScaledSheet.create({
 
 // #region Types
 interface Props {
-  items?: Array<SelectItem>;
-  selectedItems?: Array<SelectItem>;
+  items?: SelectItem[];
+  selectedItems?: SelectItem[];
   allowMultiSelect?: boolean;
-  onItemsSelected?: (selectedItems?: Array<SelectItem>) => void;
+  onItemsSelected?: (selectedItems?: SelectItem[]) => void;
   visible?: boolean;
   onDismiss?: () => void;
   searchLabel?: string;
@@ -68,8 +68,8 @@ interface Props {
 }
 
 interface State {
-  items?: Array<SelectItem>;
-  selectedItems?: Array<SelectItem>;
+  items?: SelectItem[];
+  selectedItems?: SelectItem[];
   searchText: string;
 }
 // #endregion
@@ -90,9 +90,9 @@ class SelectDialog extends React.PureComponent<Props, State> {
 
   // #region Lifecycle
   static getDerivedStateFromProps(props: Props, state: State): State {
-    const stateItems: Array<SelectItem> | undefined = state.items;
-    const propsItems: Array<SelectItem> | undefined = props.items;
-    let newItems: Array<SelectItem> | undefined;
+    const stateItems: SelectItem[] | undefined = state.items;
+    const propsItems: SelectItem[] | undefined = props.items;
+    let newItems: SelectItem[] | undefined;
 
     if (
       stateItems &&
@@ -143,7 +143,7 @@ class SelectDialog extends React.PureComponent<Props, State> {
   _onItemPressed = (item: SelectItem): void => {
     const { selectedItems } = this.state;
     const { allowMultiSelect, onItemsSelected, onDismiss } = this.props;
-    let newSelectedItems: Array<SelectItem> = Array.from(selectedItems || []);
+    let newSelectedItems: SelectItem[] = Array.from(selectedItems || []);
     let index = -1;
 
     newSelectedItems.some((dataItem, i) => {
@@ -212,7 +212,7 @@ class SelectDialog extends React.PureComponent<Props, State> {
     return (
       <DefaultInput
         mode="outlined"
-        label={searchLabel}
+        label={searchLabel === undefined ? 'Look for' : searchLabel}
         value={searchText}
         onChangeText={this._onChangeTextSearchText}
         style={{ backgroundColor: theme.colors.surface }}
@@ -238,7 +238,7 @@ class SelectDialog extends React.PureComponent<Props, State> {
 
     return (
       <Text style={styles.noDataText} size={15}>
-        {noDataMessage}
+        {noDataMessage === undefined ? 'No data available' : noDataMessage}
       </Text>
     );
   };
@@ -275,7 +275,7 @@ class SelectDialog extends React.PureComponent<Props, State> {
             {this._getContent()}
           </View>
           <Button
-            text={closeText}
+            text={closeText === undefined ? 'Close' : closeText}
             onPress={onDismiss}
             style={[
               styles.closeButton,
