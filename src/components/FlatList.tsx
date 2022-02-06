@@ -29,7 +29,6 @@ const styles = ScaledSheet.create({
 
 // #region Types
 interface Props extends FlatListProps<FlatListItem> {
-  isRefreshing?: boolean;
   onRefresh?: () => void;
   refreshColor?: string;
   theme: Theme;
@@ -38,7 +37,7 @@ interface Props extends FlatListProps<FlatListItem> {
 
 const FlatList = (props: Props): React.ReactElement => {
   const {
-    isRefreshing,
+    refreshing,
     onRefresh,
     refreshColor,
     showsHorizontalScrollIndicator,
@@ -65,19 +64,24 @@ const FlatList = (props: Props): React.ReactElement => {
       keyExtractor={
         keyExtractor === undefined ? (item) => item.key : keyExtractor
       }
-      onEndReachedThreshold={onEndReachedThreshold || 0.01}
+      onEndReachedThreshold={
+        onEndReachedThreshold == null || onEndReachedThreshold === undefined
+          ? 0.01
+          : onEndReachedThreshold
+      }
       style={[styles.list, style]}
       contentContainerStyle={
         horizontal
           ? [styles.horizontalContainerStyle, contentContainerStyle]
           : contentContainerStyle
       }
+      refreshing={refreshing}
       refreshControl={
         refreshControl || onRefresh ? (
           <RefreshControl
             colors={refreshColor ? [refreshColor] : [theme.colors.primary]}
             tintColor={refreshColor || theme.colors.primary}
-            refreshing={isRefreshing || false}
+            refreshing={refreshing || false}
             onRefresh={onRefresh}
           />
         ) : undefined

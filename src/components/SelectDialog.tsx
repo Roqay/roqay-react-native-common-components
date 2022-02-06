@@ -1,7 +1,7 @@
 // External imports.
 import React from 'react';
 import { withTheme } from 'react-native-paper';
-import { View, FlatList } from 'react-native';
+import { View } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 
 // Types imports.
@@ -12,6 +12,7 @@ import type { Theme } from 'react-native-paper/lib/typescript/types';
 import Dialog from './Dialog';
 import DefaultInput from './TextInput/DefaultInput';
 import Text from './Text';
+import FlatList from './FlatList';
 import Checkbox from './Checkbox';
 import Button from './Button';
 
@@ -228,7 +229,6 @@ class SelectDialog extends React.PureComponent<Props, State> {
       return (
         <FlatList
           data={items}
-          keyExtractor={(item) => item.key}
           renderItem={({ item }) => this._getListItem(item)}
           bounces={false}
           style={styles.list}
