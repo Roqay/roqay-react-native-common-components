@@ -3,6 +3,7 @@ import { ScaledSheet } from 'react-native-size-matters';
 
 const styles = ScaledSheet.create({
   input: {
+    width: '100%',
     textAlign: 'left',
     fontSize: '13@msr',
     lineHeight: '26@msr',

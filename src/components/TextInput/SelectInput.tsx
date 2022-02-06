@@ -1,9 +1,8 @@
 // External imports.
 import React from 'react';
-import { TouchableRipple, Menu } from 'react-native-paper';
+import { TouchableRipple, Menu, TextInput } from 'react-native-paper';
 import { View } from 'react-native';
 import { omit } from 'lodash';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 // Types imports.
 import type Props from './Props';
@@ -40,7 +39,7 @@ export default class SelectInput extends React.PureComponent<Props, State> {
   // #region Lifecycle
   static getDerivedStateFromProps(props: Props, state: State): State {
     const selectedItems = props.selectProps?.selectedItems || [];
-    let value = props.placeholder || '';
+    let value = '';
 
     if (selectedItems.length) {
       const names: string[] = [];
@@ -169,12 +168,31 @@ export default class SelectInput extends React.PureComponent<Props, State> {
   };
 
   _getInput = (): React.ReactElement => {
-    const { right, ...other } = this.props;
-    const inputProps = omit(other, ['selectProps', 'editable']);
+    const { value } = this.state;
+    const { right, theme, style, ...other } = this.props;
+    const inputProps = omit(other, ['selectProps', 'editable', 'value']);
+
     return (
       <DefaultInput
         editable={false}
-        right={right === undefined ? <Icon name="menu-down" /> : right}
+        value={value}
+        right={
+          right == null || right === undefined ? (
+            <TextInput.Icon name="menu-down" theme={theme} />
+          ) : (
+            right
+          )
+        }
+        style={[
+          styles.noVerticalMargin,
+          omit(style || {}, [
+            'marginVertical',
+            'marginTop',
+            'marginBottom',
+            'width',
+          ]),
+        ]}
+        theme={theme}
         {...inputProps}
       />
     );
@@ -198,14 +216,45 @@ export default class SelectInput extends React.PureComponent<Props, State> {
   };
 
   render(): React.ReactElement {
-    const { selectProps, editable, theme } = this.props;
+    const { selectProps, editable, style, theme } = this.props;
     const { isSelectVisible } = this.state;
+
+    const {
+      marginVertical,
+      marginTop,
+      marginBottom,
+      width,
+      marginHorizontal,
+      marginStart,
+      marginEnd,
+      marginLeft,
+      marginRight,
+      alignSelf,
+    } = style || {};
+
+    const widthHorizontalMarginStyle = {
+      width: width === undefined ? '100%' : width,
+      marginHorizontal,
+      marginStart,
+      marginEnd,
+      marginLeft,
+      marginRight,
+      alignSelf,
+    };
 
     return (
       <>
         <TouchableRipple
-          disabled={!editable}
+          disabled={editable === false}
           onPress={isSelectVisible ? this._dismissSelect : this._showSelect}
+          style={[
+            styles.noVerticalMargin,
+            {
+              marginTop: marginVertical || marginTop,
+              marginBottom: marginVertical || marginBottom,
+            },
+            widthHorizontalMarginStyle,
+          ]}
         >
           <View pointerEvents="box-only">
             {selectProps?.mode === 'dropdown' ? (
@@ -214,6 +263,14 @@ export default class SelectInput extends React.PureComponent<Props, State> {
                 onDismiss={this._dismissSelect}
                 anchor={this._getInput()}
                 theme={theme}
+                style={[
+                  styles.noVerticalMargin,
+                  {
+                    marginTop: marginVertical || marginTop,
+                    marginBottom: marginVertical || marginBottom,
+                  },
+                  widthHorizontalMarginStyle,
+                ]}
               >
                 {selectProps?.items?.map((item) => this._getListItem(item))}
               </Menu>
