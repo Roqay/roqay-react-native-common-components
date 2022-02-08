@@ -48,10 +48,17 @@ Each component has its own usage part in the [documentation](docs).
 - [Button](docs/Button.md)
 - [Checkbox](docs/Checkbox.md)
 - [Dialog](docs/Dialog.md)
+- [FlatList](docs/FlatList.md)
 - [IconButton](docs/IconButton.md)
 - [ImagePlaceholder](docs/ImagePlaceholder.md)
 - [RadioButton](docs/RadioButton.md)
+- [SelectDialog](docs/SelectDialog.md)
 - [Text](docs/Text.md)
+
+## Types
+
+- [FlatListItem](docs/FlatListItem.md)
+- [SelectItem](docs/SelectItem.md)
 
 ## Contributing
 
