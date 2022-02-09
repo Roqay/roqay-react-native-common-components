@@ -16,6 +16,11 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
       />
       <Button
         style={styles.button}
+        onPress={() => _openScreen('Card')}
+        text="Card"
+      />
+      <Button
+        style={styles.button}
         onPress={() => _openScreen('Checkbox')}
         text="Checkbox"
       />

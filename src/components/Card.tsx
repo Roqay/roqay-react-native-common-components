@@ -12,7 +12,7 @@ const styles = ScaledSheet.create({
     width: '95%',
     alignSelf: 'center',
     padding: '8@msr',
-    borderRadius: '16@msr',
+    borderRadius: '8@msr',
     marginVertical: '4@msr',
   },
 });

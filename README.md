@@ -46,6 +46,7 @@ Each component has its own usage part in the [documentation](docs).
 ## Components
 
 - [Button](docs/Button.md)
+- [Card](docs/Card.md)
 - [Checkbox](docs/Checkbox.md)
 - [Dialog](docs/Dialog.md)
 - [FlatList](docs/FlatList.md)

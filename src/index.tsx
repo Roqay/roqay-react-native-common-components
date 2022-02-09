@@ -1,5 +1,6 @@
 // Components import.
 import Button from './components/Button';
+import Card from './components/Card';
 import Checkbox from './components/Checkbox';
 import Dialog from './components/Dialog';
 import FlatList from './components/FlatList';
@@ -17,6 +18,7 @@ import type SelectItem from './types/SelectItem';
 // Components export.
 export {
   Button,
+  Card,
   Checkbox,
   Dialog,
   FlatList,
