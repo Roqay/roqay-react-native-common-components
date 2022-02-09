@@ -1,7 +1,11 @@
+// External imports.
 import React from 'react';
 import { View, Image, ViewProps, LayoutChangeEvent } from 'react-native';
 import { ScaledSheet, ms } from 'react-native-size-matters';
-import { DefaultTheme } from 'react-native-paper';
+import { withTheme } from 'react-native-paper';
+
+// Types imports.
+import type { Theme } from 'react-native-paper/lib/typescript/types';
 
 // #region Styles
 const styles = ScaledSheet.create({
@@ -32,41 +36,37 @@ const styles = ScaledSheet.create({
 // #endregion
 
 // #region Types
-type ResizeModeType =
-  | 'cover'
-  | 'contain'
-  | 'stretch'
-  | 'center'
-  | null
-  | undefined;
+type ResizeModeType = 'cover' | 'contain' | 'stretch' | 'center';
 
-type PriorityType = 'low' | 'normal' | 'high' | null | undefined;
+type PriorityType = 'low' | 'normal' | 'high';
 
-type CacheType = 'immutable' | 'web' | 'cacheOnly' | null | undefined;
+type CacheType = 'immutable' | 'web' | 'cacheOnly';
 
 interface Props extends ViewProps {
-  size?: number | null | undefined;
-  source?: string | undefined;
-  placeholder?: number | undefined;
+  size?: number;
+  source?: string;
+  placeholder?: number;
   resizeMode?: ResizeModeType;
   priority?: PriorityType;
   cache?: CacheType;
-  loadingProps?: LoadingProps | null | undefined;
+  loadingProps?: LoadingProps;
+  theme: Theme;
 }
 
 interface LoadingProps {
-  showLoading?: boolean | null | undefined;
-  color?: string | null | undefined;
-  backgroundColor?: string | null | undefined;
+  showLoading?: boolean;
+  color?: string;
+  backgroundColor?: string;
 }
 
 interface ImageProps {
-  source?: string | undefined;
-  placeholder?: number | undefined;
+  source?: string;
+  placeholder?: number;
   resizeMode?: ResizeModeType;
   priority?: PriorityType;
   cache?: CacheType;
-  loadingProps?: LoadingProps | null | undefined;
+  loadingProps?: LoadingProps;
+  theme: Theme;
 }
 
 interface State {
@@ -77,10 +77,7 @@ interface State {
 }
 // #endregion
 
-export default class ImagePlaceholder extends React.PureComponent<
-  Props,
-  State
-> {
+class ImagePlaceholder extends React.PureComponent<Props, State> {
   // Variable for mount state.
   isComponentMounted: boolean = false;
 
@@ -107,33 +104,40 @@ export default class ImagePlaceholder extends React.PureComponent<
   }
   // #endregion
 
-  setLoadingState = (isLoading: boolean): void => {
+  _setLoadingState = (isLoading: boolean): void => {
     if (this.isComponentMounted) {
       this.setState({ isLoading });
     }
   };
 
-  setErrorState = (isError: boolean): void => {
+  _setErrorState = (isError: boolean): void => {
     if (this.isComponentMounted) {
       this.setState({ isError, isLoading: false });
     }
   };
 
-  setProgressState = (progress: number): void => {
+  _setProgressState = (progress: number): void => {
     if (this.isComponentMounted) {
       this.setState({ progress });
     }
   };
 
-  setProgressSizeState = (progressSize: number): void => {
+  _setProgressSizeState = (progressSize: number): void => {
     if (this.isComponentMounted) {
       this.setState({ progressSize });
     }
   };
 
-  getImage = (props: ImageProps): null | React.ReactElement => {
-    const { source, placeholder, resizeMode, priority, cache, loadingProps } =
-      props;
+  _getImage = (props: ImageProps): null | React.ReactElement => {
+    const {
+      source,
+      placeholder,
+      resizeMode,
+      priority,
+      cache,
+      loadingProps,
+      theme,
+    } = props;
 
     try {
       const FastImage = require('react-native-fast-image');
@@ -211,13 +215,13 @@ export default class ImagePlaceholder extends React.PureComponent<
                 cache: notNullCache,
               }}
               resizeMode={notNullResizeMode}
-              onLoadStart={() => this.setLoadingState(true)}
-              onLoadEnd={() => this.setLoadingState(false)}
-              onError={() => this.setErrorState(true)}
+              onLoadStart={() => this._setLoadingState(true)}
+              onLoadEnd={() => this._setLoadingState(false)}
+              onError={() => this._setErrorState(true)}
               onProgress={(e: {
                 nativeEvent: { loaded: number; total: number };
               }) =>
-                this.setProgressState(
+                this._setProgressState(
                   e.nativeEvent.total > 0
                     ? e.nativeEvent.loaded / e.nativeEvent.total
                     : 0
@@ -234,12 +238,12 @@ export default class ImagePlaceholder extends React.PureComponent<
                   backgroundColor:
                     loadingProps?.backgroundColor == null ||
                     loadingProps?.backgroundColor === undefined
-                      ? DefaultTheme.colors.onSurface.concat('66')
+                      ? theme.colors.onSurface.concat('66')
                       : loadingProps?.backgroundColor,
                 },
               ]}
               onLayout={(event: LayoutChangeEvent) =>
-                this.setProgressSizeState(
+                this._setProgressSizeState(
                   (event.nativeEvent.layout.width >
                   event.nativeEvent.layout.height
                     ? event.nativeEvent.layout.height
@@ -255,7 +259,7 @@ export default class ImagePlaceholder extends React.PureComponent<
                 color={
                   loadingProps?.color == null ||
                   loadingProps?.color === undefined
-                    ? DefaultTheme.colors.surface
+                    ? theme.colors.surface
                     : loadingProps?.color
                 }
               />
@@ -279,6 +283,7 @@ export default class ImagePlaceholder extends React.PureComponent<
       cache,
       loadingProps,
       style,
+      theme,
       ...other
     } = this.props;
 
@@ -295,15 +300,18 @@ export default class ImagePlaceholder extends React.PureComponent<
         ]}
         {...other}
       >
-        {this.getImage({
+        {this._getImage({
           source,
           placeholder,
           resizeMode,
           priority,
           cache,
           loadingProps,
+          theme,
         })}
       </View>
     );
   }
 }
+
+export default withTheme(ImagePlaceholder);

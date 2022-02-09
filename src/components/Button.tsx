@@ -1,17 +1,20 @@
+// External imports.
 import React from 'react';
 import { View, Image, ViewProps, StyleSheet } from 'react-native';
-import { DefaultTheme, TouchableRipple } from 'react-native-paper';
+import { withTheme, TouchableRipple } from 'react-native-paper';
 import { ScaledSheet, ms } from 'react-native-size-matters';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import Text from './Text';
+// Types imports.
+import type { Theme } from 'react-native-paper/lib/typescript/types';
 
+// Internal imports.
+import Text from './Text';
 import type { Props as TextProps } from './Text';
 
 // #region Styles
 const styles = ScaledSheet.create({
   container: {
-    backgroundColor: DefaultTheme.colors.primary,
     borderRadius: '16@msr',
     overflow: 'hidden',
   },
@@ -43,26 +46,27 @@ const styles = ScaledSheet.create({
 
 // #region Types
 interface Props extends ViewProps {
-  text?: string | null | undefined;
-  startImage?: number | null | undefined;
-  startVector?: number | null | undefined;
-  startIconName?: string | null | undefined;
-  endImage?: number | null | undefined;
-  endVector?: number | null | undefined;
-  endIconName?: string | null | undefined;
-  onPress?: () => void | null | undefined;
-  disabled?: boolean | undefined;
-  iconSize?: number | null | undefined;
-  noIconTint?: boolean | null | undefined;
-  textProps?: TextProps | null | undefined;
+  text?: string;
+  startImage?: number;
+  startVector?: number;
+  startIconName?: string;
+  endImage?: number;
+  endVector?: number;
+  endIconName?: string;
+  onPress?: () => void;
+  disabled?: boolean;
+  iconSize?: number;
+  noIconTint?: boolean;
+  textProps?: TextProps;
+  theme: Theme;
 }
 
 interface IconProps {
-  image?: number | null | undefined;
-  vector?: number | null | undefined;
-  iconName?: string | null | undefined;
+  image?: number;
+  vector?: number;
+  iconName?: string;
   size: number;
-  color: string | undefined;
+  color?: string;
 }
 // #endregion
 
@@ -102,7 +106,7 @@ const getIcon = (props: IconProps): null | React.ReactElement => {
   return null;
 };
 
-export default (props: Props): React.ReactElement => {
+const Button = (props: Props): React.ReactElement => {
   const {
     text,
     startImage,
@@ -117,11 +121,11 @@ export default (props: Props): React.ReactElement => {
     noIconTint,
     textProps,
     style,
+    theme,
     ...other
   } = props;
 
-  const textProp = textProps || {};
-  const { style: textStyle, type, ...rest } = textProp;
+  const { style: textStyle, type, ...rest } = textProps || {};
 
   const enabledStyle = {
     opacity: disabled ? 0.5 : 1.0,
@@ -157,7 +161,13 @@ export default (props: Props): React.ReactElement => {
 
   return (
     <View
-      style={[styles.container, style, enabledStyle, styles.noPadding]}
+      style={[
+        styles.container,
+        { backgroundColor: theme.colors.primary },
+        style,
+        enabledStyle,
+        styles.noPadding,
+      ]}
       {...other}
     >
       <TouchableRipple
@@ -165,6 +175,7 @@ export default (props: Props): React.ReactElement => {
         disabled={disabled}
         rippleColor={rippleColor}
         underlayColor={rippleColor}
+        theme={theme}
       >
         <View
           style={[
@@ -208,3 +219,5 @@ export default (props: Props): React.ReactElement => {
     </View>
   );
 };
+
+export default withTheme(Button);

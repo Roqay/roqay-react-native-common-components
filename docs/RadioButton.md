@@ -7,13 +7,13 @@ RadioButton component that uses `RadioButton` component from `react-native-paper
 ### Android
 
 <p align="middle">
-  <img src="/assets/images/android-radio-button.png" width="30%" alt="Android RadioButton">
+  <img src="/assets/images/radio-button/android/radio-button.png" width="30%" alt="Android RadioButton">
 </p>
 
 ### iOS
 
 <p align="middle">
-  <img src="/assets/images/ios-radio-button.png" width="30%" alt="iOS RadioButton">
+  <img src="/assets/images/radio-button/ios/radio-button.png" width="30%" alt="iOS RadioButton">
 </p>
 
 ## Usage
@@ -64,7 +64,7 @@ Determines whether radio button is disabled.
 
 Type: `string`  
 Custom color for checked radio button.  
-If not passed a default value from `react-native-paper` default theme is used equivalent to `DefaultTheme.colors.primary`.
+If not passed a default value from `react-native-paper` theme is used equivalent to `theme.colors.primary`.
 
 ### uncheckedColor
 

@@ -7,17 +7,17 @@ Dialog component that is wrapped by `Portal` component from `react-native-paper`
 ### Android
 
 <p align="middle">
-  <img src="/assets/images/android-simple-dialog.png" width="30%" alt="Android Simple Dialog">
-  <img src="/assets/images/android-top-dialog.png" width="30%" alt="Android Top Dialog">
-  <img src="/assets/images/android-bottom-dialog.png" width="30%" alt="Android Bottom Dialog">
+  <img src="/assets/images/dialog/android/simple.png" width="30%" alt="Android Simple Dialog">
+  <img src="/assets/images/dialog/android/top.png" width="30%" alt="Android Top Dialog">
+  <img src="/assets/images/dialog/android/bottom.png" width="30%" alt="Android Bottom Dialog">
 </p>
 
 ### iOS
 
 <p align="middle">
-  <img src="/assets/images/ios-simple-dialog.png" width="30%" alt="iOS Simple Dialog">
-  <img src="/assets/images/ios-top-dialog.png" width="30%" alt="iOS Top Dialog">
-  <img src="/assets/images/ios-bottom-dialog.png" width="30%" alt="iOS Bottom Dialog">
+  <img src="/assets/images/dialog/ios/simple.png" width="30%" alt="iOS Simple Dialog">
+  <img src="/assets/images/dialog/ios/top.png" width="30%" alt="iOS Top Dialog">
+  <img src="/assets/images/dialog/ios/bottom.png" width="30%" alt="iOS Bottom Dialog">
 </p>
 
 ## Usage
@@ -80,7 +80,7 @@ Type: `StyleProp<ViewStyle>`
 
 Type: `string`  
 The overlay color that displays behind the dialog.  
-If not passed a default value from `react-native-paper` default theme is used equivalent to `DefaultTheme.colors.onSurface` with alpha `70%`.
+If not passed a default value from `react-native-paper` theme is used equivalent to `theme.colors.onSurface` with alpha `70%`.
 
 ### children
 

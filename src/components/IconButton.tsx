@@ -1,8 +1,12 @@
+// External imports.
 import React from 'react';
 import { View, Image, ViewProps } from 'react-native';
-import { DefaultTheme, TouchableRipple } from 'react-native-paper';
+import { withTheme, TouchableRipple } from 'react-native-paper';
 import { ScaledSheet, ms } from 'react-native-size-matters';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
+// Types imports.
+import type { Theme } from 'react-native-paper/lib/typescript/types';
 
 // #region Styles
 const styles = ScaledSheet.create({
@@ -35,23 +39,24 @@ const styles = ScaledSheet.create({
 
 // #region Types
 interface Props extends ViewProps {
-  image?: number | null | undefined;
-  vector?: number | null | undefined;
-  iconName?: string | null | undefined;
-  size?: number | null | undefined;
-  color?: string | null | undefined;
-  onPress?: () => void | null | undefined;
-  disabled?: boolean | undefined;
-  iconPercent?: number | null | undefined;
+  image?: number;
+  vector?: number;
+  iconName?: string;
+  size?: number;
+  color?: string;
+  onPress?: () => void;
+  disabled?: boolean;
+  iconPercent?: number;
+  theme: Theme;
 }
 
 interface IconProps {
-  image?: number | null | undefined;
-  vector?: number | null | undefined;
-  iconName?: string | null | undefined;
+  image?: number;
+  vector?: number;
+  iconName?: string;
   size: number;
   color: string;
-  iconPercent?: number | null | undefined;
+  iconPercent?: number;
 }
 // #endregion
 
@@ -95,7 +100,7 @@ const getIcon = (props: IconProps): null | React.ReactElement => {
   return null;
 };
 
-export default (props: Props): React.ReactElement => {
+const IconButton = (props: Props): React.ReactElement => {
   const {
     image,
     vector,
@@ -106,6 +111,7 @@ export default (props: Props): React.ReactElement => {
     disabled,
     iconPercent,
     style,
+    theme,
     ...other
   } = props;
 
@@ -114,7 +120,7 @@ export default (props: Props): React.ReactElement => {
   );
 
   const notNullColor: string =
-    color == null || color === undefined ? DefaultTheme.colors.primary : color;
+    color == null || color === undefined ? theme.colors.primary : color;
 
   const enabledStyle = {
     opacity: disabled ? 0.5 : 1.0,
@@ -145,6 +151,7 @@ export default (props: Props): React.ReactElement => {
         disabled={disabled}
         rippleColor={rippleColor}
         underlayColor={rippleColor}
+        theme={theme}
       >
         <View style={[styles.ripple, styles.rippleView]}>
           {getIcon({
@@ -160,3 +167,5 @@ export default (props: Props): React.ReactElement => {
     </View>
   );
 };
+
+export default withTheme(IconButton);

@@ -7,13 +7,13 @@ Checkbox component that uses `Checkbox` component from `react-native-paper` alon
 ### Android
 
 <p align="middle">
-  <img src="/assets/images/android-checkbox.png" width="30%" alt="Android Checkbox">
+  <img src="/assets/images/checkbox/android/checkbox.png" width="30%" alt="Android Checkbox">
 </p>
 
 ### iOS
 
 <p align="middle">
-  <img src="/assets/images/ios-checkbox.png" width="30%" alt="iOS Checkbox">
+  <img src="/assets/images/checkbox/ios/checkbox.png" width="30%" alt="iOS Checkbox">
 </p>
 
 ## Usage
@@ -64,7 +64,7 @@ Determines whether checkbox is disabled.
 
 Type: `string`  
 Custom color for checked checkbox.  
-If not passed a default value from `react-native-paper` default theme is used equivalent to `DefaultTheme.colors.primary`.
+If not passed a default value from `react-native-paper` theme is used equivalent to `theme.colors.primary`.
 
 ### uncheckedColor
 

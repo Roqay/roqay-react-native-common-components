@@ -1,3 +1,4 @@
+// External imports.
 import React from 'react';
 import {
   Pressable,
@@ -7,8 +8,11 @@ import {
   ViewStyle,
 } from 'react-native';
 import { Edge, SafeAreaView } from 'react-native-safe-area-context';
-import { DefaultTheme, Portal } from 'react-native-paper';
+import { withTheme, Portal } from 'react-native-paper';
 import { ScaledSheet } from 'react-native-size-matters';
+
+// Types imports.
+import type { Theme } from 'react-native-paper/lib/typescript/types';
 
 // #region Styles
 const styles = ScaledSheet.create({
@@ -23,7 +27,6 @@ const styles = ScaledSheet.create({
   dialog: {
     width: '90%',
     marginVertical: '8@vs',
-    backgroundColor: DefaultTheme.colors.surface,
     borderRadius: '10@msr',
     overflow: 'hidden',
     alignItems: 'center',
@@ -34,19 +37,20 @@ const styles = ScaledSheet.create({
 
 // #region Types
 interface Props {
-  visible?: boolean | null | undefined;
-  position?: 'top' | 'bottom' | 'center' | null | undefined;
-  onDismiss?: () => void | null | undefined;
-  dismissable?: boolean | null | undefined;
-  style?: StyleProp<ViewStyle> | null | undefined;
-  overlayColor?: string | null | undefined;
-  children?: React.ReactNode | null | undefined;
+  visible?: boolean;
+  position?: 'top' | 'bottom' | 'center';
+  onDismiss?: () => void;
+  dismissable?: boolean;
+  style?: StyleProp<ViewStyle>;
+  overlayColor?: string;
+  children?: React.ReactNode;
+  theme: Theme;
 }
 
 interface State {}
 // #endregion
 
-export default class Dialog extends React.PureComponent<Props, State> {
+class Dialog extends React.PureComponent<Props, State> {
   // Variable for mount state.
   isComponentMounted: boolean = false;
 
@@ -61,7 +65,7 @@ export default class Dialog extends React.PureComponent<Props, State> {
     // Register subscription for back handler.
     this.backHandlerSubscription = BackHandler.addEventListener(
       'hardwareBackPress',
-      this.onBackPress
+      this._onBackPress
     );
   }
 
@@ -74,7 +78,7 @@ export default class Dialog extends React.PureComponent<Props, State> {
   }
   // #endregion
 
-  onBackPress = (): boolean => {
+  _onBackPress = (): boolean => {
     const { visible, onDismiss, dismissable } = this.props;
 
     if (visible) {
@@ -100,6 +104,7 @@ export default class Dialog extends React.PureComponent<Props, State> {
       style,
       overlayColor,
       children,
+      theme,
     } = this.props;
 
     if (visible) {
@@ -137,13 +142,13 @@ export default class Dialog extends React.PureComponent<Props, State> {
         {
           backgroundColor:
             overlayColor == null || overlayColor === undefined
-              ? DefaultTheme.colors.onSurface.concat('B3')
+              ? theme.colors.onSurface.concat('B3')
               : overlayColor,
         },
       ];
 
       return (
-        <Portal>
+        <Portal theme={theme}>
           <Pressable
             style={overlayStyle}
             onPress={isDialogDismissable ? onDismiss : null}
@@ -152,7 +157,14 @@ export default class Dialog extends React.PureComponent<Props, State> {
               edges={edges}
               style={[styles.safeArea, { justifyContent: justifyContent }]}
             >
-              <Pressable style={[styles.dialog, style]} onPress={() => {}}>
+              <Pressable
+                style={[
+                  styles.dialog,
+                  { backgroundColor: theme.colors.surface },
+                  style,
+                ]}
+                onPress={() => {}}
+              >
                 {children}
               </Pressable>
             </SafeAreaView>
@@ -164,3 +176,5 @@ export default class Dialog extends React.PureComponent<Props, State> {
     return null;
   }
 }
+
+export default withTheme(Dialog);

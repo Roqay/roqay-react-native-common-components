@@ -7,13 +7,13 @@ Image component that used to display remote image with placeholder that displays
 ### Android
 
 <p align="middle">
-  <img src="/assets/images/android-image-placeholder.png" width="30%" alt="Android ImagePlaceholder">
+  <img src="/assets/images/image-placeholder/android/image-placeholder.png" width="30%" alt="Android ImagePlaceholder">
 </p>
 
 ### iOS
 
 <p align="middle">
-  <img src="/assets/images/ios-image-placeholder.png" width="30%" alt="iOS ImagePlaceholder">
+  <img src="/assets/images/image-placeholder/ios/image-placeholder.png" width="30%" alt="iOS ImagePlaceholder">
 </p>
 
 ## Extra Installation
@@ -87,7 +87,7 @@ Default value: `'immutable'`
 
 ### loadingProps
 
-Type: `Object`  
+Type: `LoadingProps`  
 Props for loading indicator.
 
 #### loadingProps.showLoading
@@ -100,12 +100,12 @@ Whether to show loading indicator while the image is loading or not.
 
 Type: `string`  
 Custom color for loading indicator.  
-If not passed a default value from `react-native-paper` default theme is used equivalent to `DefaultTheme.colors.surface`.
+If not passed a default value from `react-native-paper` theme is used equivalent to `theme.colors.surface`.
 
 #### loadingProps.backgroundColor
 
 Type: `string`  
 Custom color for loading indicator background.  
-If not passed a default value from `react-native-paper` default theme is used equivalent to `DefaultTheme.colors.onSurface` with alpha `40%`.
+If not passed a default value from `react-native-paper` theme is used equivalent to `theme.colors.onSurface` with alpha `40%`.
 
 ### [...View props](https://reactnative.dev/docs/view#props)

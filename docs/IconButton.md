@@ -7,13 +7,13 @@ Icon button component that renders a clickable icon and supports normal images, 
 ### Android
 
 <p align="middle">
-  <img src="/assets/images/android-icon-button.png" width="30%" alt="Android IconButton">
+  <img src="/assets/images/icon-button/android/icon-button.png" width="30%" alt="Android IconButton">
 </p>
 
 ### iOS
 
 <p align="middle">
-  <img src="/assets/images/ios-icon-button.png" width="30%" alt="iOS IconButton">
+  <img src="/assets/images/icon-button/ios/icon-button.png" width="30%" alt="iOS IconButton">
 </p>
 
 ## `.svg` support
@@ -68,7 +68,7 @@ Determines the full icon button size including the padding if available.
 
 Type: `string`  
 Custom color for icon.  
-If not passed a default value from `react-native-paper` default theme is used equivalent to `DefaultTheme.colors.primary`.
+If not passed a default value from `react-native-paper` theme is used equivalent to `theme.colors.primary`.
 
 ### onPress
 
