@@ -7,6 +7,7 @@ import FlatList from './components/FlatList';
 import IconButton from './components/IconButton';
 import ImagePlaceholder from './components/ImagePlaceholder';
 import RadioButton from './components/RadioButton';
+import ScrollView from './components/ScrollView';
 import SelectDialog from './components/SelectDialog';
 import Text from './components/Text';
 import TextInput from './components/TextInput';
@@ -25,6 +26,7 @@ export {
   IconButton,
   ImagePlaceholder,
   RadioButton,
+  ScrollView,
   SelectDialog,
   Text,
   TextInput,
