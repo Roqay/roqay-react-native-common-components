@@ -29,7 +29,6 @@ const styles = ScaledSheet.create({
 
 // #region Types
 interface Props extends FlatListProps<FlatListItem> {
-  onRefresh?: () => void;
   refreshColor?: string;
   theme: Theme;
 }
@@ -82,7 +81,7 @@ const FlatList = (props: Props): React.ReactElement => {
             colors={refreshColor ? [refreshColor] : [theme.colors.primary]}
             tintColor={refreshColor || theme.colors.primary}
             refreshing={refreshing || false}
-            onRefresh={onRefresh}
+            onRefresh={onRefresh || undefined}
           />
         ) : undefined
       }
