@@ -57,6 +57,7 @@ Each component has its own usage part in the [documentation](docs).
 - [IconButton](docs/IconButton.md)
 - [ImagePlaceholder](docs/ImagePlaceholder.md)
 - [RadioButton](docs/RadioButton.md)
+- [ScrollView](docs/ScrollView.md)
 - [SelectDialog](docs/SelectDialog.md)
 - [Text](docs/Text.md)
 - [TextInput](docs/TextInput.md)

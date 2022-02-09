@@ -1,8 +1,6 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
-
-import { Button } from 'roqay-react-native-common-components';
+import { ScrollView, Button } from 'roqay-react-native-common-components';
 
 export default function HomeScreen({ navigation }: { navigation: any }) {
   const _openScreen = (screenName: string) => navigation.navigate(screenName);

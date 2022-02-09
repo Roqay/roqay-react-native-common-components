@@ -1,6 +1,9 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
-import { TextInput, SelectItem } from 'roqay-react-native-common-components';
+import {
+  ScrollView,
+  TextInput,
+  SelectItem,
+} from 'roqay-react-native-common-components';
 import { ScaledSheet } from 'react-native-size-matters';
 
 export default function TextInputScreen() {
