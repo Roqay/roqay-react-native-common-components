@@ -20,9 +20,81 @@ Dialog with custom style to be used for displaying and selecting items with supp
   <img src="/assets/images/ios-select-dialog-search.png" width="30%" alt="iOS SelectDialog search">
 </p>
 
-## `.svg` support
+## Usage
 
-If you intend using `.svg` images for component then make sure to add [`react-native-vector-image`](https://github.com/oblador/react-native-vector-image) to your project and follow the [installation steps](https://github.com/oblador/react-native-vector-image#installation) as well.
+```js
+import React from 'react';
+import { View } from 'react-native';
+import {
+  SelectDialog,
+  SelectItem,
+  Button,
+  Text,
+} from 'roqay-react-native-common-components';
+
+const MyComponent = () => {
+  const [selectDialogVisible, setSelectDialogVisible] = React.useState(false);
+
+  const [selectDialogSelectedItems, setSelectDialogSelectedItems] =
+    React.useState<SelectItem[] | undefined>(undefined);
+
+  const showSelectDialog = () => setSelectDialogVisible(true);
+
+  const hideSelectDialog = () => setSelectDialogVisible(false);
+
+  const onSelectItemsSelected = (selectedItems?: SelectItem[]) =>
+    setSelectDialogSelectedItems(selectedItems);
+
+  const selectItems = [
+    {
+      id: 1,
+      key: 'select-item-1',
+      dropdownTitle: 'Select Item 1',
+    },
+    {
+      id: 2,
+      key: 'select-item-2',
+      dropdownTitle: 'Select Item 2',
+    },
+    {
+      id: 3,
+      key: 'select-item-3',
+      dropdownTitle: 'Select Item 3',
+    },
+    {
+      id: 4,
+      key: 'select-item-4',
+      dropdownTitle: 'Select Item 4',
+    },
+    {
+      id: 5,
+      key: 'select-item-5',
+      dropdownTitle: 'Select Item 5',
+    },
+  ];
+
+  return (
+    <View>
+      <Button
+          onPress={showSelectDialog}
+          text="Show Select Dialog"
+        />
+      <Text style={styles.text}>
+          {selectDialogSelectedItems?.map(
+            (item) => `${item.dropdownTitle} `
+          )}
+      </Text>
+      <SelectDialog
+        visible={selectDialogVisible}
+        onDismiss={hideSelectDialog}
+        items={selectItems}
+        selectedItems={selectDialogSelectedItems}
+        onItemsSelected={onSelectItemsSelected}
+      />
+    </View>
+  );
+};
+```
 
 ## Props
 
