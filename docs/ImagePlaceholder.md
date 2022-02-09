@@ -87,7 +87,7 @@ Default value: `'immutable'`
 
 ### loadingProps
 
-Type: `Object`  
+Type: `LoadingProps`  
 Props for loading indicator.
 
 #### loadingProps.showLoading

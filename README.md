@@ -54,6 +54,7 @@ Each component has its own usage part in the [documentation](docs).
 - [RadioButton](docs/RadioButton.md)
 - [SelectDialog](docs/SelectDialog.md)
 - [Text](docs/Text.md)
+- [TextInput](docs/TextInput.md)
 
 ## Types
 

@@ -7,8 +7,8 @@ import IconButton from './components/IconButton';
 import ImagePlaceholder from './components/ImagePlaceholder';
 import RadioButton from './components/RadioButton';
 import SelectDialog from './components/SelectDialog';
-import TextInput from './components/TextInput';
 import Text from './components/Text';
+import TextInput from './components/TextInput';
 
 // Types import.
 import type FlatListItem from './types/FlatListItem';
@@ -24,8 +24,8 @@ export {
   ImagePlaceholder,
   RadioButton,
   SelectDialog,
-  TextInput,
   Text,
+  TextInput,
 };
 
 // Types export.
