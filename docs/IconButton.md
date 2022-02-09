@@ -7,13 +7,13 @@ Icon button component that renders a clickable icon and supports normal images, 
 ### Android
 
 <p align="middle">
-  <img src="/assets/images/android-icon-button.png" width="30%" alt="Android IconButton">
+  <img src="/assets/images/icon-button/android/icon-button.png" width="30%" alt="Android IconButton">
 </p>
 
 ### iOS
 
 <p align="middle">
-  <img src="/assets/images/ios-icon-button.png" width="30%" alt="iOS IconButton">
+  <img src="/assets/images/icon-button/ios/icon-button.png" width="30%" alt="iOS IconButton">
 </p>
 
 ## `.svg` support

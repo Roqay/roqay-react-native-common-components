@@ -7,13 +7,13 @@ Text component that uses `Text`, `Title` and `Caption` components from `react-na
 ### Android
 
 <p align="middle">
-  <img src="/assets/images/android-text.png" width="30%" alt="Android Text">
+  <img src="/assets/images/text/android/text.png" width="30%" alt="Android Text">
 </p>
 
 ### iOS
 
 <p align="middle">
-  <img src="/assets/images/ios-text.png" width="30%" alt="iOS Text">
+  <img src="/assets/images/text/ios/text.png" width="30%" alt="iOS Text">
 </p>
 
 ## Usage

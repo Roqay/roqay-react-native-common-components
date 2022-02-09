@@ -7,17 +7,17 @@ Dialog with custom style to be used for displaying and selecting items with supp
 ### Android
 
 <p align="middle">
-  <img src="/assets/images/android-select-dialog-not-selected.png" width="30%" alt="Android SelectDialog not selected">
-  <img src="/assets/images/android-select-dialog-selected.png" width="30%" alt="Android SelectDialog selected">
-  <img src="/assets/images/android-select-dialog-search.png" width="30%" alt="Android SelectDialog search">
+  <img src="/assets/images/select-dialog/android/not-selected.png" width="30%" alt="Android SelectDialog not selected">
+  <img src="/assets/images/select-dialog/android/selected.png" width="30%" alt="Android SelectDialog selected">
+  <img src="/assets/images/select-dialog/android/search.png" width="30%" alt="Android SelectDialog search">
 </p>
 
 ### iOS
 
 <p align="middle">
-  <img src="/assets/images/ios-select-dialog-not-selected.png" width="30%" alt="iOS SelectDialog not selected">
-  <img src="/assets/images/ios-select-dialog-selected.png" width="30%" alt="iOS SelectDialog selected">
-  <img src="/assets/images/ios-select-dialog-search.png" width="30%" alt="iOS SelectDialog search">
+  <img src="/assets/images/select-dialog/ios/not-selected.png" width="30%" alt="iOS SelectDialog not selected">
+  <img src="/assets/images/select-dialog/ios/selected.png" width="30%" alt="iOS SelectDialog selected">
+  <img src="/assets/images/select-dialog/ios/search.png" width="30%" alt="iOS SelectDialog search">
 </p>
 
 ## Usage

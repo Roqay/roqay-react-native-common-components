@@ -7,13 +7,13 @@ RadioButton component that uses `RadioButton` component from `react-native-paper
 ### Android
 
 <p align="middle">
-  <img src="/assets/images/android-radio-button.png" width="30%" alt="Android RadioButton">
+  <img src="/assets/images/radio-button/android/radio-button.png" width="30%" alt="Android RadioButton">
 </p>
 
 ### iOS
 
 <p align="middle">
-  <img src="/assets/images/ios-radio-button.png" width="30%" alt="iOS RadioButton">
+  <img src="/assets/images/radio-button/ios/radio-button.png" width="30%" alt="iOS RadioButton">
 </p>
 
 ## Usage

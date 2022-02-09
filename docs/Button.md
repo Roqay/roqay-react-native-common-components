@@ -7,13 +7,13 @@ Button component that renders a button with icon and supports normal images, `.s
 ### Android
 
 <p align="middle">
-  <img src="/assets/images/android-button.png" width="30%" alt="Android Button">
+  <img src="/assets/images/button/android/button.png" width="30%" alt="Android Button">
 </p>
 
 ### iOS
 
 <p align="middle">
-  <img src="/assets/images/ios-button.png" width="30%" alt="iOS Button">
+  <img src="/assets/images/button/ios/button.png" width="30%" alt="iOS Button">
 </p>
 
 ## `.svg` support

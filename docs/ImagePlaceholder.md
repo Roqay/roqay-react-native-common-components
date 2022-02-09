@@ -7,13 +7,13 @@ Image component that used to display remote image with placeholder that displays
 ### Android
 
 <p align="middle">
-  <img src="/assets/images/android-image-placeholder.png" width="30%" alt="Android ImagePlaceholder">
+  <img src="/assets/images/image-placeholder/android/image-placeholder.png" width="30%" alt="Android ImagePlaceholder">
 </p>
 
 ### iOS
 
 <p align="middle">
-  <img src="/assets/images/ios-image-placeholder.png" width="30%" alt="iOS ImagePlaceholder">
+  <img src="/assets/images/image-placeholder/ios/image-placeholder.png" width="30%" alt="iOS ImagePlaceholder">
 </p>
 
 ## Extra Installation
