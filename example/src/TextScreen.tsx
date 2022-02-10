@@ -1,6 +1,5 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
-import { Text } from 'roqay-react-native-common-components';
+import { ScrollView, Text } from 'roqay-react-native-common-components';
 import { ScaledSheet } from 'react-native-size-matters';
 
 export default function TextScreen() {

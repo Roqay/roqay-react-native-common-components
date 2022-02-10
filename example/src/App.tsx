@@ -5,11 +5,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import HomeScreen from './HomeScreen';
+import AlertDialogScreen from './AlertDialogScreen';
 import ButtonScreen from './ButtonScreen';
+import CardScreen from './CardScreen';
 import CheckboxScreen from './CheckboxScreen';
 import DialogScreen from './DialogScreen';
 import IconButtonScreen from './IconButtonScreen';
 import ImagePlaceholderScreen from './ImagePlaceholderScreen';
+import LoadingDialogScreen from './LoadingDialogScreen';
 import RadioButtonScreen from './RadioButtonScreen';
 import SelectDialogScreen from './SelectDialogScreen';
 import TextInputScreen from './TextInputScreen';
@@ -25,7 +28,9 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="AlertDialog" component={AlertDialogScreen} />
           <Stack.Screen name="Button" component={ButtonScreen} />
+          <Stack.Screen name="Card" component={CardScreen} />
           <Stack.Screen name="Checkbox" component={CheckboxScreen} />
           <Stack.Screen name="Dialog" component={DialogScreen} />
           <Stack.Screen name="IconButton" component={IconButtonScreen} />
@@ -33,6 +38,7 @@ export default function App() {
             name="ImagePlaceholder"
             component={ImagePlaceholderScreen}
           />
+          <Stack.Screen name="LoadingDialog" component={LoadingDialogScreen} />
           <Stack.Screen name="RadioButton" component={RadioButtonScreen} />
           <Stack.Screen name="SelectDialog" component={SelectDialogScreen} />
           <Stack.Screen name="TextInput" component={TextInputScreen} />

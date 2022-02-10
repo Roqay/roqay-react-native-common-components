@@ -161,6 +161,7 @@
   "optionalDependencies": {
     "@klarna/react-native-vector-drawable": "^0.3.0",
     "react-native-fast-image": "^8.5.11",
+    "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-progress": "^5.0.0",
     "react-native-svg": "^12.1.1",
     "react-native-vector-image": "^0.3.3"

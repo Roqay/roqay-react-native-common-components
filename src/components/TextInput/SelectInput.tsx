@@ -210,7 +210,7 @@ export default class SelectInput extends React.PureComponent<Props, State> {
         checkedColor={theme.colors.primary}
         uncheckedColor={theme.colors.onSurface}
         text={item.dropdownTitle}
-        textProps={{ style: { color: theme.colors.onSurface }, theme }}
+        textProps={{ style: { color: theme.colors.onSurface } }}
       />
     );
   };

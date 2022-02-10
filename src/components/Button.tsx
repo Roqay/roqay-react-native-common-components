@@ -45,7 +45,7 @@ const styles = ScaledSheet.create({
 // #endregion
 
 // #region Types
-interface Props extends ViewProps {
+export interface Props extends ViewProps {
   text?: string;
   startImage?: number;
   startVector?: number;
@@ -58,6 +58,9 @@ interface Props extends ViewProps {
   iconSize?: number;
   noIconTint?: boolean;
   textProps?: TextProps;
+}
+
+interface PropsWithTheme extends Props {
   theme: Theme;
 }
 
@@ -106,7 +109,7 @@ const getIcon = (props: IconProps): null | React.ReactElement => {
   return null;
 };
 
-const Button = (props: Props): React.ReactElement => {
+const Button = (props: PropsWithTheme): React.ReactElement => {
   const {
     text,
     startImage,

@@ -64,6 +64,9 @@ interface Props {
   searchLabel?: string;
   noDataMessage?: string;
   closeText?: string;
+}
+
+interface PropsWithTheme extends Props {
   theme: Theme;
 }
 
@@ -74,11 +77,11 @@ interface State {
 }
 // #endregion
 
-class SelectDialog extends React.PureComponent<Props, State> {
+class SelectDialog extends React.PureComponent<PropsWithTheme, State> {
   // Variable for mount state.
   isComponentMounted: boolean = false;
 
-  constructor(props: Props) {
+  constructor(props: PropsWithTheme) {
     super(props);
 
     this.state = {
@@ -254,7 +257,7 @@ class SelectDialog extends React.PureComponent<Props, State> {
         checkedColor={theme.colors.primary}
         uncheckedColor={theme.colors.onSurface}
         text={item.dropdownTitle}
-        textProps={{ style: { color: theme.colors.onSurface }, theme }}
+        textProps={{ style: { color: theme.colors.onSurface } }}
       />
     );
   };
@@ -281,7 +284,7 @@ class SelectDialog extends React.PureComponent<Props, State> {
               styles.closeButton,
               { backgroundColor: theme.colors.surface },
             ]}
-            textProps={{ style: { color: theme.colors.onSurface }, theme }}
+            textProps={{ style: { color: theme.colors.onSurface } }}
           />
         </>
       </Dialog>

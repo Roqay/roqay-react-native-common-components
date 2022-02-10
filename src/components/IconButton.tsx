@@ -47,6 +47,9 @@ interface Props extends ViewProps {
   onPress?: () => void;
   disabled?: boolean;
   iconPercent?: number;
+}
+
+interface PropsWithTheme extends Props {
   theme: Theme;
 }
 
@@ -100,7 +103,7 @@ const getIcon = (props: IconProps): null | React.ReactElement => {
   return null;
 };
 
-const IconButton = (props: Props): React.ReactElement => {
+const IconButton = (props: PropsWithTheme): React.ReactElement => {
   const {
     image,
     vector,

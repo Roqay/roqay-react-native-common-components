@@ -54,11 +54,14 @@ interface Props extends ViewProps {
   checkedColor?: string;
   uncheckedColor?: string;
   textProps?: TextProps;
+}
+
+interface PropsWithTheme extends Props {
   theme: Theme;
 }
 // #endregion
 
-const RadioButton = (props: Props): React.ReactElement => {
+const RadioButton = (props: PropsWithTheme): React.ReactElement => {
   const {
     text,
     checked,

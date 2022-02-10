@@ -27,6 +27,10 @@ If you intend using `.svg` images for components that support them then make sur
 
 If you intend using [`ImagePlaceholder`](docs/ImagePlaceholder.md) component then make sure to add [`react-native-fast-image`](https://github.com/DylanVann/react-native-fast-image), [`react-native-progress`](https://github.com/oblador/react-native-progress) and [`react-native-svg`](https://github.com/react-native-svg/react-native-svg) to your project.
 
+### Using `ScrollView` component
+
+If you intend using [`ScrollView`](docs/ScrollView.md) component then make sure to add [`react-native-keyboard-aware-scroll-view`](https://github.com/APSL/react-native-keyboard-aware-scroll-view) to your project.
+
 ## Example
 
 Example is available in [example folder](example).
@@ -45,13 +49,17 @@ Each component has its own usage part in the [documentation](docs).
 
 ## Components
 
+- [AlertDialog](docs/AlertDialog.md)
 - [Button](docs/Button.md)
+- [Card](docs/Card.md)
 - [Checkbox](docs/Checkbox.md)
 - [Dialog](docs/Dialog.md)
 - [FlatList](docs/FlatList.md)
 - [IconButton](docs/IconButton.md)
 - [ImagePlaceholder](docs/ImagePlaceholder.md)
+- [LoadingDialog](docs/LoadingDialog.md)
 - [RadioButton](docs/RadioButton.md)
+- [ScrollView](docs/ScrollView.md)
 - [SelectDialog](docs/SelectDialog.md)
 - [Text](docs/Text.md)
 - [TextInput](docs/TextInput.md)

@@ -25,8 +25,7 @@ Dialog component that is wrapped by `Portal` component from `react-native-paper`
 ```js
 import React from 'react';
 import { View } from 'react-native';
-import { Button } from 'react-native-paper';
-import { Dialog, Text } from 'roqay-react-native-common-components';
+import { Button, Dialog, Text } from 'roqay-react-native-common-components';
 
 const MyComponent = () => {
   const [visible, setVisible] = React.useState(false);
@@ -37,7 +36,7 @@ const MyComponent = () => {
 
   return (
     <View>
-      <Button onPress={showDialog}>Show Dialog</Button>
+      <Button text="Show Dialog" onPress={showDialog} />
       <Dialog visible={visible} onDismiss={hideDialog}>
         <Text>This is simple dialog</Text>
       </Dialog>

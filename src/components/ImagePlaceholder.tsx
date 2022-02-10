@@ -50,6 +50,9 @@ interface Props extends ViewProps {
   priority?: PriorityType;
   cache?: CacheType;
   loadingProps?: LoadingProps;
+}
+
+interface PropsWithTheme extends Props {
   theme: Theme;
 }
 
@@ -77,11 +80,11 @@ interface State {
 }
 // #endregion
 
-class ImagePlaceholder extends React.PureComponent<Props, State> {
+class ImagePlaceholder extends React.PureComponent<PropsWithTheme, State> {
   // Variable for mount state.
   isComponentMounted: boolean = false;
 
-  constructor(props: Props) {
+  constructor(props: PropsWithTheme) {
     super(props);
 
     this.state = {

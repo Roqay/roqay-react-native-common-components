@@ -54,11 +54,14 @@ interface Props extends ViewProps {
   checkedColor?: string;
   uncheckedColor?: string;
   textProps?: TextProps;
+}
+
+interface PropsWithTheme extends Props {
   theme: Theme;
 }
 // #endregion
 
-const Checkbox = (props: Props): React.ReactElement => {
+const Checkbox = (props: PropsWithTheme): React.ReactElement => {
   const {
     text,
     checked,
