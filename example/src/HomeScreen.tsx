@@ -9,6 +9,11 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
     <ScrollView>
       <Button
         style={styles.button}
+        onPress={() => _openScreen('AlertDialog')}
+        text="AlertDialog"
+      />
+      <Button
+        style={styles.button}
         onPress={() => _openScreen('Button')}
         text="Button"
       />

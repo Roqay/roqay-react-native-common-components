@@ -18,17 +18,39 @@ import Button from './Button';
 
 // #region Styles
 const styles = ScaledSheet.create({
+  dialog: {
+    alignItems: 'stretch',
+  },
   actionsContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'flex-end',
     marginTop: '32@msr',
+  },
+  actionsContainerRow: {
+    flexDirection: 'row-reverse',
+    flexWrap: 'wrap',
+    justifyContent: 'flex-start',
+  },
+  actionsContainerColumn: {
+    flexDirection: 'column',
+    alignItems: 'flex-end',
   },
   action: {
     backgroundColor: '#00000000',
     paddingHorizontal: '8@msr',
-    marginEnd: '8@msr',
     maxWidth: '80%',
+    marginTop: '8@msr',
+  },
+  actionRow: {
+    marginStart: '8@msr',
+  },
+  actionColumn: {
+    width: '80%',
+  },
+  actionTextRow: {
+    textAlign: 'center',
+  },
+  actionTextColumn: {
+    flex: 1,
+    textAlign: 'right',
   },
 });
 // #endregion
@@ -61,15 +83,25 @@ const AlertDialog = (props: Props): React.ReactElement => {
     theme,
   } = props;
 
+  const { style: dialogStyle, ...dialogOther } = dialogProps || {};
   const { type: titleType, size: titleSize, ...titleOther } = titleProps || {};
 
   return (
-    <Dialog {...(dialogProps || {})}>
-      <Text type={titleType || 'bold'} size={titleSize || 18} {...titleOther}>
-        {title}
-      </Text>
-      <Text {...(messageProps || {})}>{message}</Text>
-      <View style={styles.actionsContainer}>
+    <Dialog style={[styles.dialog, dialogStyle]} {...dialogOther}>
+      {Boolean(title) && (
+        <Text type={titleType || 'bold'} size={titleSize || 18} {...titleOther}>
+          {title}
+        </Text>
+      )}
+      {Boolean(message) && <Text {...(messageProps || {})}>{message}</Text>}
+      <View
+        style={[
+          styles.actionsContainer,
+          (actions?.length || 0) > 2
+            ? styles.actionsContainerColumn
+            : styles.actionsContainerRow,
+        ]}
+      >
         {actions?.map((action) => {
           if (action.action) {
             const {
@@ -84,11 +116,22 @@ const AlertDialog = (props: Props): React.ReactElement => {
             return (
               <Button
                 key={action.action}
-                style={[styles.action, actionStyle]}
+                style={[
+                  styles.action,
+                  (actions?.length || 0) > 2
+                    ? styles.actionColumn
+                    : styles.actionRow,
+                  actionStyle,
+                ]}
                 textProps={{
-                  style: [{ color: theme.colors.primary }, actionTextStyle],
-                  theme: theme,
-                  ...omit(actionTextOther, ['theme']),
+                  style: [
+                    { color: theme.colors.primary },
+                    (actions?.length || 0) > 2
+                      ? styles.actionTextColumn
+                      : styles.actionTextRow,
+                    actionTextStyle,
+                  ],
+                  ...actionTextOther,
                 }}
                 text={action.action}
                 {...omit(actionOther, ['text'])}

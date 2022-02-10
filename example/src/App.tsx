@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import HomeScreen from './HomeScreen';
+import AlertDialogScreen from './AlertDialogScreen';
 import ButtonScreen from './ButtonScreen';
 import CardScreen from './CardScreen';
 import CheckboxScreen from './CheckboxScreen';
@@ -27,6 +28,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="AlertDialog" component={AlertDialogScreen} />
           <Stack.Screen name="Button" component={ButtonScreen} />
           <Stack.Screen name="Card" component={CardScreen} />
           <Stack.Screen name="Checkbox" component={CheckboxScreen} />

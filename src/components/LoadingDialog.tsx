@@ -20,11 +20,14 @@ const styles = ScaledSheet.create({
 // #region Types
 interface Props {
   visible?: boolean;
+}
+
+interface PropsWithTheme extends Props {
   theme: Theme;
 }
 // #endregion
 
-const LoadingDialog = (props: Props): React.ReactElement => {
+const LoadingDialog = (props: PropsWithTheme): React.ReactElement => {
   const { visible, theme } = props;
 
   return (

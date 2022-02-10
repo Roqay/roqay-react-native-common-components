@@ -44,13 +44,16 @@ export interface Props {
   style?: StyleProp<ViewStyle>;
   overlayColor?: string;
   children?: React.ReactNode;
+}
+
+interface PropsWithTheme extends Props {
   theme: Theme;
 }
 
 interface State {}
 // #endregion
 
-class Dialog extends React.PureComponent<Props, State> {
+class Dialog extends React.PureComponent<PropsWithTheme, State> {
   // Variable for mount state.
   isComponentMounted: boolean = false;
 

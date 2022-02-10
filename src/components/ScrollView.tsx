@@ -12,11 +12,14 @@ type Props = React.ComponentProps<typeof KeyboardAwareScrollView> & {
   refreshing?: boolean;
   onRefresh?: () => void;
   refreshColor?: string;
+};
+
+type PropsWithTheme = Props & {
   theme: Theme;
 };
 // #endregion
 
-const ScrollView = (props: Props): React.ReactElement => {
+const ScrollView = (props: PropsWithTheme): React.ReactElement => {
   const {
     refreshing,
     onRefresh,

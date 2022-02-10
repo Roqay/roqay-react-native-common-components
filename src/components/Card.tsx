@@ -19,12 +19,14 @@ const styles = ScaledSheet.create({
 // #endregion
 
 // #region Types
-type Props = React.ComponentProps<typeof PaperCard> & {
+type Props = React.ComponentProps<typeof PaperCard>;
+
+type PropsWithTheme = Props & {
   theme: Theme;
 };
 // #endregion
 
-const Card = (props: Props): React.ReactElement => {
+const Card = (props: PropsWithTheme): React.ReactElement => {
   const { mode, elevation, style, ...other } = props;
 
   switch (mode) {

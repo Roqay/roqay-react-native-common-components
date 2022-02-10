@@ -18,11 +18,14 @@ type TextType = 'normal' | 'bold' | 'caption';
 export interface Props extends TextProps {
   size?: number;
   type?: TextType;
+}
+
+interface PropsWithTheme extends Props {
   theme: Theme;
 }
 // #endregion
 
-const Text = (props: Props): React.ReactElement => {
+const Text = (props: PropsWithTheme): React.ReactElement => {
   const { size, type, style, children, theme, ...other } = props;
   let defaultTextSize: number = 13;
 
