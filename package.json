@@ -161,6 +161,7 @@
   },
   "optionalDependencies": {
     "@klarna/react-native-vector-drawable": "^0.3.0",
+    "@react-native-firebase/app": "^14.3.1",
     "@react-native-firebase/crashlytics": "^14.3.1",
     "react-native-fast-image": "^8.5.11",
     "react-native-keyboard-aware-scroll-view": "^0.9.5",

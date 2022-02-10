@@ -17,6 +17,7 @@ import RadioButtonScreen from './RadioButtonScreen';
 import SelectDialogScreen from './SelectDialogScreen';
 import TextInputScreen from './TextInputScreen';
 import TextScreen from './TextScreen';
+import UtilsScreen from './UtilsScreen';
 
 enableScreens();
 
@@ -43,6 +44,7 @@ export default function App() {
           <Stack.Screen name="SelectDialog" component={SelectDialogScreen} />
           <Stack.Screen name="TextInput" component={TextInputScreen} />
           <Stack.Screen name="Text" component={TextScreen} />
+          <Stack.Screen name="Utils" component={UtilsScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

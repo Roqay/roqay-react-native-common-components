@@ -67,6 +67,11 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
         onPress={() => _openScreen('Text')}
         text="Text"
       />
+      <Button
+        style={styles.button}
+        onPress={() => _openScreen('Utils')}
+        text="Utils"
+      />
     </ScrollView>
   );
 }
