@@ -1,4 +1,5 @@
 // Components import.
+import AlertDialog from './components/AlertDialog';
 import Button from './components/Button';
 import Card from './components/Card';
 import Checkbox from './components/Checkbox';
@@ -19,6 +20,7 @@ import type SelectItem from './types/SelectItem';
 
 // Components export.
 export {
+  AlertDialog,
   Button,
   Card,
   Checkbox,

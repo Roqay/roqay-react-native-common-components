@@ -36,7 +36,7 @@ const styles = ScaledSheet.create({
 // #endregion
 
 // #region Types
-interface Props {
+export interface Props {
   visible?: boolean;
   position?: 'top' | 'bottom' | 'center';
   onDismiss?: () => void;

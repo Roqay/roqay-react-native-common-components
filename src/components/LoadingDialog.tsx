@@ -26,6 +26,7 @@ interface Props {
 
 const LoadingDialog = (props: Props): React.ReactElement => {
   const { visible, theme } = props;
+
   return (
     <Dialog visible={visible} dismissable={false} style={styles.dialog}>
       <ActivityIndicator
