@@ -23,6 +23,7 @@ import {
   isIPhoneWithMonobrow,
   getStatusBarHeight,
 } from './utils/StatusBarHeight';
+import { configureLog } from './utils/LogConfig';
 
 // Types import.
 import type FlatListItem from './types/FlatListItem';
@@ -54,6 +55,7 @@ export {
   isIPhone12Max,
   isIPhoneWithMonobrow,
   getStatusBarHeight,
+  configureLog,
 };
 
 // Types export.
