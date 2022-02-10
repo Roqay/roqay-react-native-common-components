@@ -14,6 +14,16 @@ import SelectDialog from './components/SelectDialog';
 import Text from './components/Text';
 import TextInput from './components/TextInput';
 
+// Utils import.
+import {
+  isIPhoneX,
+  isIPhoneXMax,
+  isIPhone12,
+  isIPhone12Max,
+  isIPhoneWithMonobrow,
+  getStatusBarHeight,
+} from './utils/StatusBarHeight';
+
 // Types import.
 import type FlatListItem from './types/FlatListItem';
 import type SelectItem from './types/SelectItem';
@@ -34,6 +44,16 @@ export {
   SelectDialog,
   Text,
   TextInput,
+};
+
+// Utils export.
+export {
+  isIPhoneX,
+  isIPhoneXMax,
+  isIPhone12,
+  isIPhone12Max,
+  isIPhoneWithMonobrow,
+  getStatusBarHeight,
 };
 
 // Types export.
