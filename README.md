@@ -56,6 +56,7 @@ Each component has its own usage part in the [documentation](docs).
 - [FlatList](docs/FlatList.md)
 - [IconButton](docs/IconButton.md)
 - [ImagePlaceholder](docs/ImagePlaceholder.md)
+- [LoadingDialog](docs/LoadingDialog.md)
 - [RadioButton](docs/RadioButton.md)
 - [ScrollView](docs/ScrollView.md)
 - [SelectDialog](docs/SelectDialog.md)
