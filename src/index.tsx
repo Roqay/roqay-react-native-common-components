@@ -6,6 +6,7 @@ import Dialog from './components/Dialog';
 import FlatList from './components/FlatList';
 import IconButton from './components/IconButton';
 import ImagePlaceholder from './components/ImagePlaceholder';
+import LoadingDialog from './components/LoadingDialog';
 import RadioButton from './components/RadioButton';
 import ScrollView from './components/ScrollView';
 import SelectDialog from './components/SelectDialog';
@@ -25,6 +26,7 @@ export {
   FlatList,
   IconButton,
   ImagePlaceholder,
+  LoadingDialog,
   RadioButton,
   ScrollView,
   SelectDialog,
