@@ -11,6 +11,7 @@ import CheckboxScreen from './CheckboxScreen';
 import DialogScreen from './DialogScreen';
 import IconButtonScreen from './IconButtonScreen';
 import ImagePlaceholderScreen from './ImagePlaceholderScreen';
+import LoadingDialogScreen from './LoadingDialogScreen';
 import RadioButtonScreen from './RadioButtonScreen';
 import SelectDialogScreen from './SelectDialogScreen';
 import TextInputScreen from './TextInputScreen';
@@ -35,6 +36,7 @@ export default function App() {
             name="ImagePlaceholder"
             component={ImagePlaceholderScreen}
           />
+          <Stack.Screen name="LoadingDialog" component={LoadingDialogScreen} />
           <Stack.Screen name="RadioButton" component={RadioButtonScreen} />
           <Stack.Screen name="SelectDialog" component={SelectDialogScreen} />
           <Stack.Screen name="TextInput" component={TextInputScreen} />

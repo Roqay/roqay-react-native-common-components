@@ -39,6 +39,11 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
       />
       <Button
         style={styles.button}
+        onPress={() => _openScreen('LoadingDialog')}
+        text="LoadingDialog"
+      />
+      <Button
+        style={styles.button}
         onPress={() => _openScreen('RadioButton')}
         text="RadioButton"
       />
