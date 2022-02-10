@@ -49,6 +49,7 @@ Each component has its own usage part in the [documentation](docs).
 
 ## Components
 
+- [AlertDialog](docs/AlertDialog.md)
 - [Button](docs/Button.md)
 - [Card](docs/Card.md)
 - [Checkbox](docs/Checkbox.md)

@@ -42,16 +42,6 @@ const styles = ScaledSheet.create({
   actionRow: {
     marginStart: '8@msr',
   },
-  actionColumn: {
-    width: '80%',
-  },
-  actionTextRow: {
-    textAlign: 'center',
-  },
-  actionTextColumn: {
-    flex: 1,
-    textAlign: 'right',
-  },
 });
 // #endregion
 
@@ -68,11 +58,14 @@ interface Props {
   message?: string;
   messageProps?: TextProps;
   actions?: Action[];
+}
+
+interface PropsWithTheme extends Props {
   theme: Theme;
 }
 // #endregion
 
-const AlertDialog = (props: Props): React.ReactElement => {
+const AlertDialog = (props: PropsWithTheme): React.ReactElement => {
   const {
     dialogProps,
     title,
@@ -118,19 +111,11 @@ const AlertDialog = (props: Props): React.ReactElement => {
                 key={action.action}
                 style={[
                   styles.action,
-                  (actions?.length || 0) > 2
-                    ? styles.actionColumn
-                    : styles.actionRow,
+                  (actions?.length || 0) > 2 ? undefined : styles.actionRow,
                   actionStyle,
                 ]}
                 textProps={{
-                  style: [
-                    { color: theme.colors.primary },
-                    (actions?.length || 0) > 2
-                      ? styles.actionTextColumn
-                      : styles.actionTextRow,
-                    actionTextStyle,
-                  ],
+                  style: [{ color: theme.colors.primary }, actionTextStyle],
                   ...actionTextOther,
                 }}
                 text={action.action}
