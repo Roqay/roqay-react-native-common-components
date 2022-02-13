@@ -23,13 +23,17 @@ As mentioned in [React Native Paper Getting Started](https://callstack.github.io
 
 If you intend using `.svg` images for components that support them then make sure to add [`react-native-vector-image`](https://github.com/oblador/react-native-vector-image) to your project and follow the [installation steps](https://github.com/oblador/react-native-vector-image#installation) as well.
 
-### Using `ImagePlaceholder` component
+### Using [`ImagePlaceholder`](docs/ImagePlaceholder.md) component
 
 If you intend using [`ImagePlaceholder`](docs/ImagePlaceholder.md) component then make sure to add [`react-native-fast-image`](https://github.com/DylanVann/react-native-fast-image), [`react-native-progress`](https://github.com/oblador/react-native-progress) and [`react-native-svg`](https://github.com/react-native-svg/react-native-svg) to your project.
 
-### Using `ScrollView` component
+### Using [`ScrollView`](docs/ScrollView.md) component
 
 If you intend using [`ScrollView`](docs/ScrollView.md) component then make sure to add [`react-native-keyboard-aware-scroll-view`](https://github.com/APSL/react-native-keyboard-aware-scroll-view) to your project.
+
+### Using [`LogUtils`](docs/LogUtils.md)
+
+If you intend using [`LogUtils`](docs/LogUtils.md) then make sure to add [`reactotron-react-native`](https://github.com/infinitered/reactotron/blob/master/docs/quick-start-react-native.md) as a dev dependency and both [`@react-native-firebase/app`](https://rnfirebase.io) and [`@react-native-firebase/crashlytics`](https://rnfirebase.io/crashlytics/usage) as dependencies to your project and follow the instruction for them.
 
 ## Example
 
@@ -63,6 +67,11 @@ Each component has its own usage part in the [documentation](docs).
 - [SelectDialog](docs/SelectDialog.md)
 - [Text](docs/Text.md)
 - [TextInput](docs/TextInput.md)
+
+## Utils
+
+- [LogUtils](docs/LogUtils.md)
+- [StatusBarUtils](docs/StatusBarUtils.md)
 
 ## Types
 
