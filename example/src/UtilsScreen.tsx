@@ -8,18 +8,20 @@ import {
   isIPhone12Max,
   isIPhoneWithMonobrow,
   getStatusBarHeight,
-  configureLog,
+  Button,
 } from 'roqay-react-native-common-components';
 import { ScaledSheet } from 'react-native-size-matters';
+import crashlytics from '@react-native-firebase/crashlytics';
 
 export default function UtilsScreen() {
-  React.useEffect(() => {
-    configureLog({
-      appName: 'roqay-react-native-common-components',
-      firebaseLogLevels: ['INFO', 'LOG', 'WARN', 'ERROR'],
-      isLocalLogEnable: true,
-    });
-  });
+  const _onLogMessagePress = () => {
+    console.log('Log message');
+  };
+
+  const _onLogErrorPress = () => {
+    console.error('Log error');
+    crashlytics().crash();
+  };
 
   return (
     <ScrollView>
@@ -33,12 +35,27 @@ export default function UtilsScreen() {
       <Text
         style={styles.text}
       >{`getStatusBarHeight: ${getStatusBarHeight()}`}</Text>
+      <Button
+        text="Add Log Message"
+        onPress={_onLogMessagePress}
+        style={styles.button}
+      />
+      <Button
+        text="Add Log Error"
+        onPress={_onLogErrorPress}
+        style={styles.button}
+      />
     </ScrollView>
   );
 }
 
 const styles = ScaledSheet.create({
   text: {
+    width: '90%',
+    alignSelf: 'center',
+    marginVertical: '8@vs',
+  },
+  button: {
     width: '90%',
     alignSelf: 'center',
     marginVertical: '8@vs',

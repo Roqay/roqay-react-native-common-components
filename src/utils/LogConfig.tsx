@@ -16,7 +16,7 @@ let isLocalLogEnable: boolean = false;
 
 const configureReactotron = (appName?: string): void => {
   try {
-    const Reactotron = require('reactotron-react-native');
+    const Reactotron = require('reactotron-react-native').default;
     const { scriptURL } = NativeModules.SourceCode;
     const scriptHostname = scriptURL.split('://')[1].split(':')[0];
 
@@ -37,95 +37,115 @@ const configureReactotron = (appName?: string): void => {
 };
 
 const info = (message: string, ...args: any[]): void => {
-  try {
-    const Reactotron = require('reactotron-react-native');
-    const crashlytics = require('@react-native-firebase/crashlytics');
-    const tag = 'INFO';
+  const tag = 'INFO';
 
-    if (firebaseLogLevels.includes(tag)) {
+  if (firebaseLogLevels.includes(tag)) {
+    try {
+      require('@react-native-firebase/app');
+      const crashlytics = require('@react-native-firebase/crashlytics').default;
+
       crashlytics().log(
         `## ${tag} ## Message: ${message} ## Data: ${JSON.stringify(args)}`
       );
-    }
+    } catch (e) {}
+  }
 
-    if (isLocalLogEnable) {
+  if (isLocalLogEnable) {
+    try {
+      const Reactotron = require('reactotron-react-native').default;
+
       Reactotron.display({
         name: tag,
         preview: message,
         value: { message, args },
       });
-    }
-  } catch (e) {}
+    } catch (e) {}
+  }
 };
 
 const log = (message: string, ...args: any[]): void => {
-  try {
-    const Reactotron = require('reactotron-react-native');
-    const crashlytics = require('@react-native-firebase/crashlytics');
-    const tag = 'LOG';
+  const tag = 'LOG';
 
-    if (firebaseLogLevels.includes(tag)) {
+  if (firebaseLogLevels.includes(tag)) {
+    try {
+      require('@react-native-firebase/app');
+      const crashlytics = require('@react-native-firebase/crashlytics').default;
+
       crashlytics().log(
         `## ${tag} ## Message: ${message} ## Data: ${JSON.stringify(args)}`
       );
-    }
+    } catch (e) {}
+  }
 
-    if (isLocalLogEnable) {
+  if (isLocalLogEnable) {
+    try {
+      const Reactotron = require('reactotron-react-native').default;
+
       Reactotron.display({
         name: tag,
         preview: message,
         value: { message, args },
       });
-    }
-  } catch (e) {}
+    } catch (e) {}
+  }
 };
 
 const warn = (message: string, ...args: any[]): void => {
-  try {
-    const Reactotron = require('reactotron-react-native');
-    const crashlytics = require('@react-native-firebase/crashlytics');
-    const tag = 'WARN';
+  const tag = 'WARN';
 
-    if (firebaseLogLevels.includes(tag)) {
+  if (firebaseLogLevels.includes(tag)) {
+    try {
+      require('@react-native-firebase/app');
+      const crashlytics = require('@react-native-firebase/crashlytics').default;
+
       crashlytics().log(
         `## ${tag} ## Message: ${message} ## Data: ${JSON.stringify(args)}`
       );
-    }
+    } catch (e) {}
+  }
 
-    if (isLocalLogEnable) {
+  if (isLocalLogEnable) {
+    try {
+      const Reactotron = require('reactotron-react-native').default;
+
       Reactotron.display({
         name: tag,
         preview: message,
         value: { message, args },
         important: true,
       });
-    }
-  } catch (e) {}
+    } catch (e) {}
+  }
 };
 
 const error = (message: string, ...args: any[]): void => {
-  try {
-    const Reactotron = require('reactotron-react-native');
-    const crashlytics = require('@react-native-firebase/crashlytics');
-    const tag = 'ERROR';
+  const tag = 'ERROR';
 
-    if (firebaseLogLevels.includes(tag)) {
+  if (firebaseLogLevels.includes(tag)) {
+    try {
+      require('@react-native-firebase/app');
+      const crashlytics = require('@react-native-firebase/crashlytics').default;
+
       crashlytics().recordError(
         new Error(
           `## ${tag} ## Message: ${message} ## Data: ${JSON.stringify(args)}`
         )
       );
-    }
+    } catch (e) {}
+  }
 
-    if (isLocalLogEnable) {
+  if (isLocalLogEnable) {
+    try {
+      const Reactotron = require('reactotron-react-native').default;
+
       Reactotron.display({
         name: tag,
         preview: message,
         value: { message, args },
         important: true,
       });
-    }
-  } catch (e) {}
+    } catch (e) {}
+  }
 };
 
 const connectConsoleToReactotron = (): void => {
