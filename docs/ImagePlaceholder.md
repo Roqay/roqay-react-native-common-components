@@ -90,19 +90,19 @@ Default value: `'immutable'`
 Type: `LoadingProps`  
 Props for loading indicator.
 
-#### loadingProps.showLoading
+#### LoadingProps.showLoading
 
 Type: `boolean`  
 Default value: `true`  
 Whether to show loading indicator while the image is loading or not.
 
-#### loadingProps.color
+#### LoadingProps.color
 
 Type: `string`  
 Custom color for loading indicator.  
 If not passed a default value from `react-native-paper` theme is used equivalent to `theme.colors.surface`.
 
-#### loadingProps.backgroundColor
+#### LoadingProps.backgroundColor
 
 Type: `string`  
 Custom color for loading indicator background.  

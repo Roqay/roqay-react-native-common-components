@@ -3,6 +3,7 @@ import { enableScreens } from 'react-native-screens';
 import { Provider, DefaultTheme } from 'react-native-paper';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { configureLog } from 'roqay-react-native-common-components';
 
 import HomeScreen from './HomeScreen';
 import AlertDialogScreen from './AlertDialogScreen';
@@ -17,12 +18,21 @@ import RadioButtonScreen from './RadioButtonScreen';
 import SelectDialogScreen from './SelectDialogScreen';
 import TextInputScreen from './TextInputScreen';
 import TextScreen from './TextScreen';
+import UtilsScreen from './UtilsScreen';
 
 enableScreens();
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  React.useEffect(() => {
+    configureLog({
+      appName: 'roqay-react-native-common-components',
+      firebaseLogLevels: ['INFO', 'LOG', 'WARN', 'ERROR'],
+      isLocalLogEnable: true,
+    });
+  });
+
   return (
     <Provider theme={DefaultTheme}>
       <NavigationContainer>
@@ -43,6 +53,7 @@ export default function App() {
           <Stack.Screen name="SelectDialog" component={SelectDialogScreen} />
           <Stack.Screen name="TextInput" component={TextInputScreen} />
           <Stack.Screen name="Text" component={TextScreen} />
+          <Stack.Screen name="Utils" component={UtilsScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

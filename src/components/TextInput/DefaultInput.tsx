@@ -56,13 +56,28 @@ export default (props: Props): React.ReactElement => {
     'scrollEnabled',
   ]);
 
+  const label = getLabel(props);
+  let height;
+
+  if (!multiline) {
+    if (label) {
+      if (props.mode === 'outlined') {
+        height = ms(35);
+      } else {
+        height = ms(45);
+      }
+    } else {
+      height = ms(35);
+    }
+  }
+
   return (
     <TextInput
       dense={dense === undefined ? true : dense}
       autoCapitalize={autoCapitalize === undefined ? 'none' : autoCapitalize}
       autoCorrect={autoCorrect === undefined ? false : autoCorrect}
       error={errorProps?.errorMessage ? true : error}
-      label={getLabel(props)}
+      label={label}
       placeholder={getPlaceholder(props)}
       multiline={secureTextEntry ? false : true}
       numberOfLines={
@@ -78,6 +93,7 @@ export default (props: Props): React.ReactElement => {
       returnKeyType={returnKeyType === undefined ? 'done' : returnKeyType}
       style={[
         styles.input,
+        { height: height },
         style,
         { minHeight: multiline ? ms(70) : undefined },
       ]}
@@ -111,7 +127,7 @@ export default (props: Props): React.ReactElement => {
         }
       }}
       secureTextEntry={secureTextEntry}
-      scrollEnabled={secureTextEntry ? false : multiline}
+      scrollEnabled={secureTextEntry ? false : Boolean(multiline)}
       {...newProps}
     />
   );

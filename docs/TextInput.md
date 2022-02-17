@@ -98,12 +98,12 @@ If `true` then label and placeholder will have a trailing `*` to indicate field 
 Type: `TopLabelProps`  
 Props for top label. If `label` prop inside `topLabelProps` is available then `label` prop from `topLabelProps` will be on top of `TextInput` and the `label` prop from `TextInputProps` will be ignored.
 
-#### topLabelProps.label
+#### TopLabelProps.label
 
 Type: `string`  
 The label text to be displayed on top of `TextInput`.
 
-#### topLabelProps.textProps
+#### TopLabelProps.textProps
 
 Type: [`TextProps`](Text.md#props)  
 The text props for the top label text.
@@ -113,12 +113,12 @@ The text props for the top label text.
 Type: `ErrorProps`  
 Props for error. If `errorMessage` prop inside `errorProps` is available then `TextInput` will be styles with error style from `react-native-paper` and an `errorMessage` prop from `errorProps` will be displayed below the `TextInput`.
 
-#### errorProps.errorMessage
+#### ErrorProps.errorMessage
 
 Type: `string`  
 The error message to be displayed below `TextInput`.
 
-#### errorProps.textProps
+#### ErrorProps.textProps
 
 Type: [`TextProps`](Text.md#props)  
 The text props for the error message.
@@ -128,7 +128,7 @@ The text props for the error message.
 Type: `SelectProps`  
 Props for select input mode. If available then `TextInput` will enable selection mode based on `SelectProps` passed.
 
-#### selectProps.mode
+#### SelectProps.mode
 
 Type: `'dialog' | 'dropdown'`  
 Default value: `'dialog'`
@@ -136,40 +136,40 @@ Default value: `'dialog'`
 - `'dialog'` - Use [`SelectDialog`](SelectDialog.md) for selection.
 - `'dropdown'` - Use `Menu` from `react-native-paper` for selection.
 
-#### selectProps.items
+#### SelectProps.items
 
 Type: `Array<SelectItem>`  
 An `Array` of type [`SelectItem`](SelectItem.md) to be displayed for the user.
 
-#### selectProps.selectedItems
+#### SelectProps.selectedItems
 
 Type: `Array<SelectItem>`  
 An `Array` of type [`SelectItem`](SelectItem.md) to be marked as selected for the user.
 
-#### selectProps.allowMultiSelect
+#### SelectProps.allowMultiSelect
 
 Type: `boolean`  
 Default value: `false`  
 Determines whether multi select mode is enabled or not.
 
-#### selectProps.onItemsSelected
+#### SelectProps.onItemsSelected
 
 Type: `(selectedItems: Array<SelectItem>) => void`  
 Callback that is called when the user press an item in the select dialog or dropdown menu.
 
-#### selectProps.searchLabel
+#### SelectProps.searchLabel
 
 Type: `string`  
 Default value: `'Look for'`  
 The label text to display for the search input in case of dialog mode.
 
-#### selectProps.noDataMessage
+#### SelectProps.noDataMessage
 
 Type: `string`  
 Default value: `'No data available'`  
 The text to display when no data available that match the search in case of dialog mode.
 
-#### selectProps.closeText
+#### SelectProps.closeText
 
 Type: `string`  
 Default value: `'Close'`  
