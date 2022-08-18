@@ -48,6 +48,7 @@ export default (props: Props): React.ReactElement => {
     onChangeText,
     secureTextEntry,
     theme,
+    positiveNumbersOnly,
     ...other
   } = props;
 
@@ -135,6 +136,10 @@ export default (props: Props): React.ReactElement => {
             .replaceAll('٧', '7')
             .replaceAll('٨', '8')
             .replaceAll('٩', '9');
+        }
+
+        if (positiveNumbersOnly) {
+          editedText = editedText.replace(/[^0-9]/g, '');
         }
 
         if (onChangeText) {

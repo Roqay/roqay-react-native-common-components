@@ -31,4 +31,5 @@ export default interface Props extends TextInputProps {
   errorProps?: ErrorProps;
   selectProps?: SelectProps;
   ref?: any;
+  positiveNumbersOnly?: boolean;
 }
