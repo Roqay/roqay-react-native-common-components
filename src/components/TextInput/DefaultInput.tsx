@@ -35,8 +35,11 @@ export default (props: Props): React.ReactElement => {
     dense,
     autoCapitalize,
     autoCorrect,
-    error,
     errorProps,
+    underlineColor,
+    activeUnderlineColor,
+    outlineColor,
+    activeOutlineColor,
     multiline,
     numberOfLines,
     returnKeyType,
@@ -44,6 +47,7 @@ export default (props: Props): React.ReactElement => {
     keyboardType,
     onChangeText,
     secureTextEntry,
+    theme,
     ...other
   } = props;
 
@@ -76,7 +80,18 @@ export default (props: Props): React.ReactElement => {
       dense={dense === undefined ? true : dense}
       autoCapitalize={autoCapitalize === undefined ? 'none' : autoCapitalize}
       autoCorrect={autoCorrect === undefined ? false : autoCorrect}
-      error={errorProps?.errorMessage ? true : error}
+      underlineColor={
+        errorProps?.errorMessage ? theme.colors.error : underlineColor
+      }
+      activeUnderlineColor={
+        errorProps?.errorMessage ? theme.colors.error : activeUnderlineColor
+      }
+      outlineColor={
+        errorProps?.errorMessage ? theme.colors.error : outlineColor
+      }
+      activeOutlineColor={
+        errorProps?.errorMessage ? theme.colors.error : activeOutlineColor
+      }
       label={label}
       placeholder={getPlaceholder(props)}
       multiline={secureTextEntry ? false : true}
@@ -128,6 +143,7 @@ export default (props: Props): React.ReactElement => {
       }}
       secureTextEntry={secureTextEntry}
       scrollEnabled={secureTextEntry ? false : Boolean(multiline)}
+      theme={theme}
       {...newProps}
     />
   );
