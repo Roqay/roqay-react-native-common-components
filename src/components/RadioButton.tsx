@@ -46,7 +46,7 @@ const styles = ScaledSheet.create({
 // #endregion
 
 // #region Types
-interface Props extends ViewProps {
+export interface Props extends ViewProps {
   text?: string;
   checked?: boolean;
   onPress?: () => void;

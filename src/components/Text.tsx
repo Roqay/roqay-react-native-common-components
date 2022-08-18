@@ -13,7 +13,7 @@ import type { Theme } from 'react-native-paper/lib/typescript/types';
 import type { TextProps } from 'react-native';
 
 // #region Types
-type TextType = 'normal' | 'bold' | 'caption';
+export type TextType = 'normal' | 'bold' | 'caption';
 
 export interface Props extends TextProps {
   size?: number;

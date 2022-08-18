@@ -18,7 +18,7 @@ const styles = ScaledSheet.create({
 // #endregion
 
 // #region Types
-interface Props {
+export interface Props {
   visible?: boolean;
 }
 

@@ -8,7 +8,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import type { Theme } from 'react-native-paper/lib/typescript/types';
 
 // #region Types
-type Props = React.ComponentProps<typeof KeyboardAwareScrollView> & {
+export type Props = React.ComponentProps<typeof KeyboardAwareScrollView> & {
   refreshing?: boolean;
   onRefresh?: () => void;
   refreshColor?: string;

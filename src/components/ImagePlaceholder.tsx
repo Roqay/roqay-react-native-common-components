@@ -36,13 +36,13 @@ const styles = ScaledSheet.create({
 // #endregion
 
 // #region Types
-type ResizeModeType = 'cover' | 'contain' | 'stretch' | 'center';
+export type ResizeModeType = 'cover' | 'contain' | 'stretch' | 'center';
 
-type PriorityType = 'low' | 'normal' | 'high';
+export type PriorityType = 'low' | 'normal' | 'high';
 
-type CacheType = 'immutable' | 'web' | 'cacheOnly';
+export type CacheType = 'immutable' | 'web' | 'cacheOnly';
 
-interface Props extends ViewProps {
+export interface Props extends ViewProps {
   size?: number;
   source?: string;
   placeholder?: number;
@@ -56,13 +56,13 @@ interface PropsWithTheme extends Props {
   theme: Theme;
 }
 
-interface LoadingProps {
+export interface LoadingProps {
   showLoading?: boolean;
   color?: string;
   backgroundColor?: string;
 }
 
-interface ImageProps {
+export interface ImageProps {
   source?: string;
   placeholder?: number;
   resizeMode?: ResizeModeType;

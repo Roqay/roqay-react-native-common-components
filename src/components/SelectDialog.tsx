@@ -54,7 +54,7 @@ const styles = ScaledSheet.create({
 // #endregion
 
 // #region Types
-interface Props {
+export interface Props {
   items?: SelectItem[];
   selectedItems?: SelectItem[];
   allowMultiSelect?: boolean;
