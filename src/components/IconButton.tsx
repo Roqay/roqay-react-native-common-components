@@ -38,7 +38,7 @@ const styles = ScaledSheet.create({
 // #endregion
 
 // #region Types
-interface Props extends ViewProps {
+export interface Props extends ViewProps {
   image?: number;
   vector?: number;
   iconName?: string;
@@ -53,12 +53,12 @@ interface PropsWithTheme extends Props {
   theme: Theme;
 }
 
-interface IconProps {
+export interface IconProps {
   image?: number;
   vector?: number;
   iconName?: string;
   size: number;
-  color: string;
+  color?: string;
   iconPercent?: number;
 }
 // #endregion

@@ -3,7 +3,7 @@ import type { TextInputProps } from 'react-native-paper/lib/typescript/component
 import type { Props as TextProps } from '../Text';
 import type SelectItem from '../../types/SelectItem';
 
-interface SelectProps {
+export interface SelectProps {
   mode?: 'dialog' | 'dropdown';
   items?: SelectItem[];
   selectedItems?: SelectItem[];
@@ -14,12 +14,12 @@ interface SelectProps {
   closeText?: string;
 }
 
-interface ErrorProps {
+export interface ErrorProps {
   errorMessage?: string;
   textProps?: TextProps;
 }
 
-interface TopLabelProps {
+export interface TopLabelProps {
   label?: string;
   textProps?: TextProps;
 }
@@ -31,4 +31,5 @@ export default interface Props extends TextInputProps {
   errorProps?: ErrorProps;
   selectProps?: SelectProps;
   ref?: any;
+  positiveNumbersOnly?: boolean;
 }

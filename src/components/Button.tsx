@@ -11,6 +11,7 @@ import type { Theme } from 'react-native-paper/lib/typescript/types';
 // Internal imports.
 import Text from './Text';
 import type { Props as TextProps } from './Text';
+import type { IconProps } from './IconButton';
 
 // #region Styles
 const styles = ScaledSheet.create({
@@ -62,14 +63,6 @@ export interface Props extends ViewProps {
 
 interface PropsWithTheme extends Props {
   theme: Theme;
-}
-
-interface IconProps {
-  image?: number;
-  vector?: number;
-  iconName?: string;
-  size: number;
-  color?: string;
 }
 // #endregion
 

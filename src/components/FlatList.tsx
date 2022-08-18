@@ -28,7 +28,7 @@ const styles = ScaledSheet.create({
 // #endregion
 
 // #region Types
-interface Props extends FlatListProps<FlatListItem> {
+export interface Props extends FlatListProps<FlatListItem> {
   refreshColor?: string;
 }
 

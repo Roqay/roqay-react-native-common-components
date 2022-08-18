@@ -46,12 +46,12 @@ const styles = ScaledSheet.create({
 // #endregion
 
 // #region Types
-interface Action {
+export interface Action {
   action?: string;
   actionProps?: ButtonProps;
 }
 
-interface Props {
+export interface Props {
   dialogProps?: DialogProps;
   title?: string;
   titleProps?: TextProps;
