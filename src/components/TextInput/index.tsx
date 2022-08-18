@@ -101,7 +101,7 @@ const TextInput = (props: Props): React.ReactElement => {
           ]}
           {...other}
         >
-          {errorProps?.errorMessage}
+          {topLabelProps?.label}
         </Text>
       )}
       {getInput(set(props, 'style', inputStyle))}
