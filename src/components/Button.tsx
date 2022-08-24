@@ -55,6 +55,7 @@ export interface Props extends ViewProps {
   endVector?: number;
   endIconName?: string;
   onPress?: () => void;
+  onLongPress?: () => void;
   disabled?: boolean;
   iconSize?: number;
   noIconTint?: boolean;
@@ -112,6 +113,7 @@ const Button = (props: PropsWithTheme): React.ReactElement => {
     endVector,
     endIconName,
     onPress,
+    onLongPress,
     disabled,
     iconSize,
     noIconTint,
@@ -168,6 +170,7 @@ const Button = (props: PropsWithTheme): React.ReactElement => {
     >
       <TouchableRipple
         onPress={onPress}
+        onLongPress={onLongPress}
         disabled={disabled}
         rippleColor={rippleColor}
         underlayColor={rippleColor}
