@@ -47,6 +47,7 @@ export interface Props extends ViewProps {
   onPress?: () => void;
   disabled?: boolean;
   iconPercent?: number;
+  noIconTint?: boolean;
 }
 
 interface PropsWithTheme extends Props {
@@ -60,11 +61,13 @@ export interface IconProps {
   size: number;
   color?: string;
   iconPercent?: number;
+  noIconTint?: boolean;
 }
 // #endregion
 
 const getIcon = (props: IconProps): null | React.ReactElement => {
-  const { image, vector, iconName, size, color, iconPercent } = props;
+  const { image, vector, iconName, size, color, iconPercent, noIconTint } =
+    props;
 
   const notNullIconPercent: number =
     iconPercent == null || iconPercent === undefined ? 60 : iconPercent;
@@ -76,7 +79,7 @@ const getIcon = (props: IconProps): null | React.ReactElement => {
     {
       width: iconSize,
       height: iconSize,
-      tintColor: color,
+      tintColor: noIconTint ? undefined : color,
     },
   ];
 
@@ -115,6 +118,7 @@ const IconButton = (props: PropsWithTheme): React.ReactElement => {
     iconPercent,
     style,
     theme,
+    noIconTint,
     ...other
   } = props;
 
@@ -164,6 +168,7 @@ const IconButton = (props: PropsWithTheme): React.ReactElement => {
             size: notNullSize,
             color: notNullColor,
             iconPercent,
+            noIconTint,
           })}
         </View>
       </TouchableRipple>
