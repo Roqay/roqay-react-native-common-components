@@ -145,7 +145,7 @@ class Dialog extends React.PureComponent<PropsWithTheme, State> {
         {
           backgroundColor:
             overlayColor == null || overlayColor === undefined
-              ? theme.colors.onSurface.concat('B3')
+              ? theme.colors.backdrop
               : overlayColor,
         },
       ];
