@@ -107,7 +107,6 @@ const Checkbox = (props: PropsWithTheme): React.ReactElement => {
         disabled={disabled}
         rippleColor={rippleColor}
         underlayColor={rippleColor}
-        theme={theme}
       >
         <View
           style={[
@@ -131,7 +130,6 @@ const Checkbox = (props: PropsWithTheme): React.ReactElement => {
             color={notNullCheckedColor}
             uncheckedColor={uncheckedColor}
             disabled={disabled}
-            theme={theme}
           />
           {Boolean(text) && Boolean(text?.length) && (
             <Text style={[styles.text, textStyle]} {...rest}>

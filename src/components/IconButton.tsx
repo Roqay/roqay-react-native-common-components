@@ -158,7 +158,6 @@ const IconButton = (props: PropsWithTheme): React.ReactElement => {
         disabled={disabled}
         rippleColor={rippleColor}
         underlayColor={rippleColor}
-        theme={theme}
       >
         <View style={[styles.ripple, styles.rippleView]}>
           {getIcon({

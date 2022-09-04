@@ -219,7 +219,6 @@ class SelectDialog extends React.PureComponent<PropsWithTheme, State> {
         value={searchText}
         onChangeText={this._onChangeTextSearchText}
         style={{ backgroundColor: theme.colors.surface }}
-        theme={theme}
       />
     );
   };

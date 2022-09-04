@@ -5,6 +5,7 @@ import { set, omit } from 'lodash';
 
 // Types imports.
 import type Props from './Props';
+import type { PropsWithTheme } from './Props';
 
 // Internal imports.
 import Text from '../Text';
@@ -22,7 +23,7 @@ const getInput = (props: Props): React.ReactElement => {
   return <DefaultInput {...other} />;
 };
 
-const TextInput = (props: Props): React.ReactElement => {
+const TextInput = (props: PropsWithTheme): React.ReactElement => {
   const { topLabelProps, errorProps, theme } = props;
 
   const {

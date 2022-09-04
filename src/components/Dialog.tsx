@@ -151,7 +151,7 @@ class Dialog extends React.PureComponent<PropsWithTheme, State> {
       ];
 
       return (
-        <Portal theme={theme}>
+        <Portal>
           <Pressable
             style={overlayStyle}
             onPress={isDialogDismissable ? onDismiss : null}

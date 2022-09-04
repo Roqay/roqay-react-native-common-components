@@ -1,11 +1,16 @@
 // External imports.
 import React from 'react';
-import { TouchableRipple, Menu, TextInput } from 'react-native-paper';
+import {
+  withTheme,
+  TouchableRipple,
+  Menu,
+  TextInput,
+} from 'react-native-paper';
 import { View } from 'react-native';
 import { omit } from 'lodash';
 
 // Types imports.
-import type Props from './Props';
+import type { PropsWithTheme } from './Props';
 import type SelectItem from '../../types/SelectItem';
 
 // Internal imports.
@@ -22,11 +27,11 @@ interface State {
 }
 // #endregion
 
-export default class SelectInput extends React.PureComponent<Props, State> {
+class SelectInput extends React.PureComponent<PropsWithTheme, State> {
   // Variable for mount state.
   isComponentMounted: boolean = false;
 
-  constructor(props: Props) {
+  constructor(props: PropsWithTheme) {
     super(props);
 
     this.state = {
@@ -37,7 +42,7 @@ export default class SelectInput extends React.PureComponent<Props, State> {
   }
 
   // #region Lifecycle
-  static getDerivedStateFromProps(props: Props, state: State): State {
+  static getDerivedStateFromProps(props: PropsWithTheme, state: State): State {
     const selectedItems = props.selectProps?.selectedItems || [];
     let value = '';
 
@@ -169,8 +174,14 @@ export default class SelectInput extends React.PureComponent<Props, State> {
 
   _getInput = (): React.ReactElement => {
     const { value } = this.state;
-    const { right, theme, style, ...other } = this.props;
-    const inputProps = omit(other, ['selectProps', 'editable', 'value']);
+    const { right, style, ...other } = this.props;
+
+    const inputProps = omit(other, [
+      'selectProps',
+      'editable',
+      'value',
+      'theme',
+    ]);
 
     return (
       <DefaultInput
@@ -178,7 +189,7 @@ export default class SelectInput extends React.PureComponent<Props, State> {
         value={value}
         right={
           right == null || right === undefined ? (
-            <TextInput.Icon name="menu-down" theme={theme} />
+            <TextInput.Icon name="menu-down" />
           ) : (
             right
           )
@@ -192,7 +203,6 @@ export default class SelectInput extends React.PureComponent<Props, State> {
             'width',
           ]),
         ]}
-        theme={theme}
         {...inputProps}
       />
     );
@@ -216,7 +226,7 @@ export default class SelectInput extends React.PureComponent<Props, State> {
   };
 
   render(): React.ReactElement {
-    const { selectProps, editable, style, theme } = this.props;
+    const { selectProps, editable, style } = this.props;
     const { isSelectVisible } = this.state;
 
     const {
@@ -262,7 +272,6 @@ export default class SelectInput extends React.PureComponent<Props, State> {
                 visible={isSelectVisible}
                 onDismiss={this._dismissSelect}
                 anchor={this._getInput()}
-                theme={theme}
                 style={[
                   styles.noVerticalMargin,
                   {
@@ -296,3 +305,5 @@ export default class SelectInput extends React.PureComponent<Props, State> {
     );
   }
 }
+
+export default withTheme(SelectInput);
