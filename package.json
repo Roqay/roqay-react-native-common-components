@@ -1,6 +1,6 @@
 {
   "name": "roqay-react-native-common-components",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "Common React Native components used by \"Roqay\" packed in library for usage in future projects.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
