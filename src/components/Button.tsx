@@ -174,7 +174,6 @@ const Button = (props: PropsWithTheme): React.ReactElement => {
         disabled={disabled}
         rippleColor={rippleColor}
         underlayColor={rippleColor}
-        theme={theme}
       >
         <View
           style={[

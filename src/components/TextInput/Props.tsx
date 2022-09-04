@@ -2,6 +2,7 @@
 import type { TextInputProps } from 'react-native-paper/lib/typescript/components/TextInput/TextInput';
 import type { Props as TextProps } from '../Text';
 import type SelectItem from '../../types/SelectItem';
+import type { Theme } from 'react-native-paper/lib/typescript/types';
 
 export interface SelectProps {
   mode?: 'dialog' | 'dropdown';
@@ -24,7 +25,7 @@ export interface TopLabelProps {
   textProps?: TextProps;
 }
 
-export default interface Props extends TextInputProps {
+export default interface Props extends Omit<TextInputProps, 'theme'> {
   style?: TextInputProps['style'] & { [key: string]: any };
   isRequired?: boolean;
   topLabelProps?: TopLabelProps;
@@ -32,4 +33,8 @@ export default interface Props extends TextInputProps {
   selectProps?: SelectProps;
   ref?: any;
   positiveNumbersOnly?: boolean;
+}
+
+export interface PropsWithTheme extends Props {
+  theme: Theme;
 }

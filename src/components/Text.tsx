@@ -71,7 +71,7 @@ const Text = (props: PropsWithTheme): React.ReactElement => {
 
     default:
       return (
-        <PaperText style={textStyle} theme={theme} {...other}>
+        <PaperText style={textStyle} {...other}>
           {children}
         </PaperText>
       );
