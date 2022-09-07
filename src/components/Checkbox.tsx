@@ -1,6 +1,6 @@
 // External imports.
 import React from 'react';
-import { View, ViewProps, StyleSheet } from 'react-native';
+import { View, ViewProps, StyleSheet, FlexAlignType } from 'react-native';
 import {
   withTheme,
   TouchableRipple,
@@ -34,11 +34,9 @@ const styles = ScaledSheet.create({
   },
   rippleView: {
     flexDirection: 'row',
-    alignItems: 'center',
     paddingHorizontal: '8@s',
   },
   text: {
-    flex: 1,
     marginStart: '8@s',
   },
 });
@@ -53,6 +51,7 @@ export interface Props extends ViewProps {
   checkedColor?: string;
   uncheckedColor?: string;
   textProps?: TextProps;
+  contentAlign?: FlexAlignType;
 }
 
 interface PropsWithTheme extends Props {
@@ -69,6 +68,7 @@ const Checkbox = (props: PropsWithTheme): React.ReactElement => {
     checkedColor,
     uncheckedColor,
     textProps,
+    contentAlign,
     style,
     theme,
     ...other
@@ -120,6 +120,7 @@ const Checkbox = (props: PropsWithTheme): React.ReactElement => {
               paddingEnd,
               paddingRight,
               paddingLeft,
+              alignItems: contentAlign || 'center',
             },
           ]}
         >
