@@ -18,7 +18,6 @@ import type { Props as TextProps } from './Text';
 // #region Styles
 const styles = ScaledSheet.create({
   container: {
-    width: '100%',
     borderRadius: '8@msr',
     overflow: 'hidden',
   },
