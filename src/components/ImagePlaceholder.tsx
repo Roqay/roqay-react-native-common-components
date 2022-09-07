@@ -241,7 +241,7 @@ class ImagePlaceholder extends React.PureComponent<PropsWithTheme, State> {
                   backgroundColor:
                     loadingProps?.backgroundColor == null ||
                     loadingProps?.backgroundColor === undefined
-                      ? theme.colors.onSurface.concat('66')
+                      ? theme.colors.backdrop
                       : loadingProps?.backgroundColor,
                 },
               ]}
@@ -254,7 +254,6 @@ class ImagePlaceholder extends React.PureComponent<PropsWithTheme, State> {
                 )
               }
             >
-              {/* {progressSize > 0 && ( */}
               <Progress.Pie
                 indeterminate={progress <= 0}
                 size={progressSize}
@@ -266,7 +265,6 @@ class ImagePlaceholder extends React.PureComponent<PropsWithTheme, State> {
                     : loadingProps?.color
                 }
               />
-              {/* )} */}
             </View>
           )}
         </>
