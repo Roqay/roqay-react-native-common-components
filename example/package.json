@@ -4,15 +4,14 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "link-deps": "react-native link",
     "android-clean": "cd android && ./gradlew clean && cd ..",
     "pods": "pod repo update && npx pod-install",
     "android": "react-native run-android",
-    "ios-clean": "cd ios && xcodebuild clean && cd ..",
-    "ios-simulator": "react-native run-ios --simulator=\"iPhone 13 Pro Max\"",
+    "ios-clean": "cd ios && rm -rf build && xcodebuild clean && cd ..",
+    "ios-simulator": "react-native run-ios --simulator=\"iPhone 14 Pro Max\"",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "postinstall": "yarn pods && yarn link-deps && yarn android-clean && yarn ios-clean"
+    "postinstall": "yarn pods && yarn android-clean && yarn ios-clean"
   },
   "dependencies": {
     "@klarna/react-native-vector-drawable": "^0.4.0",
@@ -20,8 +19,8 @@
     "@react-native-firebase/crashlytics": "^15.6.0",
     "@react-navigation/native": "^6.0.13",
     "@react-navigation/native-stack": "^6.9.0",
-    "react": "17.0.2",
-    "react-native": "0.66.4",
+    "react": "18.1.0",
+    "react-native": "0.70.1",
     "react-native-fast-image": "^8.6.1",
     "react-native-paper": "^4.12.4",
     "react-native-progress": "^5.0.0",
