@@ -5,6 +5,7 @@ const STATUSBAR_DEFAULT_HEIGHT: number = 20;
 const STATUSBAR_X_HEIGHT: number = 44;
 const STATUSBAR_IP12_HEIGHT: number = 47;
 const STATUSBAR_IP12MAX_HEIGHT: number = 47;
+const STATUSBAR_IP14MAX_HEIGHT: number = 59;
 
 const X_WIDTH: number = 375;
 const X_HEIGHT: number = 812;
@@ -18,6 +19,9 @@ const IP12_HEIGHT: number = 844;
 const IP12MAX_WIDTH: number = 428;
 const IP12MAX_HEIGHT: number = 926;
 
+const IP14MAX_WIDTH: number = 430;
+const IP14MAX_HEIGHT: number = 932;
+
 const { height: W_HEIGHT, width: W_WIDTH } = Dimensions.get('window');
 
 let statusBarHeight: number = STATUSBAR_DEFAULT_HEIGHT;
@@ -25,6 +29,7 @@ let isIPhoneX_v: boolean = false;
 let isIPhoneXMax_v: boolean = false;
 let isIPhone12_v: boolean = false;
 let isIPhone12Max_v: boolean = false;
+let isIPhone14Max_v: boolean = false;
 let isIPhoneWithMonobrow_v: boolean = false;
 
 if (Platform.OS === 'ios' && !Platform.isPad && !Platform.isTV) {
@@ -44,6 +49,10 @@ if (Platform.OS === 'ios' && !Platform.isPad && !Platform.isTV) {
     isIPhoneWithMonobrow_v = true;
     isIPhone12Max_v = true;
     statusBarHeight = STATUSBAR_IP12MAX_HEIGHT;
+  } else if (W_WIDTH === IP14MAX_WIDTH && W_HEIGHT === IP14MAX_HEIGHT) {
+    isIPhoneWithMonobrow_v = true;
+    isIPhone14Max_v = true;
+    statusBarHeight = STATUSBAR_IP14MAX_HEIGHT;
   }
 }
 
@@ -51,6 +60,7 @@ export const isIPhoneX = (): boolean => isIPhoneX_v;
 export const isIPhoneXMax = (): boolean => isIPhoneXMax_v;
 export const isIPhone12 = (): boolean => isIPhone12_v;
 export const isIPhone12Max = (): boolean => isIPhone12Max_v;
+export const isIPhone14Max = (): boolean => isIPhone14Max_v;
 export const isIPhoneWithMonobrow = (): boolean => isIPhoneWithMonobrow_v;
 
 export const getStatusBarHeight = (skipAndroid?: boolean): number => {
