@@ -27,7 +27,7 @@ let isIPhone12_v: boolean = false;
 let isIPhone12Max_v: boolean = false;
 let isIPhoneWithMonobrow_v: boolean = false;
 
-if (Platform.OS === 'ios' && !Platform.isPad && !Platform.isTVOS) {
+if (Platform.OS === 'ios' && !Platform.isPad && !Platform.isTV) {
   if (W_WIDTH === X_WIDTH && W_HEIGHT === X_HEIGHT) {
     isIPhoneWithMonobrow_v = true;
     isIPhoneX_v = true;
