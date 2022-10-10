@@ -1,5 +1,5 @@
 // Types imports.
-import type { TextInputProps } from 'react-native-paper/lib/typescript/components/TextInput/TextInput';
+import type { Props as TextInputProps } from 'react-native-paper/lib/typescript/components/TextInput/TextInput';
 import type { Props as TextProps } from '../Text';
 import type SelectItem from '../../types/SelectItem';
 import type { Theme } from 'react-native-paper/lib/typescript/types';
