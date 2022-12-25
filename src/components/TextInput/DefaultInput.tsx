@@ -94,9 +94,8 @@ export default (props: Props): React.ReactElement => {
       returnKeyType={returnKeyType === undefined ? 'done' : returnKeyType}
       style={[
         styles.input,
-        { height: height },
+        { height: height, minHeight: multiline ? ms(70) : undefined },
         style,
-        { minHeight: multiline ? ms(70) : undefined },
       ]}
       keyboardType={keyboardType}
       onChangeText={(text: string) => {
