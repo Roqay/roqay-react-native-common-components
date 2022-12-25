@@ -8,8 +8,8 @@ export default function CardScreen() {
       <Card style={styles.card}>
         <Text>Default card</Text>
       </Card>
-      <Card style={styles.card} mode="outlined">
-        <Text>Outlined card</Text>
+      <Card style={styles.card} mode="contained">
+        <Text>Contained card</Text>
       </Card>
     </ScrollView>
   );
@@ -18,7 +18,7 @@ export default function CardScreen() {
 const styles = ScaledSheet.create({
   card: {
     width: '90%',
-    alignSelf: 'center',
+    marginHorizontal: '5%',
     marginVertical: '8@vs',
   },
 });
