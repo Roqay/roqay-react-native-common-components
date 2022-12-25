@@ -119,6 +119,7 @@ const AlertDialog = (props: PropsWithTheme): React.ReactElement => {
                 ]}
                 textProps={{
                   style: [{ color: theme.colors.primary }, actionTextStyle],
+                  children: undefined,
                   ...actionTextOther,
                 }}
                 text={action.action}
