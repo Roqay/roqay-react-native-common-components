@@ -6,7 +6,10 @@ import { ScaledSheet, ms } from 'react-native-size-matters';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 // Types imports.
-import type { Theme } from 'react-native-paper/lib/typescript/types';
+import type {
+  MD2Theme,
+  MD3Theme,
+} from 'react-native-paper/lib/typescript/types';
 
 // Internal imports.
 import Text from './Text';
@@ -63,7 +66,7 @@ export interface Props extends ViewProps {
 }
 
 interface PropsWithTheme extends Props {
-  theme: Theme;
+  theme: MD2Theme | MD3Theme;
 }
 // #endregion
 

@@ -4,7 +4,7 @@ import {
   Button,
   LoadingDialog,
 } from 'roqay-react-native-common-components';
-import { ScaledSheet } from 'react-native-size-matters';
+import {ScaledSheet} from 'react-native-size-matters';
 
 export default function LoadingDialogScreen() {
   const [visibleTimeLeft, setVisibleTimeLeft] = React.useState(0);
@@ -15,7 +15,7 @@ export default function LoadingDialogScreen() {
     if (!visibleTimeLeft) return;
 
     const timeoutId = setTimeout(() => {
-      setVisibleTimeLeft((t) => t - 1);
+      setVisibleTimeLeft(t => t - 1);
     }, 1000);
 
     return () => clearTimeout(timeoutId);

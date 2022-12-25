@@ -6,7 +6,10 @@ import { ScaledSheet } from 'react-native-size-matters';
 import { omit } from 'lodash';
 
 // Types imports.
-import type { Theme } from 'react-native-paper/lib/typescript/types';
+import type {
+  MD2Theme,
+  MD3Theme,
+} from 'react-native-paper/lib/typescript/types';
 import type { Props as DialogProps } from './Dialog';
 import type { Props as TextProps } from './Text';
 import type { Props as ButtonProps } from './Button';
@@ -61,7 +64,7 @@ export interface Props {
 }
 
 interface PropsWithTheme extends Props {
-  theme: Theme;
+  theme: MD2Theme | MD3Theme;
 }
 // #endregion
 

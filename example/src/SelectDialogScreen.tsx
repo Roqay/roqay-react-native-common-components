@@ -6,7 +6,7 @@ import {
   Button,
   SelectItem,
 } from 'roqay-react-native-common-components';
-import { ScaledSheet } from 'react-native-size-matters';
+import {ScaledSheet} from 'react-native-size-matters';
 
 export default function SelectDialogScreen() {
   const [singleSelectDialogVisible, setSingleSelectDialogVisible] =
@@ -100,9 +100,9 @@ export default function SelectDialogScreen() {
           text="Show Single Select Dialog"
         />
         <Text style={styles.text}>
-          {singleSelectDialogSelectedItems?.map(
-            (item) => `${item.dropdownTitle}, `
-          )}
+          {singleSelectDialogSelectedItems
+            ?.map(item => item.dropdownTitle)
+            ?.join(', ')}
         </Text>
         <Button
           style={styles.button}
@@ -110,9 +110,9 @@ export default function SelectDialogScreen() {
           text="Show Multi Select Dialog"
         />
         <Text style={styles.text}>
-          {multiSelectDialogSelectedItems?.map(
-            (item) => `${item.dropdownTitle}, `
-          )}
+          {multiSelectDialogSelectedItems
+            ?.map(item => item.dropdownTitle)
+            ?.join(', ')}
         </Text>
       </ScrollView>
       <SelectDialog

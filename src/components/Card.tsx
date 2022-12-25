@@ -4,7 +4,10 @@ import { withTheme, Card as PaperCard } from 'react-native-paper';
 import { ScaledSheet } from 'react-native-size-matters';
 
 // Types imports.
-import type { Theme } from 'react-native-paper/lib/typescript/types';
+import type {
+  MD2Theme,
+  MD3Theme,
+} from 'react-native-paper/lib/typescript/types';
 
 // #region Styles
 const styles = ScaledSheet.create({
@@ -22,7 +25,7 @@ const styles = ScaledSheet.create({
 export type Props = React.ComponentProps<typeof PaperCard>;
 
 type PropsWithTheme = Props & {
-  theme: Theme;
+  theme: MD2Theme | MD3Theme;
 };
 // #endregion
 

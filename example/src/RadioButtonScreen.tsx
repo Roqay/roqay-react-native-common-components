@@ -1,6 +1,6 @@
 import React from 'react';
-import { ScrollView, RadioButton } from 'roqay-react-native-common-components';
-import { ScaledSheet } from 'react-native-size-matters';
+import {ScrollView, RadioButton} from 'roqay-react-native-common-components';
+import {ScaledSheet} from 'react-native-size-matters';
 
 export default function RadioButtonScreen() {
   const [checked, setChecked] = React.useState(false);

@@ -189,7 +189,7 @@ class SelectInput extends React.PureComponent<PropsWithTheme, State> {
         value={value}
         right={
           right == null || right === undefined ? (
-            <TextInput.Icon name="menu-down" />
+            <TextInput.Icon icon="menu-down" />
           ) : (
             right
           )

@@ -9,7 +9,10 @@ import {
 import { ms } from 'react-native-size-matters';
 
 // Types imports.
-import type { Theme } from 'react-native-paper/lib/typescript/types';
+import type {
+  MD2Theme,
+  MD3Theme,
+} from 'react-native-paper/lib/typescript/types';
 import type { TextProps } from 'react-native';
 
 // #region Types
@@ -21,7 +24,7 @@ export interface Props extends TextProps {
 }
 
 interface PropsWithTheme extends Props {
-  theme: Theme;
+  theme: MD2Theme | MD3Theme;
 }
 // #endregion
 
@@ -44,7 +47,7 @@ const Text = (props: PropsWithTheme): React.ReactElement => {
   }
 
   const textStyle = [
-    { color: theme.colors.text },
+    { color: theme.isV3 ? theme.colors.onBackground : theme.colors.text },
     style,
     {
       fontSize: ms(size == null || size === undefined ? defaultTextSize : size),

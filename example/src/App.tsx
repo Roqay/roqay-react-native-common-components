@@ -1,9 +1,9 @@
 import React from 'react';
-import { enableScreens } from 'react-native-screens';
-import { Provider, DefaultTheme } from 'react-native-paper';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { configureLog } from 'roqay-react-native-common-components';
+import {enableScreens} from 'react-native-screens';
+import {Provider, DefaultTheme} from 'react-native-paper';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {configureLog} from 'roqay-react-native-common-components';
 
 import HomeScreen from './HomeScreen';
 import AlertDialogScreen from './AlertDialogScreen';

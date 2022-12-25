@@ -5,7 +5,10 @@ import { ScaledSheet, ms } from 'react-native-size-matters';
 import { withTheme } from 'react-native-paper';
 
 // Types imports.
-import type { Theme } from 'react-native-paper/lib/typescript/types';
+import type {
+  MD2Theme,
+  MD3Theme,
+} from 'react-native-paper/lib/typescript/types';
 
 // #region Styles
 const styles = ScaledSheet.create({
@@ -53,7 +56,7 @@ export interface Props extends ViewProps {
 }
 
 interface PropsWithTheme extends Props {
-  theme: Theme;
+  theme: MD2Theme | MD3Theme;
 }
 
 export interface LoadingProps {
@@ -69,7 +72,7 @@ export interface ImageProps {
   priority?: PriorityType;
   cache?: CacheType;
   loadingProps?: LoadingProps;
-  theme: Theme;
+  theme: MD2Theme | MD3Theme;
 }
 
 interface State {
