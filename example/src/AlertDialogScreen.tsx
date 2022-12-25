@@ -4,7 +4,7 @@ import {
   AlertDialog,
   Button,
 } from 'roqay-react-native-common-components';
-import { ScaledSheet } from 'react-native-size-matters';
+import {ScaledSheet} from 'react-native-size-matters';
 
 export default function AlertDialogScreen() {
   const [singleActionAlertDialogVisible, setSingleActionAlertDialogVisible] =
@@ -62,7 +62,7 @@ export default function AlertDialogScreen() {
         actions={[
           {
             action: 'OK',
-            actionProps: { onPress: _hideSingleActionAlertDialog },
+            actionProps: {onPress: _hideSingleActionAlertDialog},
           },
         ]}
       />
@@ -75,11 +75,11 @@ export default function AlertDialogScreen() {
         actions={[
           {
             action: 'Action 1',
-            actionProps: { onPress: _hideTwoActionsAlertDialog },
+            actionProps: {onPress: _hideTwoActionsAlertDialog},
           },
           {
             action: 'Action 2',
-            actionProps: { onPress: _hideTwoActionsAlertDialog },
+            actionProps: {onPress: _hideTwoActionsAlertDialog},
           },
         ]}
       />
@@ -93,15 +93,15 @@ export default function AlertDialogScreen() {
         actions={[
           {
             action: 'Action 1',
-            actionProps: { onPress: _hideThreeActionsAlertDialog },
+            actionProps: {onPress: _hideThreeActionsAlertDialog},
           },
           {
             action: 'Action 2',
-            actionProps: { onPress: _hideThreeActionsAlertDialog },
+            actionProps: {onPress: _hideThreeActionsAlertDialog},
           },
           {
             action: 'Action 3',
-            actionProps: { onPress: _hideThreeActionsAlertDialog },
+            actionProps: {onPress: _hideThreeActionsAlertDialog},
           },
         ]}
       />

@@ -10,7 +10,7 @@ import {
   getStatusBarHeight,
   Button,
 } from 'roqay-react-native-common-components';
-import { ScaledSheet } from 'react-native-size-matters';
+import {ScaledSheet} from 'react-native-size-matters';
 import crashlytics from '@react-native-firebase/crashlytics';
 
 export default function UtilsScreen() {
@@ -30,11 +30,13 @@ export default function UtilsScreen() {
       <Text style={styles.text}>{`isIPhone12: ${isIPhone12()}`}</Text>
       <Text style={styles.text}>{`isIPhone12Max: ${isIPhone12Max()}`}</Text>
       <Text
-        style={styles.text}
-      >{`isIPhoneWithMonobrow: ${isIPhoneWithMonobrow()}`}</Text>
+        style={
+          styles.text
+        }>{`isIPhoneWithMonobrow: ${isIPhoneWithMonobrow()}`}</Text>
       <Text
-        style={styles.text}
-      >{`getStatusBarHeight: ${getStatusBarHeight()}`}</Text>
+        style={
+          styles.text
+        }>{`getStatusBarHeight: ${getStatusBarHeight()}`}</Text>
       <Button
         text="Add Log Message"
         onPress={_onLogMessagePress}

@@ -12,7 +12,10 @@ import { withTheme, Portal } from 'react-native-paper';
 import { ScaledSheet } from 'react-native-size-matters';
 
 // Types imports.
-import type { Theme } from 'react-native-paper/lib/typescript/types';
+import type {
+  MD2Theme,
+  MD3Theme,
+} from 'react-native-paper/lib/typescript/types';
 
 // #region Styles
 const styles = ScaledSheet.create({
@@ -47,7 +50,7 @@ export interface Props {
 }
 
 interface PropsWithTheme extends Props {
-  theme: Theme;
+  theme: MD2Theme | MD3Theme;
 }
 
 interface State {}

@@ -94,7 +94,7 @@ const TextInput = (props: PropsWithTheme): React.ReactElement => {
           style={[
             styles.noVerticalMargin,
             {
-              color: theme.colors.text,
+              color: theme.isV3 ? theme.colors.onBackground : theme.colors.text,
               marginTop: marginVertical || marginTop,
             },
             widthHorizontalMarginStyle,

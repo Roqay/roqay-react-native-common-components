@@ -5,7 +5,7 @@ import {
   Text,
   Button,
 } from 'roqay-react-native-common-components';
-import { ScaledSheet } from 'react-native-size-matters';
+import {ScaledSheet} from 'react-native-size-matters';
 
 export default function DialogScreen() {
   const [simpleDialogVisible, setSimpleDialogVisible] = React.useState(false);
@@ -49,15 +49,13 @@ export default function DialogScreen() {
       <Dialog
         visible={topDialogVisible}
         onDismiss={_hideTopDialog}
-        position="top"
-      >
+        position="top">
         <Text style={styles.text}>This is top dialog</Text>
       </Dialog>
       <Dialog
         visible={bottomDialogVisible}
         onDismiss={_hideBottomDialog}
-        position="bottom"
-      >
+        position="bottom">
         <Text style={styles.text}>This is bottom dialog</Text>
       </Dialog>
     </>

@@ -2,7 +2,10 @@
 import type { Props as TextInputProps } from 'react-native-paper/lib/typescript/components/TextInput/TextInput';
 import type { Props as TextProps } from '../Text';
 import type SelectItem from '../../types/SelectItem';
-import type { Theme } from 'react-native-paper/lib/typescript/types';
+import type {
+  MD2Theme,
+  MD3Theme,
+} from 'react-native-paper/lib/typescript/types';
 
 export interface SelectProps {
   mode?: 'dialog' | 'dropdown';
@@ -36,5 +39,5 @@ export default interface Props extends Omit<TextInputProps, 'theme'> {
 }
 
 export interface PropsWithTheme extends Props {
-  theme: Theme;
+  theme: MD2Theme | MD3Theme;
 }
