@@ -13,7 +13,7 @@ import type {
   MD2Theme,
   MD3Theme,
 } from 'react-native-paper/lib/typescript/types';
-import type { TextProps } from 'react-native';
+import type { Props as TextProps } from 'react-native-paper/lib/typescript/components/Typography/Text';
 
 // #region Types
 export type TextType = 'normal' | 'bold' | 'caption';
@@ -29,7 +29,7 @@ interface PropsWithTheme extends Props {
 // #endregion
 
 const Text = (props: PropsWithTheme): React.ReactElement => {
-  const { size, type, style, children, theme, ...other } = props;
+  const { size, type, variant, style, children, theme, ...other } = props;
   let defaultTextSize: number = 13;
 
   switch (type) {
@@ -47,26 +47,42 @@ const Text = (props: PropsWithTheme): React.ReactElement => {
   }
 
   const textStyle = [
-    { color: theme.isV3 ? theme.colors.onBackground : theme.colors.text },
-    style,
     {
+      color: theme.isV3 ? theme.colors.onBackground : theme.colors.text,
       fontSize: ms(size == null || size === undefined ? defaultTextSize : size),
       lineHeight: ms(
         (size == null || size === undefined ? defaultTextSize : size) * 2
       ),
     },
+    style,
   ];
+
+  if (variant) {
+    return (
+      <PaperText style={textStyle} variant={variant} {...other}>
+        {children}
+      </PaperText>
+    );
+  }
 
   switch (type) {
     case 'caption':
-      return (
+      return theme.isV3 ? (
+        <PaperText style={textStyle} variant="bodySmall" {...other}>
+          {children}
+        </PaperText>
+      ) : (
         <Caption style={textStyle} {...other}>
           {children}
         </Caption>
       );
 
     case 'bold':
-      return (
+      return theme.isV3 ? (
+        <PaperText style={textStyle} variant="titleLarge" {...other}>
+          {children}
+        </PaperText>
+      ) : (
         <Title style={textStyle} {...other}>
           {children}
         </Title>
