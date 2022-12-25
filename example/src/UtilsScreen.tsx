@@ -6,6 +6,8 @@ import {
   isIPhoneXMax,
   isIPhone12,
   isIPhone12Max,
+  isIPhone14Pro,
+  isIPhone14Max,
   isIPhoneWithMonobrow,
   getStatusBarHeight,
   Button,
@@ -29,6 +31,8 @@ export default function UtilsScreen() {
       <Text style={styles.text}>{`isIPhoneXMax: ${isIPhoneXMax()}`}</Text>
       <Text style={styles.text}>{`isIPhone12: ${isIPhone12()}`}</Text>
       <Text style={styles.text}>{`isIPhone12Max: ${isIPhone12Max()}`}</Text>
+      <Text style={styles.text}>{`isIPhone14Pro: ${isIPhone14Pro()}`}</Text>
+      <Text style={styles.text}>{`isIPhone14Max: ${isIPhone14Max()}`}</Text>
       <Text
         style={
           styles.text
