@@ -261,7 +261,6 @@ class SelectDialog extends React.PureComponent<PropsWithTheme, State> {
         text={item.dropdownTitle}
         textProps={{
           style: { color: theme.colors.onSurface },
-          children: undefined,
         }}
       />
     );
@@ -291,7 +290,6 @@ class SelectDialog extends React.PureComponent<PropsWithTheme, State> {
             ]}
             textProps={{
               style: { color: theme.colors.onSurface },
-              children: undefined,
             }}
           />
         </>

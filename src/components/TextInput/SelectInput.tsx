@@ -222,7 +222,6 @@ class SelectInput extends React.PureComponent<PropsWithTheme, State> {
         text={item.dropdownTitle}
         textProps={{
           style: { color: theme.colors.onSurface },
-          children: undefined,
         }}
       />
     );
