@@ -62,7 +62,7 @@ export interface Props extends ViewProps {
   disabled?: boolean;
   iconSize?: number;
   noIconTint?: boolean;
-  textProps?: TextProps;
+  textProps?: Omit<TextProps, 'children'>;
 }
 
 interface PropsWithTheme extends Props {

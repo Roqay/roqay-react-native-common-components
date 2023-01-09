@@ -20,12 +20,12 @@ export interface SelectProps {
 
 export interface ErrorProps {
   errorMessage?: string;
-  textProps?: TextProps;
+  textProps?: Omit<TextProps, 'children'>;
 }
 
 export interface TopLabelProps {
   label?: string;
-  textProps?: TextProps;
+  textProps?: Omit<TextProps, 'children'>;
 }
 
 export default interface Props extends Omit<TextInputProps, 'theme'> {

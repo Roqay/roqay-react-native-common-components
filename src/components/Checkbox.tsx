@@ -53,7 +53,7 @@ export interface Props extends ViewProps {
   disabled?: boolean;
   checkedColor?: string;
   uncheckedColor?: string;
-  textProps?: TextProps;
+  textProps?: Omit<TextProps, 'children'>;
   contentAlign?: FlexAlignType;
 }
 

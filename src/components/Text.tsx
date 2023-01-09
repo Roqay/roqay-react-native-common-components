@@ -49,10 +49,20 @@ const Text = (props: PropsWithTheme): React.ReactElement => {
   const textStyle = [
     {
       color: theme.isV3 ? theme.colors.onBackground : theme.colors.text,
-      fontSize: ms(size == null || size === undefined ? defaultTextSize : size),
-      lineHeight: ms(
-        (size == null || size === undefined ? defaultTextSize : size) * 2
-      ),
+      fontSize:
+        (size == null || size === undefined) &&
+        (variant == null || variant === undefined)
+          ? ms(defaultTextSize)
+          : size
+          ? ms(size)
+          : undefined,
+      lineHeight:
+        (size == null || size === undefined) &&
+        (variant == null || variant === undefined)
+          ? ms(defaultTextSize) * 2
+          : size
+          ? ms(size) * 2
+          : undefined,
     },
     style,
   ];
@@ -90,7 +100,7 @@ const Text = (props: PropsWithTheme): React.ReactElement => {
 
     default:
       return (
-        <PaperText style={textStyle} {...other}>
+        <PaperText style={textStyle} variant="bodyMedium" {...other}>
           {children}
         </PaperText>
       );
