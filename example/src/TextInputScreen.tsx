@@ -63,6 +63,12 @@ export default function TextInputScreen() {
       key: 'dialog-item-5',
       dropdownTitle: 'Dialog Item 5',
     },
+    {
+      id: 6,
+      key: 'dialog-item-6',
+      dropdownTitle:
+        'Dialog Item 6 Dialog Item 6 Dialog Item 6 Dialog Item 6 Dialog Item 6 Dialog Item 6 Dialog Item 6 Dialog Item 6',
+    },
   ];
 
   const dropdownItems = [
@@ -90,6 +96,12 @@ export default function TextInputScreen() {
       id: 5,
       key: 'dropdown-item-5',
       dropdownTitle: 'Dropdown Item 5',
+    },
+    {
+      id: 6,
+      key: 'dropdown-item-6',
+      dropdownTitle:
+        'Dropdown Item 6 Dropdown Item 6 Dropdown Item 6 Dropdown Item 6 Dropdown Item 6 Dropdown Item 6 Dropdown Item 6 Dropdown Item 6',
     },
   ];
 

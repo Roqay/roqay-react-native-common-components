@@ -57,9 +57,9 @@ export interface Action {
 export interface Props {
   dialogProps?: DialogProps;
   title?: string;
-  titleProps?: TextProps;
+  titleProps?: Omit<TextProps, 'children'>;
   message?: string;
-  messageProps?: TextProps;
+  messageProps?: Omit<TextProps, 'children'>;
   actions?: Action[];
 }
 
