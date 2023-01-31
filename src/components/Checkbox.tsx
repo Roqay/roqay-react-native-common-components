@@ -41,6 +41,7 @@ const styles = ScaledSheet.create({
   },
   text: {
     marginStart: '8@s',
+    flex: 1,
   },
 });
 // #endregion

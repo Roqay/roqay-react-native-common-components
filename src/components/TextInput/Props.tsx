@@ -16,6 +16,7 @@ export interface SelectProps {
   searchLabel?: string;
   noDataMessage?: string;
   closeText?: string;
+  trimLength?: number;
 }
 
 export interface ErrorProps {

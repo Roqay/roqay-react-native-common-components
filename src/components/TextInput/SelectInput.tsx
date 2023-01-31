@@ -18,6 +18,7 @@ import DefaultInput from './DefaultInput';
 import SelectDialog from '../SelectDialog';
 import Checkbox from '../Checkbox';
 import styles from './styles';
+import { getStatusBarHeight, trimStringToLength } from '../../utils';
 
 // #region Types
 interface State {
@@ -174,19 +175,14 @@ class SelectInput extends React.PureComponent<PropsWithTheme, State> {
 
   _getInput = (): React.ReactElement => {
     const { value } = this.state;
-    const { right, style, ...other } = this.props;
+    const { selectProps, right, style, ...other } = this.props;
 
-    const inputProps = omit(other, [
-      'selectProps',
-      'editable',
-      'value',
-      'theme',
-    ]);
+    const inputProps = omit(other, ['editable', 'value', 'theme']);
 
     return (
       <DefaultInput
         editable={false}
-        value={value}
+        value={trimStringToLength(value, selectProps?.trimLength)}
         right={
           right == null || right === undefined ? (
             <TextInput.Icon icon="menu-down" />
@@ -271,6 +267,7 @@ class SelectInput extends React.PureComponent<PropsWithTheme, State> {
           <View pointerEvents="box-only">
             {selectProps?.mode === 'dropdown' ? (
               <Menu
+                statusBarHeight={getStatusBarHeight()}
                 visible={isSelectVisible}
                 onDismiss={this._dismissSelect}
                 anchor={this._getInput()}
