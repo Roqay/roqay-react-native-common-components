@@ -24,7 +24,7 @@ const getInput = (props: Props): React.ReactElement => {
 };
 
 const TextInput = (props: PropsWithTheme): React.ReactElement => {
-  const { topLabelProps, errorProps, theme } = props;
+  const { topLabelProps, errorProps, theme, isRequired } = props;
 
   const {
     type: labelType,
@@ -103,6 +103,15 @@ const TextInput = (props: PropsWithTheme): React.ReactElement => {
           {...other}
         >
           {topLabelProps?.label}
+          {isRequired && (
+            <Text
+              type={labelType || 'bold'}
+              size={labelSize || 13}
+              style={{ color: theme.colors.error }}
+            >
+              {' *'}
+            </Text>
+          )}
         </Text>
       )}
       {getInput(set(props, 'style', inputStyle))}

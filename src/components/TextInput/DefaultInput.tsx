@@ -27,7 +27,7 @@ const getLabel = (props: Props): undefined | TextInputLabelProp => {
 
 const getPlaceholder = (props: Props): undefined | string => {
   const { isRequired, placeholder } = props;
-  return isRequired ? `${placeholder} *` : placeholder;
+  return placeholder && isRequired ? `${placeholder} *` : placeholder;
 };
 
 export default (props: Props): React.ReactElement => {
@@ -45,6 +45,7 @@ export default (props: Props): React.ReactElement => {
     onChangeText,
     secureTextEntry,
     positiveNumbersOnly,
+    hasPasswordToggle,
     ...other
   } = props;
 
@@ -80,9 +81,9 @@ export default (props: Props): React.ReactElement => {
       error={errorProps?.errorMessage ? true : error}
       label={label}
       placeholder={getPlaceholder(props)}
-      multiline={secureTextEntry ? false : true}
+      multiline={secureTextEntry || hasPasswordToggle ? false : true}
       numberOfLines={
-        secureTextEntry
+        secureTextEntry || hasPasswordToggle
           ? 1
           : numberOfLines === undefined
           ? multiline
@@ -131,7 +132,9 @@ export default (props: Props): React.ReactElement => {
         }
       }}
       secureTextEntry={secureTextEntry}
-      scrollEnabled={secureTextEntry ? false : Boolean(multiline)}
+      scrollEnabled={
+        secureTextEntry || hasPasswordToggle ? false : Boolean(multiline)
+      }
       {...newProps}
     />
   );

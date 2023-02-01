@@ -37,6 +37,7 @@ export default interface Props extends Omit<TextInputProps, 'theme'> {
   selectProps?: SelectProps;
   ref?: any;
   positiveNumbersOnly?: boolean;
+  hasPasswordToggle?: boolean;
 }
 
 export interface PropsWithTheme extends Props {
