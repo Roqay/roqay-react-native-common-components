@@ -41,7 +41,7 @@ const ScrollView = (props: PropsWithTheme): React.ReactElement => {
       showsHorizontalScrollIndicator={showsHorizontalScrollIndicator || false}
       showsVerticalScrollIndicator={showsVerticalScrollIndicator || false}
       keyboardShouldPersistTaps={keyboardShouldPersistTaps || 'handled'}
-      keyboardDismissMode={keyboardDismissMode || 'on-drag'}
+      keyboardDismissMode={keyboardDismissMode || 'none'}
       refreshControl={
         refreshControl || onRefresh ? (
           <RefreshControl
