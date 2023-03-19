@@ -46,6 +46,7 @@ export interface Props extends ViewProps {
   size?: number;
   source?: string;
   placeholder?: number;
+  vectorPlaceholder?: number;
   resizeMode?: ResizeModeType;
   priority?: PriorityType;
   cache?: CacheType;
@@ -65,11 +66,19 @@ export interface LoadingProps {
 export interface ImageProps {
   source?: string;
   placeholder?: number;
+  vectorPlaceholder?: number;
   resizeMode?: ResizeModeType;
   priority?: PriorityType;
   cache?: CacheType;
   loadingProps?: LoadingProps;
   theme: MD2Theme | MD3Theme;
+}
+
+export interface PlaceholderProps {
+  source?: string;
+  placeholder?: number;
+  vectorPlaceholder?: number;
+  resizeMode?: ResizeModeType;
 }
 
 interface State {
@@ -131,10 +140,52 @@ class ImagePlaceholder extends React.PureComponent<PropsWithTheme, State> {
     }
   };
 
+  _getImagePlaceholder = (
+    props: PlaceholderProps
+  ): null | React.ReactElement => {
+    const { source, placeholder, vectorPlaceholder, resizeMode } = props;
+
+    const { isLoading, isError } = this.state;
+
+    if (!source || isError || isLoading) {
+      const notNullResizeMode = resizeMode || 'cover';
+      if (placeholder) {
+        return (
+          <Image
+            source={placeholder}
+            style={[styles.image, { resizeMode: notNullResizeMode }]}
+            resizeMode={notNullResizeMode}
+          />
+        );
+      }
+
+      if (vectorPlaceholder) {
+        try {
+          const VectorImage = require('react-native-vector-image').default;
+
+          return (
+            <VectorImage
+              source={vectorPlaceholder}
+              style={[styles.image, { resizeMode: notNullResizeMode }]}
+              resizeMode={notNullResizeMode}
+            />
+          );
+        } catch (error) {
+          return null;
+        }
+      }
+
+      return null;
+    }
+
+    return null;
+  };
+
   _getImage = (props: ImageProps): null | React.ReactElement => {
     const {
       source,
       placeholder,
+      vectorPlaceholder,
       resizeMode,
       priority,
       cache,
@@ -202,13 +253,12 @@ class ImagePlaceholder extends React.PureComponent<PropsWithTheme, State> {
 
       return (
         <>
-          {(!source || isError || isLoading) && placeholder && (
-            <Image
-              source={placeholder}
-              style={[styles.image, { resizeMode: notNullResizeMode }]}
-              resizeMode={notNullResizeMode}
-            />
-          )}
+          {this._getImagePlaceholder({
+            source,
+            placeholder,
+            vectorPlaceholder,
+            resizeMode,
+          })}
           {Boolean(source) && !isError && (
             <FastImage
               style={styles.image}
@@ -279,6 +329,7 @@ class ImagePlaceholder extends React.PureComponent<PropsWithTheme, State> {
       size,
       source,
       placeholder,
+      vectorPlaceholder,
       resizeMode,
       priority,
       cache,
@@ -304,6 +355,7 @@ class ImagePlaceholder extends React.PureComponent<PropsWithTheme, State> {
         {this._getImage({
           source,
           placeholder,
+          vectorPlaceholder,
           resizeMode,
           priority,
           cache,
