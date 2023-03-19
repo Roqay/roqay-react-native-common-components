@@ -6,12 +6,11 @@ import { ms } from 'react-native-size-matters';
 
 // Types imports.
 import type Props from './Props';
-import type { TextInputLabelProp } from 'react-native-paper/lib/typescript/components/TextInput/types';
 
 // Internal imports.
 import styles from './styles';
 
-const getLabel = (props: Props): undefined | TextInputLabelProp => {
+const getLabel = (props: Props): undefined | string | React.ReactElement => {
   const { topLabelProps, isRequired, label } = props;
 
   if (topLabelProps) {

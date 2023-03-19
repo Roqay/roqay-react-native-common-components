@@ -5,10 +5,7 @@ import { ScaledSheet, ms } from 'react-native-size-matters';
 import { withTheme } from 'react-native-paper';
 
 // Types imports.
-import type {
-  MD2Theme,
-  MD3Theme,
-} from 'react-native-paper/lib/typescript/types';
+import type { MD2Theme, MD3Theme } from 'react-native-paper';
 
 // #region Styles
 const styles = ScaledSheet.create({

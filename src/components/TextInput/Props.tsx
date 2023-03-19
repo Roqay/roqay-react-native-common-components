@@ -1,11 +1,7 @@
 // Types imports.
-import type { Props as TextInputProps } from 'react-native-paper/lib/typescript/components/TextInput/TextInput';
+import type { TextInputProps, MD2Theme, MD3Theme } from 'react-native-paper';
 import type { Props as TextProps } from '../Text';
 import type SelectItem from '../../types/SelectItem';
-import type {
-  MD2Theme,
-  MD3Theme,
-} from 'react-native-paper/lib/typescript/types';
 
 export interface SelectProps {
   mode?: 'dialog' | 'dropdown';
