@@ -9,10 +9,7 @@ import { withTheme } from 'react-native-paper';
 import { ScaledSheet } from 'react-native-size-matters';
 
 // Types imports.
-import type {
-  MD2Theme,
-  MD3Theme,
-} from 'react-native-paper/lib/typescript/types';
+import type { MD2Theme, MD3Theme } from 'react-native-paper';
 import type FlatListItem from '../types/FlatListItem';
 
 // #region Styles

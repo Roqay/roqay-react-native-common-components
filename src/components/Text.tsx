@@ -9,16 +9,12 @@ import {
 import { ms } from 'react-native-size-matters';
 
 // Types imports.
-import type {
-  MD2Theme,
-  MD3Theme,
-} from 'react-native-paper/lib/typescript/types';
-import type { Props as TextProps } from 'react-native-paper/lib/typescript/components/Typography/Text';
+import type { MD2Theme, MD3Theme, TextProps } from 'react-native-paper';
 
 // #region Types
 export type TextType = 'normal' | 'bold' | 'caption';
 
-export interface Props extends TextProps {
+export interface Props extends TextProps<never> {
   size?: number;
   type?: TextType;
 }

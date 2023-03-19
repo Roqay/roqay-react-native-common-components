@@ -5,10 +5,7 @@ import { withTheme } from 'react-native-paper';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 // Types imports.
-import type {
-  MD2Theme,
-  MD3Theme,
-} from 'react-native-paper/lib/typescript/types';
+import type { MD2Theme, MD3Theme } from 'react-native-paper';
 
 // #region Types
 export type Props = React.ComponentProps<typeof KeyboardAwareScrollView> & {
