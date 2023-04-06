@@ -50,22 +50,22 @@ const MyComponent = () => {
 
 ### nameRegExp
 
-Type: `RegExp`
+Type: `RegExp`  
 Matches characters only.
 
 ### fullNameRegExp
 
-Type: `RegExp`
+Type: `RegExp`  
 Matches case insensitive first name, optional unlimited number of middle names and last name separated with space format.
 
 ### emailRegExp
 
-Type: `RegExp`
+Type: `RegExp`  
 Matches email addresses.
 
 ### kuwaitPhoneRegExp
 
-Type: `RegExp`
+Type: `RegExp`  
 Matches Kuwait phone numbers with following rules:
 
 - First four characters must be +965 (Optional).
@@ -74,7 +74,7 @@ Matches Kuwait phone numbers with following rules:
 
 ### strictPasswordRegExp
 
-Type: `RegExp`
+Type: `RegExp`  
 Matches strict passwords with following rules:
 
 - Minimum 8 characters.
