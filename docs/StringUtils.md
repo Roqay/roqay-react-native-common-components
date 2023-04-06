@@ -26,5 +26,5 @@ const MyComponent = () => {
 
 ### trimStringToLength
 
-Type: `(string: string, length?: number) => string`
+Type: `(string: string, length?: number) => string`  
 If `length` not passed a default value is used equivalent to `45`.
