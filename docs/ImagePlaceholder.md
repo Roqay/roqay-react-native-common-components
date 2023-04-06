@@ -20,6 +20,10 @@ Image component that used to display remote image with placeholder that displays
 
 To use the component, you need to add [`react-native-fast-image`](https://github.com/DylanVann/react-native-fast-image), [`react-native-progress`](https://github.com/oblador/react-native-progress) and [`react-native-svg`](https://github.com/react-native-svg/react-native-svg) to your project.
 
+### `.svg` placeholder support
+
+If you intend using `.svg` images for placeholder through the `vectorPlaceholder` prop then make sure to add [`react-native-vector-image`](https://github.com/oblador/react-native-vector-image) to your project and follow the [installation steps](https://github.com/oblador/react-native-vector-image#installation) as well.
+
 ## Usage
 
 ```js
@@ -34,6 +38,11 @@ const MyComponent = () => {
         size={100}
         source="https://unsplash.it/500"
         placeholder={require('./placeholder.png')}
+      />
+      <ImagePlaceholder
+        size={100}
+        source="https://unsplash.it/500"
+        vectorPlaceholder={require('./placeholder.svg')}
       />
     </View>
   );
@@ -55,7 +64,12 @@ The image URL to load.
 ### placeholder
 
 Type: `number` - opaque type returned by something like `require('./image.jpg')`  
-The image to display while loading and in case of error.
+The non `.svg` image to display while loading and in case of error.
+
+### vectorPlaceholder
+
+Type: `number` - opaque type returned by something like `require('./image.svg')`  
+The `.svg` image to display while loading and in case of error.
 
 ### resizeMode
 
