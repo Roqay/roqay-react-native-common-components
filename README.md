@@ -73,6 +73,7 @@ Each component has its own usage part in the [documentation](docs).
 - [LogUtils](docs/LogUtils.md)
 - [StatusBarUtils](docs/StatusBarUtils.md)
 - [StringUtils](docs/StringUtils.md)
+- [ValidationUtils](docs/ValidationUtils.md)
 
 ## Types
 
