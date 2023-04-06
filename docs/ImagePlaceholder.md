@@ -120,6 +120,6 @@ If not passed a default value from `react-native-paper` theme is used equivalent
 
 Type: `string`  
 Custom color for loading indicator background.  
-If not passed a default value from `react-native-paper` theme is used equivalent to `theme.colors.onSurface` with alpha `40%`.
+If not passed a default value from `react-native-paper` theme is used equivalent to `theme.colors.backdrop`.
 
 ### [...View props](https://reactnative.dev/docs/view#props)
