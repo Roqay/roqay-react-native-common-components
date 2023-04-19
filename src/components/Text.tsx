@@ -85,7 +85,7 @@ const Text = (props: PropsWithTheme): React.ReactElement => {
 
     case 'bold':
       return theme.isV3 ? (
-        <PaperText style={textStyle} variant="titleLarge" {...other}>
+        <PaperText style={textStyle} variant="titleMedium" {...other}>
           {children}
         </PaperText>
       ) : (
