@@ -1,7 +1,7 @@
 // External imports.
 import React from 'react';
 import { withTheme } from 'react-native-paper';
-import { View } from 'react-native';
+import { View, I18nManager } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 
 // Types imports.
@@ -212,10 +212,19 @@ class SelectDialog extends React.PureComponent<PropsWithTheme, State> {
     const { searchText } = this.state;
     const { searchLabel, theme } = this.props;
 
+    const isArabic =
+      (I18nManager.getConstants().localeIdentifier?.indexOf('ar') || -1) > -1;
+
     return (
       <DefaultInput
         mode="outlined"
-        label={searchLabel === undefined ? 'Look for' : searchLabel}
+        label={
+          searchLabel === undefined
+            ? isArabic
+              ? 'ابحث عن'
+              : 'Look for'
+            : searchLabel
+        }
         value={searchText}
         onChangeText={this._onChangeTextSearchText}
         style={{ backgroundColor: theme.colors.surface }}
@@ -238,9 +247,16 @@ class SelectDialog extends React.PureComponent<PropsWithTheme, State> {
       );
     }
 
+    const isArabic =
+      (I18nManager.getConstants().localeIdentifier?.indexOf('ar') || -1) > -1;
+
     return (
       <Text style={styles.noDataText} size={15}>
-        {noDataMessage === undefined ? 'No data available' : noDataMessage}
+        {noDataMessage === undefined
+          ? isArabic
+            ? 'لا تتوافر بيانات!'
+            : 'No data available'
+          : noDataMessage}
       </Text>
     );
   };
@@ -266,6 +282,9 @@ class SelectDialog extends React.PureComponent<PropsWithTheme, State> {
   render(): React.ReactElement {
     const { visible, onDismiss, closeText, theme } = this.props;
 
+    const isArabic =
+      (I18nManager.getConstants().localeIdentifier?.indexOf('ar') || -1) > -1;
+
     return (
       <Dialog visible={visible} onDismiss={onDismiss} style={styles.dialog}>
         <>
@@ -279,7 +298,13 @@ class SelectDialog extends React.PureComponent<PropsWithTheme, State> {
             {this._getContent()}
           </View>
           <Button
-            text={closeText === undefined ? 'Close' : closeText}
+            text={
+              closeText === undefined
+                ? isArabic
+                  ? 'إغلاق'
+                  : 'Close'
+                : closeText
+            }
             onPress={onDismiss}
             style={[
               styles.closeButton,
