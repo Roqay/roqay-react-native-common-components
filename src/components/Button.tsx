@@ -4,6 +4,7 @@ import { View, Image, ViewProps, StyleSheet } from 'react-native';
 import { withTheme, TouchableRipple } from 'react-native-paper';
 import { ScaledSheet, ms } from 'react-native-size-matters';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import tinyColor from 'tinycolor2';
 
 // Types imports.
 import type { MD2Theme, MD3Theme } from 'react-native-paper';
@@ -137,7 +138,7 @@ const Button = (props: PropsWithTheme): React.ReactElement => {
     textStyle == null || textStyle === undefined ? styles.text : textStyle
   ).color?.toString();
 
-  const rippleColor = textColor?.concat('40');
+  const rippleColor = tinyColor(textColor).setAlpha(0.25).toHex8String();
 
   const notNullIconSize: number = ms(
     iconSize == null || iconSize === undefined ? 24 : iconSize

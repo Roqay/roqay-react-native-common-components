@@ -57,6 +57,7 @@
     "@types/react": "^18.2.0",
     "@types/react-native": "^0.71.6",
     "@types/react-native-vector-icons": "^6.4.13",
+    "@types/tinycolor2": "^1.4.3",
     "commitlint": "^17.6.1",
     "eslint": "^8.39.0",
     "eslint-config-prettier": "^8.8.0",
@@ -157,7 +158,8 @@
   },
   "dependencies": {
     "lodash": "^4.17.21",
-    "react-native-size-matters": "^0.4.0"
+    "react-native-size-matters": "^0.4.0",
+    "tinycolor2": "^1.6.0"
   },
   "optionalDependencies": {
     "@klarna/react-native-vector-drawable": "^0.4.0",
