@@ -51,6 +51,8 @@ const Text = (props: PropsWithTheme): React.ReactElement => {
           ? ms(defaultTextSize)
           : size
           ? ms(size)
+          : variant && theme.isV3
+          ? theme.fonts[variant].fontSize
           : undefined,
       lineHeight:
         (size == null || size === undefined) &&
@@ -58,6 +60,8 @@ const Text = (props: PropsWithTheme): React.ReactElement => {
           ? ms(defaultTextSize) * 2
           : size
           ? ms(size) * 2
+          : variant && theme.isV3
+          ? theme.fonts[variant].lineHeight
           : undefined,
     },
     style,
