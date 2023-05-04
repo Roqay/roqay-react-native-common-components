@@ -29,6 +29,7 @@ const ScrollView = (props: PropsWithTheme): React.ReactElement => {
     keyboardShouldPersistTaps,
     keyboardDismissMode,
     refreshControl,
+    enableOnAndroid,
     theme,
     ...other
   } = props;
@@ -48,6 +49,11 @@ const ScrollView = (props: PropsWithTheme): React.ReactElement => {
             onRefresh={onRefresh}
           />
         ) : undefined
+      }
+      enableOnAndroid={
+        enableOnAndroid == null || enableOnAndroid === undefined
+          ? true
+          : enableOnAndroid
       }
       {...other}
     />
