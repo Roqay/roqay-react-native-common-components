@@ -40,7 +40,6 @@ const styles = ScaledSheet.create({
     resizeMode: 'contain',
   },
   text: {
-    color: '#ffffff',
     marginHorizontal: '4@msr',
   },
 });
@@ -134,9 +133,26 @@ const Button = (props: PropsWithTheme): React.ReactElement => {
     opacity: disabled ? 0.5 : 1.0,
   };
 
-  const textColor = StyleSheet.flatten(
-    textStyle == null || textStyle === undefined ? styles.text : textStyle
-  ).color?.toString();
+  const buttonDefaultBackgroundStyle = {
+    backgroundColor: theme.colors.primary,
+  };
+
+  const buttonColor =
+    StyleSheet.flatten(
+      style == null || style === undefined
+        ? buttonDefaultBackgroundStyle
+        : style
+    ).backgroundColor?.toString() || theme.colors.primary;
+
+  const textColor =
+    StyleSheet.flatten(
+      textStyle == null || textStyle === undefined ? styles.text : textStyle
+    ).color?.toString() ||
+    (theme.isV3
+      ? theme.colors.onPrimary
+      : tinyColor(buttonColor).isDark()
+      ? '#ffffff'
+      : '#000000');
 
   const rippleColor = tinyColor(textColor).setAlpha(0.25).toHex8String();
 
@@ -206,7 +222,7 @@ const Button = (props: PropsWithTheme): React.ReactElement => {
             color: iconColor,
           })}
           <Text
-            style={[styles.text, textStyle]}
+            style={[styles.text, { color: textColor }, textStyle]}
             type={type == null || type === undefined ? 'bold' : type}
             {...rest}
           >
