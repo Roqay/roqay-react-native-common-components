@@ -7,6 +7,7 @@ import {
   RadioButton as PaperRadioButton,
 } from 'react-native-paper';
 import { ScaledSheet } from 'react-native-size-matters';
+import tinyColor from 'tinycolor2';
 
 // Types imports.
 import type { MD2Theme, MD3Theme } from 'react-native-paper';
@@ -81,7 +82,9 @@ const RadioButton = (props: PropsWithTheme): React.ReactElement => {
       ? theme.colors.primary
       : checkedColor;
 
-  const rippleColor = notNullCheckedColor.concat('40');
+  const rippleColor = tinyColor(notNullCheckedColor)
+    .setAlpha(0.25)
+    .toHex8String();
 
   const flattenStyle = StyleSheet.flatten(
     style == null || style === undefined ? {} : style
