@@ -299,11 +299,7 @@ class SelectDialog extends React.PureComponent<PropsWithTheme, State> {
           </View>
           <Button
             text={
-              closeText === undefined
-                ? isArabic
-                  ? 'إغلاق'
-                  : 'Close'
-                : closeText
+              closeText === undefined ? (isArabic ? 'تم' : 'Done') : closeText
             }
             onPress={onDismiss}
             style={[
