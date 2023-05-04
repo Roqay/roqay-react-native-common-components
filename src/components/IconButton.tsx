@@ -4,6 +4,7 @@ import { View, Image, ViewProps } from 'react-native';
 import { withTheme, TouchableRipple } from 'react-native-paper';
 import { ScaledSheet, ms } from 'react-native-size-matters';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import tinyColor from 'tinycolor2';
 
 // Types imports.
 import type { MD2Theme, MD3Theme } from 'react-native-paper';
@@ -139,7 +140,7 @@ const IconButton = (props: PropsWithTheme): React.ReactElement => {
     opacity: disabled ? 0.5 : 1.0,
   };
 
-  const rippleColor = notNullColor.concat('40');
+  const rippleColor = tinyColor(notNullColor).setAlpha(0.25).toHex8String();
 
   return (
     <View
