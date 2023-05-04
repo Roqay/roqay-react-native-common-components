@@ -20,6 +20,7 @@ const styles = ScaledSheet.create({
 
 // #region Types
 export type Props = React.ComponentProps<typeof PaperCard>;
+
 type PropsWithTheme = Props & {
   theme: MD2Theme | MD3Theme;
 };
