@@ -62,7 +62,7 @@ const FlatList = (props: PropsWithTheme): React.ReactElement => {
       showsVerticalScrollIndicator={showsVerticalScrollIndicator || false}
       horizontal={horizontal}
       keyboardShouldPersistTaps={keyboardShouldPersistTaps || 'handled'}
-      keyboardDismissMode={keyboardDismissMode || 'on-drag'}
+      keyboardDismissMode={keyboardDismissMode || 'none'}
       keyExtractor={
         keyExtractor === undefined ? (item) => item.key : keyExtractor
       }
