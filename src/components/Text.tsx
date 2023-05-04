@@ -44,7 +44,6 @@ const Text = (props: PropsWithTheme): React.ReactElement => {
 
   const textStyle = [
     {
-      color: theme.isV3 ? theme.colors.onBackground : theme.colors.text,
       fontSize:
         (size == null || size === undefined) &&
         (variant == null || variant === undefined)
