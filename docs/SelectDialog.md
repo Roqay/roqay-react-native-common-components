@@ -145,5 +145,5 @@ The text to display when no data available that match the search.
 ### closeText
 
 Type: `string`  
-Default value: `'Close'`  
+Default value: `'Done'`  
 The text to display for the close button.

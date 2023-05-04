@@ -328,7 +328,7 @@ PODS:
   - React-jsinspector (0.71.7)
   - React-logger (0.71.7):
     - glog
-  - react-native-safe-area-context (4.5.1):
+  - react-native-safe-area-context (4.5.2):
     - RCT-Folly
     - RCTRequired
     - RCTTypeSafety
@@ -422,10 +422,10 @@ PODS:
     - React-Core
     - SDWebImage (~> 5.11.1)
     - SDWebImageWebPCoder (~> 0.8.4)
-  - RNFBApp (17.4.2):
+  - RNFBApp (17.4.3):
     - Firebase/CoreOnly (= 10.7.0)
     - React-Core
-  - RNFBCrashlytics (17.4.2):
+  - RNFBCrashlytics (17.4.3):
     - Firebase/Crashlytics (= 10.7.0)
     - FirebaseCoreExtension (= 10.7.0)
     - React-Core
@@ -625,7 +625,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: eaa5f71eb8f6861cf0e57f1a0f52aeb020d9e18e
   React-jsinspector: 9885f6f94d231b95a739ef7bb50536fb87ce7539
   React-logger: 3f8ebad1be1bf3299d1ab6d7f971802d7395c7ef
-  react-native-safe-area-context: f5549f36508b1b7497434baa0cd97d7e470920d4
+  react-native-safe-area-context: 1d596539b05a78f2b346e954e7c577f6f9be7544
   React-perflogger: 2d505bbe298e3b7bacdd9e542b15535be07220f6
   React-RCTActionSheet: 0e96e4560bd733c9b37efbf68f5b1a47615892fb
   React-RCTAnimation: fd138e26f120371c87e406745a27535e2c8a04ef
@@ -640,8 +640,8 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: c5c89f8f543842dd864b63ded1b0bbb9c9445328
   ReactCommon: 5307873a227ee34ddd3e7f2ec1086ebbfccc7618
   RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
-  RNFBApp: 55dbfc574e5ae414f2984394934f79f87eb4b050
-  RNFBCrashlytics: da1f9b468af6acc1ff8e98c5b4faa0c3ba65af58
+  RNFBApp: 922564a99c97a8cab366d5a918f9fecff6b563d5
+  RNFBCrashlytics: fbad0177b4603cd964364e3206a158fe5b3862c8
   RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
   RNSVG: 53c661b76829783cdaf9b7a57258f3d3b4c28315
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
