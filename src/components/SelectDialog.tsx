@@ -71,9 +71,8 @@ interface PropsWithTheme extends Props {
 }
 
 interface State {
-  items?: SelectItem[];
   selectedItems?: SelectItem[];
-  searchText: string;
+  searchText?: string;
 }
 // #endregion
 
@@ -85,35 +84,15 @@ class SelectDialog extends React.PureComponent<PropsWithTheme, State> {
     super(props);
 
     this.state = {
-      items: props.items,
       selectedItems: props.selectedItems,
-      searchText: '',
+      searchText: undefined,
     };
   }
 
   // #region Lifecycle
   static getDerivedStateFromProps(props: Props, state: State): State {
-    const stateItems: SelectItem[] | undefined = state.items;
-    const propsItems: SelectItem[] | undefined = props.items;
-    let newItems: SelectItem[] | undefined;
-
-    if (
-      stateItems &&
-      stateItems.length &&
-      propsItems &&
-      propsItems.length &&
-      propsItems.length < stateItems.length
-    ) {
-      newItems = propsItems;
-    } else if ((stateItems && stateItems.length) || state.searchText) {
-      newItems = stateItems;
-    } else {
-      newItems = propsItems;
-    }
-
     return {
       ...state,
-      items: newItems,
       selectedItems: props.selectedItems,
     };
   }
@@ -131,21 +110,14 @@ class SelectDialog extends React.PureComponent<PropsWithTheme, State> {
 
   // #region Text change events
   _onChangeTextSearchText = (text: string): void => {
-    this.setState({ searchText: text }, () => {
-      if (text) {
-        this._filterList(text);
-      } else {
-        const { items } = this.props;
-        this.setState({ items });
-      }
-    });
+    this.setState({ searchText: text });
   };
   // #endregion
 
   // #region Press events
   _onItemPressed = (item: SelectItem): void => {
     const { selectedItems } = this.state;
-    const { allowMultiSelect, onItemsSelected, onDismiss } = this.props;
+    const { allowMultiSelect, onItemsSelected } = this.props;
     let newSelectedItems: SelectItem[] = Array.from(selectedItems || []);
     let index = -1;
 
@@ -171,25 +143,39 @@ class SelectDialog extends React.PureComponent<PropsWithTheme, State> {
         onItemsSelected(newSelectedItems);
       }
 
-      if (!allowMultiSelect && onDismiss) {
-        onDismiss();
+      if (!allowMultiSelect) {
+        this._dismissDialog();
       }
     });
   };
   // #endregion
 
-  _filterList = (text: string): void => {
-    const { items } = this.props;
+  _dismissDialog = (): void => {
+    const { onDismiss } = this.props;
 
-    if (items) {
+    this.setState({ searchText: undefined }, () => {
+      if (onDismiss) {
+        onDismiss();
+      }
+    });
+  };
+
+  _getFilterList = (): SelectItem[] | undefined => {
+    const { items } = this.props;
+    const { searchText } = this.state;
+
+    if (items && searchText) {
       const filteredItems = items.filter(
         (item) =>
-          (item.dropdownTitle || '').toLowerCase().indexOf(text.toLowerCase()) >
-          -1
+          (item.dropdownTitle || '')
+            .toLowerCase()
+            .indexOf(searchText.toLowerCase()) > -1
       );
 
-      this.setState({ items: filteredItems });
+      return filteredItems;
     }
+
+    return items;
   };
 
   _isItemSelected = (item: SelectItem): boolean => {
@@ -209,7 +195,6 @@ class SelectDialog extends React.PureComponent<PropsWithTheme, State> {
   };
 
   _getSearchInput = (): React.ReactElement => {
-    const { searchText } = this.state;
     const { searchLabel, theme } = this.props;
 
     const isArabic =
@@ -225,7 +210,6 @@ class SelectDialog extends React.PureComponent<PropsWithTheme, State> {
               : 'Look for'
             : searchLabel
         }
-        value={searchText}
         onChangeText={this._onChangeTextSearchText}
         style={{ backgroundColor: theme.colors.surface }}
       />
@@ -233,8 +217,8 @@ class SelectDialog extends React.PureComponent<PropsWithTheme, State> {
   };
 
   _getContent = (): React.ReactElement => {
-    const { items } = this.state;
     const { noDataMessage } = this.props;
+    const items = this._getFilterList();
 
     if (items && items.length) {
       return (
@@ -280,13 +264,17 @@ class SelectDialog extends React.PureComponent<PropsWithTheme, State> {
   };
 
   render(): React.ReactElement {
-    const { visible, onDismiss, closeText, theme } = this.props;
+    const { visible, closeText, theme } = this.props;
 
     const isArabic =
       (I18nManager.getConstants().localeIdentifier?.indexOf('ar') || -1) > -1;
 
     return (
-      <Dialog visible={visible} onDismiss={onDismiss} style={styles.dialog}>
+      <Dialog
+        visible={visible}
+        onDismiss={this._dismissDialog}
+        style={styles.dialog}
+      >
         <>
           <View
             style={[
@@ -301,7 +289,7 @@ class SelectDialog extends React.PureComponent<PropsWithTheme, State> {
             text={
               closeText === undefined ? (isArabic ? 'تم' : 'Done') : closeText
             }
-            onPress={onDismiss}
+            onPress={this._dismissDialog}
             style={[
               styles.closeButton,
               { backgroundColor: theme.colors.surface },
