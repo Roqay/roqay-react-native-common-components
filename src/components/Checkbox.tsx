@@ -1,6 +1,6 @@
 // External imports.
 import React from 'react';
-import { View, ViewProps, StyleSheet, FlexAlignType } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import {
   withTheme,
   TouchableRipple,
@@ -11,6 +11,7 @@ import tinyColor from 'tinycolor2';
 
 // Types imports.
 import type { MD2Theme, MD3Theme } from 'react-native-paper';
+import type { ViewProps, FlexAlignType } from 'react-native';
 
 // Internal imports.
 import Text from './Text';

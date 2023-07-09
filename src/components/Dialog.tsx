@@ -1,18 +1,17 @@
 // External imports.
 import React from 'react';
-import {
-  Pressable,
-  BackHandler,
-  NativeEventSubscription,
-  StyleProp,
-  ViewStyle,
-} from 'react-native';
+import { Pressable, BackHandler } from 'react-native';
 import { Edge, SafeAreaView } from 'react-native-safe-area-context';
 import { withTheme, Portal } from 'react-native-paper';
 import { ScaledSheet, vs, ms } from 'react-native-size-matters';
 
 // Types imports.
 import type { MD2Theme, MD3Theme } from 'react-native-paper';
+import type {
+  NativeEventSubscription,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 
 // #region Styles
 const styles = ScaledSheet.create({

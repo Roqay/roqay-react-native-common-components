@@ -1,15 +1,12 @@
 // External imports.
 import React from 'react';
-import {
-  FlatList as NativeFlatList,
-  FlatListProps,
-  RefreshControl,
-} from 'react-native';
+import { FlatList as NativeFlatList, RefreshControl } from 'react-native';
 import { withTheme } from 'react-native-paper';
 import { ScaledSheet, vs } from 'react-native-size-matters';
 
 // Types imports.
 import type { MD2Theme, MD3Theme } from 'react-native-paper';
+import type { FlatListProps } from 'react-native';
 import type FlatListItem from '../types/FlatListItem';
 
 // #region Styles
