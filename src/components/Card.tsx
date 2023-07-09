@@ -1,7 +1,7 @@
 // External imports.
 import React from 'react';
 import { withTheme, Card as PaperCard } from 'react-native-paper';
-import { ScaledSheet } from 'react-native-size-matters';
+import { ScaledSheet, ms } from 'react-native-size-matters';
 
 // Types imports.
 import type { MD2Theme, MD3Theme } from 'react-native-paper';
@@ -11,9 +11,9 @@ const styles = ScaledSheet.create({
   card: {
     width: '95%',
     marginHorizontal: '2.5%',
-    padding: '8@msr',
-    borderRadius: '8@msr',
-    marginVertical: '4@msr',
+    padding: ms(8),
+    borderRadius: ms(8),
+    marginVertical: ms(4),
   },
 });
 // #endregion

@@ -5,7 +5,7 @@ import {
   Text,
   Button,
 } from 'roqay-react-native-common-components';
-import {ScaledSheet} from 'react-native-size-matters';
+import {ScaledSheet, vs} from 'react-native-size-matters';
 
 export default function DialogScreen() {
   const [simpleDialogVisible, setSimpleDialogVisible] = React.useState(false);
@@ -66,9 +66,9 @@ const styles = ScaledSheet.create({
   button: {
     width: '90%',
     alignSelf: 'center',
-    marginVertical: '8@vs',
+    marginVertical: vs(8),
   },
   text: {
-    marginVertical: '16@vs',
+    marginVertical: vs(16),
   },
 });

@@ -1,0 +1,32 @@
+diff --git a/node_modules/react-native-progress/Circle.js b/node_modules/react-native-progress/Circle.js
+index 79f0a9e..71b9b44 100644
+--- a/node_modules/react-native-progress/Circle.js
++++ b/node_modules/react-native-progress/Circle.js
+@@ -122,6 +122,7 @@ export class ProgressCircle extends Component {
+         <Surface
+           width={size}
+           height={size}
++          fill="none"
+           style={
+             indeterminate && rotation
+               ? {
+@@ -168,6 +169,7 @@ export class ProgressCircle extends Component {
+           )}
+           {border ? (
+             <Arc
++              fill={fill}
+               radius={size / 2}
+               startAngle={0}
+               endAngle={(indeterminate ? endAngle * 2 : 2) * Math.PI}
+diff --git a/node_modules/react-native-progress/Pie.js b/node_modules/react-native-progress/Pie.js
+index d649772..2945c44 100644
+--- a/node_modules/react-native-progress/Pie.js
++++ b/node_modules/react-native-progress/Pie.js
+@@ -75,6 +75,7 @@ export class ProgressPie extends Component {
+         <Surface
+           width={size}
+           height={size}
++          fill="none"
+           style={
+             rotation
+               ? {

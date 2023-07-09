@@ -1,6 +1,6 @@
 // External imports.
 import React from 'react';
-import { View, Image, ViewProps, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet } from 'react-native';
 import { withTheme, TouchableRipple } from 'react-native-paper';
 import { ScaledSheet, ms } from 'react-native-size-matters';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -8,6 +8,7 @@ import tinyColor from 'tinycolor2';
 
 // Types imports.
 import type { MD2Theme, MD3Theme } from 'react-native-paper';
+import type { ViewProps } from 'react-native';
 
 // Internal imports.
 import Text from './Text';
@@ -17,7 +18,7 @@ import type { IconProps } from './IconButton';
 // #region Styles
 const styles = ScaledSheet.create({
   container: {
-    borderRadius: '16@msr',
+    borderRadius: ms(16),
     overflow: 'hidden',
   },
   noPadding: {
@@ -40,7 +41,7 @@ const styles = ScaledSheet.create({
     resizeMode: 'contain',
   },
   text: {
-    marginHorizontal: '4@msr',
+    marginHorizontal: ms(4),
   },
 });
 // #endregion

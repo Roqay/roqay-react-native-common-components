@@ -4,7 +4,7 @@ import {
   ImagePlaceholder,
   Text,
 } from 'roqay-react-native-common-components';
-import {ScaledSheet} from 'react-native-size-matters';
+import {ScaledSheet, vs} from 'react-native-size-matters';
 
 export default function ImagePlaceholderScreen() {
   return (
@@ -29,11 +29,11 @@ export default function ImagePlaceholderScreen() {
 
 const styles = ScaledSheet.create({
   text: {
-    marginTop: '8@vs',
+    marginTop: vs(8),
     alignSelf: 'center',
   },
   image: {
-    marginBottom: '8@vs',
+    marginBottom: vs(8),
     alignSelf: 'center',
   },
 });

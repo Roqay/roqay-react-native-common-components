@@ -1,6 +1,6 @@
 // External imports.
 import React from 'react';
-import { View, Image, ViewProps } from 'react-native';
+import { View, Image } from 'react-native';
 import { withTheme, TouchableRipple } from 'react-native-paper';
 import { ScaledSheet, ms } from 'react-native-size-matters';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -8,6 +8,7 @@ import tinyColor from 'tinycolor2';
 
 // Types imports.
 import type { MD2Theme, MD3Theme } from 'react-native-paper';
+import type { ViewProps } from 'react-native';
 
 // #region Styles
 const styles = ScaledSheet.create({

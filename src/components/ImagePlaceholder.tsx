@@ -1,11 +1,12 @@
 // External imports.
 import React from 'react';
-import { View, Image, ViewProps, LayoutChangeEvent } from 'react-native';
+import { View, Image } from 'react-native';
 import { ScaledSheet, ms } from 'react-native-size-matters';
 import { withTheme } from 'react-native-paper';
 
 // Types imports.
 import type { MD2Theme, MD3Theme } from 'react-native-paper';
+import type { ViewProps, LayoutChangeEvent } from 'react-native';
 
 // #region Styles
 const styles = ScaledSheet.create({

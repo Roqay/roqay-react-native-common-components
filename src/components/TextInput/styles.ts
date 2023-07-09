@@ -1,13 +1,13 @@
 // External imports.
-import { ScaledSheet } from 'react-native-size-matters';
+import { ScaledSheet, ms } from 'react-native-size-matters';
 import { I18nManager } from 'react-native';
 
 const styles = ScaledSheet.create({
   input: {
     width: '100%',
     textAlign: I18nManager.isRTL ? 'right' : 'left',
-    fontSize: '13@msr',
-    paddingHorizontal: '8@msr',
+    fontSize: ms(13),
+    paddingHorizontal: ms(8),
   },
   noVerticalMargin: {
     marginVertical: 0,
@@ -15,7 +15,7 @@ const styles = ScaledSheet.create({
     marginBottom: 0,
   },
   selectItem: {
-    marginVertical: '4@msr',
+    marginVertical: ms(4),
   },
 });
 

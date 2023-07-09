@@ -1,6 +1,6 @@
 import React from 'react';
 import {ScrollView, Card, Text} from 'roqay-react-native-common-components';
-import {ScaledSheet} from 'react-native-size-matters';
+import {ScaledSheet, vs} from 'react-native-size-matters';
 
 export default function CardScreen() {
   return (
@@ -19,6 +19,6 @@ const styles = ScaledSheet.create({
   card: {
     width: '90%',
     marginHorizontal: '5%',
-    marginVertical: '8@vs',
+    marginVertical: vs(8),
   },
 });

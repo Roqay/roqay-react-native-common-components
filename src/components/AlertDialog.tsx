@@ -2,7 +2,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { withTheme } from 'react-native-paper';
-import { ScaledSheet } from 'react-native-size-matters';
+import { ScaledSheet, ms } from 'react-native-size-matters';
 import { omit } from 'lodash';
 
 // Types imports.
@@ -22,7 +22,7 @@ const styles = ScaledSheet.create({
     alignItems: 'stretch',
   },
   actionsContainer: {
-    marginTop: '32@msr',
+    marginTop: ms(32),
   },
   actionsContainerRow: {
     flexDirection: 'row-reverse',
@@ -35,12 +35,12 @@ const styles = ScaledSheet.create({
   },
   action: {
     backgroundColor: '#00000000',
-    paddingHorizontal: '8@msr',
+    paddingHorizontal: ms(8),
     maxWidth: '80%',
-    marginTop: '8@msr',
+    marginTop: ms(8),
   },
   actionRow: {
-    marginStart: '8@msr',
+    marginStart: ms(8),
   },
 });
 // #endregion

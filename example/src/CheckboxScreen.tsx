@@ -1,6 +1,6 @@
 import React from 'react';
 import {ScrollView, Checkbox} from 'roqay-react-native-common-components';
-import {ScaledSheet} from 'react-native-size-matters';
+import {ScaledSheet, vs} from 'react-native-size-matters';
 
 export default function CheckboxScreen() {
   const [checked, setChecked] = React.useState(false);
@@ -25,6 +25,6 @@ const styles = ScaledSheet.create({
   checkbox: {
     width: '90%',
     alignSelf: 'center',
-    marginVertical: '8@vs',
+    marginVertical: vs(8),
   },
 });

@@ -1,16 +1,17 @@
 // External imports.
 import React from 'react';
-import { View, ViewProps, StyleSheet, FlexAlignType } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import {
   withTheme,
   TouchableRipple,
   Checkbox as PaperCheckbox,
 } from 'react-native-paper';
-import { ScaledSheet } from 'react-native-size-matters';
+import { ScaledSheet, ms, s } from 'react-native-size-matters';
 import tinyColor from 'tinycolor2';
 
 // Types imports.
 import type { MD2Theme, MD3Theme } from 'react-native-paper';
+import type { ViewProps, FlexAlignType } from 'react-native';
 
 // Internal imports.
 import Text from './Text';
@@ -19,7 +20,7 @@ import type { Props as TextProps } from './Text';
 // #region Styles
 const styles = ScaledSheet.create({
   container: {
-    borderRadius: '8@msr',
+    borderRadius: ms(8),
     overflow: 'hidden',
   },
   noPadding: {
@@ -35,10 +36,10 @@ const styles = ScaledSheet.create({
   },
   rippleView: {
     flexDirection: 'row',
-    paddingHorizontal: '8@s',
+    paddingHorizontal: s(8),
   },
   text: {
-    marginStart: '8@s',
+    marginStart: s(8),
     flex: 1,
   },
 });

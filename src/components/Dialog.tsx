@@ -1,18 +1,17 @@
 // External imports.
 import React from 'react';
-import {
-  Pressable,
-  BackHandler,
+import { Pressable, BackHandler } from 'react-native';
+import { Edge, SafeAreaView } from 'react-native-safe-area-context';
+import { withTheme, Portal } from 'react-native-paper';
+import { ScaledSheet, vs, ms } from 'react-native-size-matters';
+
+// Types imports.
+import type { MD2Theme, MD3Theme } from 'react-native-paper';
+import type {
   NativeEventSubscription,
   StyleProp,
   ViewStyle,
 } from 'react-native';
-import { Edge, SafeAreaView } from 'react-native-safe-area-context';
-import { withTheme, Portal } from 'react-native-paper';
-import { ScaledSheet } from 'react-native-size-matters';
-
-// Types imports.
-import type { MD2Theme, MD3Theme } from 'react-native-paper';
 
 // #region Styles
 const styles = ScaledSheet.create({
@@ -26,11 +25,11 @@ const styles = ScaledSheet.create({
   },
   dialog: {
     width: '90%',
-    marginVertical: '8@vs',
-    borderRadius: '10@msr',
+    marginVertical: vs(8),
+    borderRadius: ms(10),
     overflow: 'hidden',
     alignItems: 'center',
-    padding: '10@msr',
+    padding: ms(10),
   },
 });
 // #endregion

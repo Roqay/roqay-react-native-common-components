@@ -4,7 +4,7 @@ import {
   TextInput,
   SelectItem,
 } from 'roqay-react-native-common-components';
-import {ScaledSheet} from 'react-native-size-matters';
+import {ScaledSheet, vs} from 'react-native-size-matters';
 
 export default function TextInputScreen() {
   const [normalValue, setNormalValue] = React.useState('');
@@ -181,6 +181,6 @@ const styles = ScaledSheet.create({
   input: {
     width: '90%',
     alignSelf: 'center',
-    marginVertical: '8@vs',
+    marginVertical: vs(8),
   },
 });

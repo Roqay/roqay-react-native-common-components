@@ -2,7 +2,7 @@
 import React from 'react';
 import { withTheme } from 'react-native-paper';
 import { View, I18nManager } from 'react-native';
-import { ScaledSheet } from 'react-native-size-matters';
+import { ScaledSheet, ms } from 'react-native-size-matters';
 
 // Types imports.
 import type SelectItem from '../types/SelectItem';
@@ -30,25 +30,25 @@ const styles = ScaledSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    borderRadius: '10@msr',
+    borderRadius: ms(10),
     overflow: 'hidden',
-    padding: '16@msr',
+    padding: ms(16),
   },
   noDataText: {
     alignSelf: 'center',
     textAlign: 'center',
-    marginTop: '16@msr',
+    marginTop: ms(16),
   },
   list: {
-    marginTop: '8@msr',
+    marginTop: ms(8),
   },
   selectItem: {
-    marginVertical: '4@msr',
+    marginVertical: ms(4),
   },
   closeButton: {
     width: '100%',
-    marginTop: '16@msr',
-    borderRadius: '10@msr',
+    marginTop: ms(16),
+    borderRadius: ms(10),
   },
 });
 // #endregion
