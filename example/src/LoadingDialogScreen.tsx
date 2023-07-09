@@ -4,7 +4,7 @@ import {
   Button,
   LoadingDialog,
 } from 'roqay-react-native-common-components';
-import {ScaledSheet} from 'react-native-size-matters';
+import {ScaledSheet, vs} from 'react-native-size-matters';
 
 export default function LoadingDialogScreen() {
   const [visibleTimeLeft, setVisibleTimeLeft] = React.useState(0);
@@ -39,6 +39,6 @@ const styles = ScaledSheet.create({
   button: {
     width: '90%',
     alignSelf: 'center',
-    marginVertical: '8@vs',
+    marginVertical: vs(8),
   },
 });

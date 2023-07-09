@@ -1,6 +1,6 @@
 import React from 'react';
 import {ScrollView, Button} from 'roqay-react-native-common-components';
-import {ScaledSheet} from 'react-native-size-matters';
+import {ScaledSheet, vs, s, ms} from 'react-native-size-matters';
 
 export default function ButtonScreen() {
   const _onPress = () => {};
@@ -41,13 +41,13 @@ const styles = ScaledSheet.create({
   button: {
     width: '90%',
     alignSelf: 'center',
-    marginVertical: '8@vs',
+    marginVertical: vs(8),
   },
   customButton: {
     alignSelf: 'center',
-    marginVertical: '8@vs',
-    paddingHorizontal: '16@s',
-    paddingVertical: '4@vs',
-    borderRadius: '8@msr',
+    marginVertical: vs(8),
+    paddingHorizontal: s(16),
+    paddingVertical: vs(4),
+    borderRadius: ms(8),
   },
 });

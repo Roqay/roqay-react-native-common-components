@@ -6,7 +6,7 @@ import {
   Button,
   SelectItem,
 } from 'roqay-react-native-common-components';
-import {ScaledSheet} from 'react-native-size-matters';
+import {ScaledSheet, vs} from 'react-native-size-matters';
 
 export default function SelectDialogScreen() {
   const [singleSelectDialogVisible, setSingleSelectDialogVisible] =
@@ -138,12 +138,12 @@ const styles = ScaledSheet.create({
   button: {
     width: '90%',
     alignSelf: 'center',
-    marginTop: '8@vs',
+    marginTop: vs(8),
   },
   text: {
     width: '90%',
     alignSelf: 'center',
-    marginTop: '2@vs',
-    marginBottom: '8@vs',
+    marginTop: vs(2),
+    marginBottom: vs(8),
   },
 });

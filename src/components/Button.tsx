@@ -17,7 +17,7 @@ import type { IconProps } from './IconButton';
 // #region Styles
 const styles = ScaledSheet.create({
   container: {
-    borderRadius: '16@msr',
+    borderRadius: ms(16),
     overflow: 'hidden',
   },
   noPadding: {
@@ -40,7 +40,7 @@ const styles = ScaledSheet.create({
     resizeMode: 'contain',
   },
   text: {
-    marginHorizontal: '4@msr',
+    marginHorizontal: ms(4),
   },
 });
 // #endregion

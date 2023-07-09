@@ -6,7 +6,7 @@ import {
   RefreshControl,
 } from 'react-native';
 import { withTheme } from 'react-native-paper';
-import { ScaledSheet } from 'react-native-size-matters';
+import { ScaledSheet, vs } from 'react-native-size-matters';
 
 // Types imports.
 import type { MD2Theme, MD3Theme } from 'react-native-paper';
@@ -17,7 +17,7 @@ const styles = ScaledSheet.create({
   list: {
     flex: 1,
     width: '100%',
-    marginVertical: '4@vs',
+    marginVertical: vs(4),
   },
   horizontalContainerStyle: {
     flexGrow: 1,

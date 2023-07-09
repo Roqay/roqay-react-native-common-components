@@ -4,7 +4,7 @@ import {
   Text,
   IconButton,
 } from 'roqay-react-native-common-components';
-import {ScaledSheet} from 'react-native-size-matters';
+import {ScaledSheet, vs} from 'react-native-size-matters';
 
 export default function IconButtonScreen() {
   const _onPress = () => {};
@@ -35,11 +35,11 @@ export default function IconButtonScreen() {
 
 const styles = ScaledSheet.create({
   text: {
-    marginTop: '8@vs',
+    marginTop: vs(8),
     alignSelf: 'center',
   },
   icon: {
-    marginBottom: '8@vs',
+    marginBottom: vs(8),
     alignSelf: 'center',
   },
 });

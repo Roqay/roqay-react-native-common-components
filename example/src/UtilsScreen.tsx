@@ -12,7 +12,7 @@ import {
   getStatusBarHeight,
   Button,
 } from 'roqay-react-native-common-components';
-import {ScaledSheet} from 'react-native-size-matters';
+import {ScaledSheet, vs} from 'react-native-size-matters';
 import crashlytics from '@react-native-firebase/crashlytics';
 
 export default function UtilsScreen() {
@@ -59,11 +59,11 @@ const styles = ScaledSheet.create({
   text: {
     width: '90%',
     alignSelf: 'center',
-    marginVertical: '8@vs',
+    marginVertical: vs(8),
   },
   button: {
     width: '90%',
     alignSelf: 'center',
-    marginVertical: '8@vs',
+    marginVertical: vs(8),
   },
 });

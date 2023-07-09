@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScaledSheet} from 'react-native-size-matters';
+import {ScaledSheet, vs} from 'react-native-size-matters';
 import {ScrollView, Button} from 'roqay-react-native-common-components';
 
 export default function HomeScreen({navigation}: {navigation: any}) {
@@ -80,6 +80,6 @@ const styles = ScaledSheet.create({
   button: {
     width: '90%',
     alignSelf: 'center',
-    marginVertical: '8@vs',
+    marginVertical: vs(8),
   },
 });
